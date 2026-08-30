@@ -206,7 +206,7 @@ function Index() {
                   <span className="font-display text-xl">
                     {p.variantes.length > 1
                       ? `Desde ${precio(Math.min(...p.variantes.map((v) => v.precio)))}`
-                      : precio(p.variantes[0].precio)}
+                      : precio(p.variantes[0]!.precio)}
                   </span>
                   <button
                     type="button"
