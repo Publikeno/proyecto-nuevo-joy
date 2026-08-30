@@ -21,11 +21,11 @@ export const Route = createFileRoute("/")({
         content:
           "Catálogo 2026 de XUUMIEL: miel melipona, jabones, cremas y elixires artesanales hechos en Quintana Roo.",
       },
-      { property: "og:title", content: "XUUMIEL · Catálogo 2026" },
+      { property: "og:title", content: "XUUMIEL · Catálogo 2026 — Miel melipona de Quintana Roo" },
       {
         property: "og:description",
         content:
-          "Del taller de la melipona a tu ritual diario. Jabones, cremas, mieles y kits artesanales de Quintana Roo.",
+          "Catálogo 2026 de XUUMIEL: miel melipona, jabones, cremas y elixires artesanales hechos en Quintana Roo.",
       },
     ],
   }),

@@ -77,8 +77,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "XUUMIEL · Catálogo 2026" },
-      { name: "description", content: "Miel melipona, jabones, cremas y elixires artesanales de Quintana Roo." },
+      { title: "XUUMIEL · Catálogo 2026 — Miel melipona de Quintana Roo" },
+      { name: "description", content: "Catálogo 2026 de XUUMIEL: miel melipona, jabones, cremas y elixires artesanales hechos en Quintana Roo." },
       { name: "author", content: "XUUMIEL" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
