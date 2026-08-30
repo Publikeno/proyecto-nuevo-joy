@@ -263,7 +263,7 @@ function Index() {
           <div>
             <h2 className="text-sm font-semibold">Contacto</h2>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li><a className="hover:text-foreground" href="mailto:hola@xuumiel.mx">hola@xuumiel.mx</a></li>
+              <li><a className="hover:text-foreground" href="mailto:info@xuumiel.com">info@xuumiel.com</a></li>
               <li>Taller en Quintana Roo</li>
               <li>Pedidos por correo</li>
             </ul>
