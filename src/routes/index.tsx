@@ -192,8 +192,10 @@ function Index() {
                 <h3 className="mt-3 font-display text-xl leading-snug">{p.nombre}</h3>
                 <dl className="mt-4 space-y-1 text-sm text-muted-foreground">
                   <div className="flex justify-between gap-3">
-                    <dt>Tamaño</dt>
-                    <dd className="text-foreground">{p.tamano}</dd>
+                    <dt>{p.variantes.length > 1 ? "Tamaños" : "Tamaño"}</dt>
+                    <dd className="text-right text-foreground">
+                      {p.variantes.map((v) => v.tamano).join(" · ")}
+                    </dd>
                   </div>
                   <div className="flex justify-between gap-3">
                     <dt>Ingrediente</dt>
@@ -201,7 +203,11 @@ function Index() {
                   </div>
                 </dl>
                 <div className="mt-6 flex items-center justify-between gap-3 border-t border-border pt-4">
-                  <span className="font-display text-xl">{precio(p.precio)}</span>
+                  <span className="font-display text-xl">
+                    {p.variantes.length > 1
+                      ? `Desde ${precio(Math.min(...p.variantes.map((v) => v.precio)))}`
+                      : precio(p.variantes[0].precio)}
+                  </span>
                   <button
                     type="button"
                     onClick={() => setDetalle(p)}
@@ -277,20 +283,35 @@ function Index() {
                 <DialogTitle className="font-display text-2xl">{detalle.nombre}</DialogTitle>
                 <DialogDescription className="text-muted-foreground">{detalle.descripcion}</DialogDescription>
               </DialogHeader>
-              <dl className="mt-2 grid grid-cols-2 gap-4 border-y border-border py-4 text-sm">
-                <div>
-                  <dt className="text-muted-foreground">Precio</dt>
-                  <dd className="font-display text-xl">{precio(detalle.precio)}</dd>
-                </div>
-                <div>
-                  <dt className="text-muted-foreground">Tamaño</dt>
-                  <dd className="font-display text-xl">{detalle.tamano}</dd>
-                </div>
-                <div className="col-span-2">
-                  <dt className="text-muted-foreground">Ingrediente principal</dt>
-                  <dd className="mt-1">{detalle.ingrediente}</dd>
-                </div>
-              </dl>
+              <div className="mt-2 border-y border-border py-4 text-sm">
+                <table className="w-full">
+                  <caption className="sr-only">
+                    Tamaños y precios de {detalle.nombre}
+                  </caption>
+                  <thead>
+                    <tr className="text-left text-muted-foreground">
+                      <th scope="col" className="pb-2 font-normal">
+                        {detalle.variantes.length > 1 ? "Tamaño" : "Presentación"}
+                      </th>
+                      <th scope="col" className="pb-2 text-right font-normal">
+                        Precio
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {detalle.variantes.map((v) => (
+                      <tr key={v.tamano} className="border-t border-border/60">
+                        <td className="py-2 font-display text-lg">{v.tamano}</td>
+                        <td className="py-2 text-right font-display text-lg">{precio(v.precio)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p className="mt-3">
+                  <span className="text-muted-foreground">Ingrediente principal: </span>
+                  {detalle.ingrediente}
+                </p>
+              </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 <span className="text-foreground">Modo de uso: </span>
                 {detalle.ritual}
