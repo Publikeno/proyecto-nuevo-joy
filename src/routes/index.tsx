@@ -7,9 +7,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { categorias, productos, type Categoria, type Producto } from "@/data/catalogo";
+import { categorias, productos, NOTA_CATALOGO, type Categoria, type Producto } from "@/data/catalogo";
+import { HeroRuta } from "@/components/HeroRuta";
 import logo from "@/assets/xuumiel-logo.png";
-import panalImg from "@/assets/ruta/panal.jpg";
+import logoXuujaab from "@/assets/xuujaab-logo.jpeg";
 import culturaImg from "@/assets/ruta/cultura.jpg";
 import educacionImg from "@/assets/ruta/educacion.jpg";
 import meliponarioImg from "@/assets/ruta/meliponario.jpg";
@@ -117,29 +118,7 @@ function Index() {
       <main>
         {/* 1 · La Ruta de la Miel */}
         <section id="ruta" className="border-b border-border">
-          <div className="relative">
-            <img
-              src={panalImg}
-              alt="Panal de abejas meliponas fotografiado en el meliponario"
-              width={1600}
-              height={1000}
-              className="h-[52vh] min-h-[320px] w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-cacao/55" aria-hidden="true" />
-            <div className="absolute inset-0 flex items-end">
-              <div className="mx-auto w-full max-w-6xl px-5 pb-10">
-                <p className="text-xs uppercase tracking-[0.3em] text-primary-foreground/80">
-                  Quintana Roo, México
-                </p>
-                <h1 className="mt-4 max-w-2xl font-display text-4xl leading-[1.05] text-primary-foreground sm:text-5xl md:text-6xl">
-                  La Ruta de la Miel
-                </h1>
-                <p className="mt-4 max-w-xl text-base text-primary-foreground/85">
-                  De Leona Vicario, estación Tren Maya, a Cancún.
-                </p>
-              </div>
-            </div>
-          </div>
+          <HeroRuta />
 
           <div className="mx-auto max-w-6xl px-5 py-14">
             <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -149,16 +128,28 @@ function Index() {
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               <article className="rounded-sm border border-border bg-card p-6">
                 <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Marca</p>
-                <h2 className="mt-3 font-display text-2xl tracking-[0.12em]">XUUMIEL</h2>
+                <div className="mt-3 flex items-center gap-3">
+                  <img src={logo} alt="" aria-hidden="true" width={44} height={44} className="h-11 w-11 object-contain" />
+                  <h2 className="font-display text-2xl tracking-[0.12em]">XUUMIEL</h2>
+                </div>
                 <p className="mt-3 leading-relaxed text-muted-foreground">
                   Miel de abejas meliponas, elixires y productos de la colmena.
                 </p>
               </article>
               <article className="rounded-sm border border-border bg-card p-6">
                 <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Marca</p>
-                <h2 className="mt-3 font-display text-2xl tracking-[0.12em]">XUUJÁAB</h2>
+                <div className="mt-3 flex items-center gap-3">
+                  <img
+                    src={logoXuujaab}
+                    alt="Logotipo original de XUUJÁAB"
+                    width={44}
+                    height={65}
+                    className="h-14 w-auto object-contain"
+                  />
+                  <h2 className="font-display text-2xl tracking-[0.12em]">XUUJÁAB</h2>
+                </div>
                 <p className="mt-3 leading-relaxed text-muted-foreground">
-                  Jabones, cremas, kits y cuidado corporal elaborados en el taller.
+                  Jabones, cremas y kits de cuidado corporal elaborados en el taller.
                 </p>
               </article>
             </div>
@@ -309,7 +300,10 @@ function Index() {
 
             <div className="mt-10 grid gap-8 lg:grid-cols-2">
               <article className="rounded-sm border border-border bg-card p-6">
-                <h3 className="font-display text-2xl tracking-[0.12em]">XUUMIEL</h3>
+                <div className="flex items-center gap-3">
+                  <img src={logo} alt="" aria-hidden="true" width={44} height={44} className="h-11 w-11 object-contain" />
+                  <h3 className="font-display text-2xl tracking-[0.12em]">XUUMIEL</h3>
+                </div>
                 <p className="mt-2 text-muted-foreground">
                   Miel de abejas meliponas, elixires y productos de la colmena.
                 </p>
@@ -345,9 +339,18 @@ function Index() {
               </article>
 
               <article className="rounded-sm border border-border bg-card p-6">
-                <h3 className="font-display text-2xl tracking-[0.12em]">XUUJÁAB</h3>
+                <div className="flex items-center gap-3">
+                  <img
+                    src={logoXuujaab}
+                    alt="Logotipo original de XUUJÁAB"
+                    width={44}
+                    height={65}
+                    className="h-14 w-auto object-contain"
+                  />
+                  <h3 className="font-display text-2xl tracking-[0.12em]">XUUJÁAB</h3>
+                </div>
                 <p className="mt-2 text-muted-foreground">
-                  Jabones, cremas, kits y cuidado corporal.
+                  Jabones, cremas y kits: el cuidado corporal de la ruta pertenece a XUUJÁAB.
                 </p>
                 <div className="mt-5 grid grid-cols-3 gap-3">
                   {[
@@ -420,7 +423,21 @@ function Index() {
             <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {lista.map((p) => (
                 <li key={p.id} className="flex flex-col rounded-sm border border-border bg-card p-6">
-                  <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">{p.categoria}</p>
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">{p.categoria}</p>
+                    {p.marca === "XUUJÁAB" ? (
+                      <img
+                        src={logoXuujaab}
+                        alt="XUUJÁAB"
+                        width={28}
+                        height={41}
+                        loading="lazy"
+                        className="h-9 w-auto object-contain"
+                      />
+                    ) : (
+                      <img src={logo} alt="XUUMIEL" width={32} height={32} loading="lazy" className="h-8 w-8 object-contain" />
+                    )}
+                  </div>
                   <h3 className="mt-3 font-display text-xl leading-snug">{p.nombre}</h3>
                   <dl className="mt-4 space-y-1 text-sm text-muted-foreground">
                     <div className="flex justify-between gap-3">
@@ -516,7 +533,16 @@ function Index() {
           {detalle && (
             <>
               <DialogHeader>
-                <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">{detalle.categoria}</p>
+                <div className="flex items-center gap-3">
+                  {detalle.marca === "XUUJÁAB" ? (
+                    <img src={logoXuujaab} alt="XUUJÁAB" width={28} height={41} className="h-9 w-auto object-contain" />
+                  ) : (
+                    <img src={logo} alt="XUUMIEL" width={32} height={32} className="h-8 w-8 object-contain" />
+                  )}
+                  <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
+                    {detalle.marca} · {detalle.categoria}
+                  </p>
+                </div>
                 <DialogTitle className="font-display text-2xl">{detalle.nombre}</DialogTitle>
                 <DialogDescription className="text-muted-foreground">{detalle.descripcion}</DialogDescription>
               </DialogHeader>
@@ -547,10 +573,49 @@ function Index() {
                   {detalle.ingrediente}
                 </p>
               </div>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                <span className="text-foreground">Modo de uso: </span>
-                {detalle.ritual}
-              </p>
+              <div className="max-h-[45vh] space-y-5 overflow-y-auto pr-1 text-sm">
+                <section>
+                  <h3 className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Ingredientes</h3>
+                  <ul className="mt-2 space-y-1 leading-relaxed text-muted-foreground">
+                    {detalle.ingredientes.map((i) => (
+                      <li key={i} className="border-l-2 border-honey pl-3">
+                        {i}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+
+                {detalle.componentes && detalle.componentes.length > 0 && (
+                  <section>
+                    <h3 className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
+                      Componentes del kit
+                    </h3>
+                    <ul className="mt-2 space-y-1 leading-relaxed text-muted-foreground">
+                      {detalle.componentes.map((c) => (
+                        <li key={c} className="border-l-2 border-honey pl-3">
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+
+                <section>
+                  <h3 className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Ritual de uso</h3>
+                  <p className="mt-2 leading-relaxed text-muted-foreground">{detalle.ritual}</p>
+                </section>
+
+                <section>
+                  <h3 className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
+                    Lo que destaca el catálogo
+                  </h3>
+                  <p className="mt-2 leading-relaxed text-muted-foreground">{detalle.destaca}</p>
+                </section>
+
+                <p className="rounded-sm border border-border bg-secondary/60 p-3 text-xs leading-relaxed text-muted-foreground">
+                  {NOTA_CATALOGO}
+                </p>
+              </div>
             </>
           )}
         </DialogContent>
