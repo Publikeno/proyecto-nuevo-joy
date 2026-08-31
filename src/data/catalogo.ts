@@ -135,6 +135,11 @@ export const productos: Producto[] = [
     descripcion: "Kit compacto pensado para llevar en la cartera o el bolso.",
     ritual: "Para tener el ritual a la mano fuera de casa.",
     destaca: "El catálogo lo presenta como el kit compacto para llevar en la cartera o el bolso.",
+    componentes: [
+      "Jabón de tepezcohuite con miel de abejas meliponas, 100 g",
+      "Cartera hecha a mano en yute natural",
+      "Miel de bolsillo en gotero de 5 ml",
+    ],
     variantes: [{ tamano: "Kit", precio: 210 }],
   },
   {
