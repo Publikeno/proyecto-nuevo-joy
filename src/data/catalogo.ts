@@ -152,6 +152,11 @@ export const productos: Producto[] = [
     descripcion: "Kit flor, una selección pequeña lista para regalar.",
     ritual: "El detalle breve: alcanza para empezar el ritual.",
     destaca: "El catálogo lo presenta como una selección pequeña lista para regalar.",
+    componentes: [
+      "Jabón de sábila menta, 80 g",
+      "Miel de bolsillo en gotero de 5 ml",
+      "Envoltura de tela de algodón",
+    ],
     variantes: [{ tamano: "Kit", precio: 90 }],
   },
   {
