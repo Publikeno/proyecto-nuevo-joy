@@ -9,7 +9,9 @@ import {
 } from "@/components/ui/dialog";
 import { categorias, productos, NOTA_CATALOGO, type Categoria, type Producto } from "@/data/catalogo";
 import { HeroRuta } from "@/components/HeroRuta";
-import logo from "@/assets/xuumiel-logo.png";
+import { FranjaGeo } from "@/components/FranjaGeo";
+import { VideoMeliponario } from "@/components/VideoMeliponario";
+import logo from "@/assets/xuumiel-logo.jpeg";
 import logoXuujaab from "@/assets/xuujaab-logo.jpeg";
 import culturaImg from "@/assets/ruta/cultura.jpg";
 import educacionImg from "@/assets/ruta/educacion.jpg";
@@ -384,6 +386,75 @@ function Index() {
                 </button>
               </article>
             </div>
+
+            {/* Subárea · Productos de la colmena XUUMIEL */}
+            <div className="mt-12 rounded-sm border border-border bg-card p-6">
+              <div className="flex items-center gap-3">
+                <img src={logo} alt="" aria-hidden="true" width={40} height={55} className="h-12 w-auto object-contain" />
+                <h3 className="font-display text-2xl">Productos de la colmena XUUMIEL</h3>
+              </div>
+              <p className="mt-2 max-w-2xl text-muted-foreground">
+                Miel de abejas meliponas y sus presentaciones, elixir, propóleo y multivitamínicos.
+              </p>
+              <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {productos
+                  .filter((p) => p.marca === "XUUMIEL")
+                  .map((p) => (
+                    <li key={p.id} className="flex flex-col rounded-sm border border-border bg-background p-5">
+                      <h4 className="font-display text-lg leading-snug">{p.nombre}</h4>
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        {p.variantes.map((v) => v.tamano).join(" · ")}
+                      </p>
+                      <div className="mt-auto flex items-center justify-between gap-2 pt-4">
+                        <span className="font-display text-lg">
+                          {p.variantes.length > 1
+                            ? `Desde ${precio(Math.min(...p.variantes.map((v) => v.precio)))}`
+                            : precio(p.variantes[0]!.precio)}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => setDetalle(p)}
+                          className="rounded-sm border border-primary px-3 py-1.5 text-sm transition-colors hover:bg-primary hover:text-primary-foreground"
+                        >
+                          Ver detalle
+                          <span className="sr-only"> de {p.nombre}</span>
+                        </button>
+                      </div>
+                    </li>
+                  ))}
+                {["Propóleo", "Multivitamínicos"].map((n) => (
+                  <li key={n} className="flex flex-col rounded-sm border border-dashed border-border bg-background/60 p-5">
+                    <h4 className="font-display text-lg leading-snug">{n}</h4>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Próximamente: pendiente de foto, tamaño y precio confirmados.
+                    </p>
+                    <span className="mt-auto pt-4 text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
+                      Próximamente
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Próximamente */}
+            <div className="mt-12">
+              <h3 className="font-display text-2xl">Próximamente</h3>
+              <p className="mt-2 max-w-2xl text-muted-foreground">
+                Piezas en desarrollo. Publicaremos su información cuando esté confirmada.
+              </p>
+              <ul className="mt-6 grid gap-4 sm:grid-cols-3">
+                {["Velas de cera", "Hidromiel", "Paletas de propóleo"].map((n) => (
+                  <li key={n} className="rounded-sm border border-dashed border-border bg-card/60 p-6">
+                    <span className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Próximamente</span>
+                    <h4 className="mt-3 font-display text-xl">{n}</h4>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Sin foto, tamaño ni precio confirmados todavía.
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </div>
         </section>
 
