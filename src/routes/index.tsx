@@ -87,20 +87,14 @@ function Index() {
 
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-3 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center">
             <img
               src={logo}
               alt="Logotipo de XUUMIEL: pirámides mayas y una abeja"
-              width={48}
-              height={48}
-              className="h-11 w-11 object-contain"
+              width={120}
+              height={164}
+              className="h-16 w-auto object-contain"
             />
-            <div className="leading-tight">
-              <p className="font-display text-lg font-semibold tracking-[0.18em]">XUUMIEL</p>
-              <p className="text-[0.7rem] uppercase tracking-[0.22em] text-muted-foreground">
-                La Ruta de la Miel
-              </p>
-            </div>
           </div>
           <nav aria-label="Principal" className="-mx-1 overflow-x-auto">
             <ul className="flex gap-1 whitespace-nowrap text-sm">
@@ -133,9 +127,8 @@ function Index() {
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               <article className="rounded-sm border border-border bg-card p-6">
                 <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Marca</p>
-                <div className="mt-3 flex items-center gap-3">
-                  <img src={logo} alt="" aria-hidden="true" width={44} height={44} className="h-11 w-11 object-contain" />
-                  <h2 className="font-display text-2xl tracking-[0.12em]">XUUMIEL</h2>
+                <div className="mt-3">
+                  <img src={logo} alt="" aria-hidden="true" width={120} height={164} className="h-20 w-auto object-contain" />
                 </div>
                 <p className="mt-3 leading-relaxed text-muted-foreground">
                   Miel de abejas meliponas, elixires y productos de la colmena.
@@ -305,9 +298,8 @@ function Index() {
 
             <div className="mt-10 grid gap-8 lg:grid-cols-2">
               <article className="rounded-sm border border-border bg-card p-6">
-                <div className="flex items-center gap-3">
-                  <img src={logo} alt="" aria-hidden="true" width={44} height={44} className="h-11 w-11 object-contain" />
-                  <h3 className="font-display text-2xl tracking-[0.12em]">XUUMIEL</h3>
+                <div>
+                  <img src={logo} alt="" aria-hidden="true" width={120} height={164} className="h-20 w-auto object-contain" />
                 </div>
                 <p className="mt-2 text-muted-foreground">
                   Miel de abejas meliponas, elixires y productos de la colmena.
@@ -393,8 +385,8 @@ function Index() {
             {/* Subárea · Productos de la colmena XUUMIEL */}
             <div className="mt-12 rounded-sm border border-border bg-card p-6">
               <div className="flex items-center gap-3">
-                <img src={logo} alt="" aria-hidden="true" width={40} height={55} className="h-12 w-auto object-contain" />
-                <h3 className="font-display text-2xl">Productos de la colmena XUUMIEL</h3>
+                <img src={logo} alt="" aria-hidden="true" width={120} height={164} className="h-20 w-auto object-contain" />
+                <h3 className="font-display text-2xl">Productos de la colmena</h3>
               </div>
               <p className="mt-2 max-w-2xl text-muted-foreground">
                 Miel de abejas meliponas y sus presentaciones, elixir, propóleo y multivitamínicos.
@@ -615,9 +607,8 @@ function Index() {
       <footer className="border-t border-border">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-3">
           <div>
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="" aria-hidden="true" width={40} height={40} loading="lazy" className="h-10 w-10 object-contain" />
-              <p className="font-display text-base tracking-[0.18em]">XUUMIEL</p>
+            <div>
+              <img src={logo} alt="" aria-hidden="true" width={120} height={164} loading="lazy" className="h-16 w-auto object-contain" />
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
               La Ruta de la Miel: de Leona Vicario, estación Tren Maya, a Cancún.
@@ -655,9 +646,9 @@ function Index() {
               <DialogHeader>
                 <div className="flex items-center gap-3">
                   {detalle.marca === "XUUJÁAB" ? (
-                    <img src={logoXuujaab} alt="XUUJÁAB" width={28} height={41} className="h-9 w-auto object-contain" />
+                    <img src={logoXuujaab} alt="XUUJÁAB" width={60} height={88} className="h-12 w-auto object-contain" />
                   ) : (
-                    <img src={logo} alt="XUUMIEL" width={32} height={32} className="h-8 w-8 object-contain" />
+                    <img src={logo} alt="XUUMIEL" width={88} height={120} className="h-12 w-auto object-contain" />
                   )}
                   <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
                     {detalle.marca} · {detalle.categoria}
