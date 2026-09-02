@@ -123,6 +123,7 @@ function Index() {
         {/* 1 · La Ruta de la Miel */}
         <section id="ruta" className="border-b border-border">
           <HeroRuta />
+          <FranjaGeo />
 
           <div className="mx-auto max-w-6xl px-5 py-14">
             <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -545,22 +546,68 @@ function Index() {
           </div>
         </section>
 
+        {/* Aliados */}
+        <section id="aliados" className="border-b border-border bg-secondary/60">
+          <div className="mx-auto max-w-6xl px-5 py-16">
+            <p className="text-xs uppercase tracking-[0.3em] text-terracotta">Aliados</p>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl">Dónde encontrarnos y con quién trabajamos</h2>
+            <div className="mt-10 grid gap-5 md:grid-cols-2">
+              <article className="flex flex-col items-start gap-4 rounded-sm border border-border bg-card p-6">
+                <img
+                  src={caribbeanLikes.url}
+                  alt="Logotipo de Caribbean Like's"
+                  width={320}
+                  height={320}
+                  loading="lazy"
+                  className="h-28 w-auto rounded-sm border border-border object-contain"
+                />
+                <h3 className="font-display text-xl">Caribbean Like's</h3>
+                <p className="text-sm text-muted-foreground">
+                  Aliado de la ruta. Datos de contacto por confirmar.
+                </p>
+              </article>
+              <article className="flex flex-col items-start gap-4 rounded-sm border border-border bg-card p-6">
+                <Store className="h-10 w-10 text-terracotta" aria-hidden="true" />
+                <h3 className="font-display text-xl">Tienda Estación Tren Maya</h3>
+                <p className="text-sm text-muted-foreground">
+                  Encuentra los productos en la tienda de la estación del Tren Maya de Leona Vicario,
+                  municipio de Puerto Morelos.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         {/* 8 · Contacto */}
         <section id="contacto" className="bg-primary text-primary-foreground">
           <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-5 py-16 md:flex-row md:items-center md:justify-between">
-            <div>
+            <div className="max-w-xl">
               <h2 className="font-display text-3xl">Contacto</h2>
-              <p className="mt-3 max-w-lg text-primary-foreground/75">
+              <p className="mt-3 text-primary-foreground/75">
                 Escríbenos para conocer la ruta, coordinar una visita al meliponario o preguntar por el
                 catálogo.
               </p>
+              <ul className="mt-5 space-y-2 text-sm text-primary-foreground/85">
+                <li>
+                  Representante en Cancún: Karely · número por confirmar.
+                </li>
+                <li className="flex items-center gap-2">
+                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                  WhatsApp: enlace listo; falta confirmar el número de celular para activarlo.
+                </li>
+                <li className="text-primary-foreground/60">
+                  El buzón info@xuumiel.com quedará activo cuando se configure el correo del dominio.
+                </li>
+              </ul>
             </div>
-            <a
-              href="mailto:info@xuumiel.com"
-              className="rounded-sm bg-honey px-6 py-3 text-sm font-medium text-cacao transition-opacity hover:opacity-90"
-            >
-              info@xuumiel.com
-            </a>
+            <div className="flex flex-col gap-3">
+              <a
+                href="mailto:info@xuumiel.com"
+                className="rounded-sm bg-honey px-6 py-3 text-center text-sm font-medium text-cacao transition-opacity hover:opacity-90"
+              >
+                info@xuumiel.com
+              </a>
+            </div>
           </div>
         </section>
       </main>
