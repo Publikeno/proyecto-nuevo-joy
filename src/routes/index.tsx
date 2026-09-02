@@ -8,9 +8,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { categorias, productos, NOTA_CATALOGO, type Categoria, type Producto } from "@/data/catalogo";
-import { HeroRuta } from "@/components/HeroRuta";
-import { FranjaGeo } from "@/components/FranjaGeo";
-import { VideoMeliponario } from "@/components/VideoMeliponario";
+import { MessageCircle, Store } from "lucide-react";
+import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import logo from "@/assets/xuumiel-logo.jpeg";
 import logoXuujaab from "@/assets/xuujaab-logo.jpeg";
 import culturaImg from "@/assets/ruta/cultura.jpg";
