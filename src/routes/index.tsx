@@ -803,13 +803,6 @@ function Index() {
 
                 <section>
                   <h3 className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
-                    Ritual de uso
-                  </h3>
-                  <p className="mt-2 leading-relaxed text-muted-foreground">{detalle.ritual}</p>
-                </section>
-
-                <section>
-                  <h3 className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
                     Lo que destaca el catálogo
                   </h3>
                   <p className="mt-2 leading-relaxed text-muted-foreground">{detalle.destaca}</p>
