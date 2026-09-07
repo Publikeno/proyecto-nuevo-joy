@@ -114,7 +114,7 @@ function Index() {
               alt={copy.alt.xuumielLogo}
               width={120}
               height={164}
-              className="h-16 w-auto object-contain"
+              className="h-24 w-auto object-contain"
             />
           </div>
           <div className="flex items-center gap-3">
@@ -194,7 +194,7 @@ function Index() {
                     aria-hidden="true"
                     width={120}
                     height={164}
-                    className="h-20 w-auto object-contain"
+                    className="h-24 w-auto object-contain"
                   />
                 </div>
                 <p className="mt-3 leading-relaxed text-muted-foreground">
@@ -344,7 +344,7 @@ function Index() {
                     aria-hidden="true"
                     width={120}
                     height={164}
-                    className="h-20 w-auto object-contain"
+                    className="h-24 w-auto object-contain"
                   />
                 </div>
                 <p className="mt-2 text-muted-foreground">{copy.xuumielDescription}</p>
@@ -434,7 +434,7 @@ function Index() {
                   aria-hidden="true"
                   width={120}
                   height={164}
-                  className="h-20 w-auto object-contain"
+                  className="h-24 w-auto object-contain"
                 />
                 <h3 className="font-display text-2xl">{copy.hiveProductsTitle}</h3>
               </div>
@@ -659,7 +659,7 @@ function Index() {
                 width={120}
                 height={164}
                 loading="lazy"
-                className="h-16 w-auto object-contain"
+                className="h-24 w-auto object-contain"
               />
             </div>
             <p className="mt-4 text-sm text-muted-foreground">{copy.footerLine}</p>
@@ -705,7 +705,7 @@ function Index() {
                       alt={copy.alt.xuujaabLogo}
                       width={60}
                       height={88}
-                      className="h-12 w-auto object-contain"
+                      className="h-16 w-auto object-contain"
                     />
                   ) : (
                     <img
@@ -713,7 +713,7 @@ function Index() {
                       alt={copy.alt.xuumielLogo}
                       width={88}
                       height={120}
-                      className="h-12 w-auto object-contain"
+                      className="h-16 w-auto object-contain"
                     />
                   )}
                   <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
