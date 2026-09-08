@@ -76,7 +76,64 @@ const NAV_KEYS = [
 
 const CAT_XUUMIEL: Categoria[] = ["Mieles y elixires"];
 
+const PRODUCT_IMAGE_URLS: Record<string, string> = {
+  "jabon-arroz-coco": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FVjiYoRnRUOswewl.png",
+  "jabon-avena": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/cjXqhYGENXHnNSSq.png",
+  "jabon-tepezcohuite-melipona": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/yHdJgNQqEyJbjCzN.png",
+  "jabon-miel-melipona-madera": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/tdPQCvHhwktiTsvU.png",
+  "jabon-neem-coco": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/tHPfKyyWZZqrrwZs.png",
+  "jabon-curcuma-coco-melipona": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/nrlTawmSqzKJDjpK.png",
+  "jabon-fresa-champagne": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/IbraseDUEzHLDVvZ.png",
+  "jabon-sabila-menta": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/iaVAwyMqheEVuhrG.png",
+  "kit-cartera": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/oQoFOOhWJEQeUlvP.png",
+  "kit-flor": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/unzopUKhjvxvgdNU.png",
+  "crema-rch": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/XgBmlNTBkuUxDfPC.png",
+  "crema-rf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/QDWEUpZtexsyzXxS.png",
+  "miel-abejas-meliponas": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/aKOGcxRygmNcGPRQ.png",
+  "elixir-miel-melipona-cacao": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/eAfHqBTggGtYVuny.png",
+  "multivitaminico-polen-propoleo-miel": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/CgeGQYnmuiRTHmeR.png",
+  "propoleo-eucalipto": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/ECzpgLjrKCNVKmfR.png",
+  "shampoo-mascarilla-miel-romero-canela": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LiPgbsxrjpooUXfa.png",
+  "repelente-crema": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FCcSMVSoBoukJMSV.png",
+  "repelente-liquido-hidroalcoholico": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/CmTOVoijXMjKgRRW.png",
+};
+
+const GALLERY_PHOTOS = [
+  ["IMG_8090", "Jabón de arroz", "Jabones", "FVjiYoRnRUOswewl.png", "Producto identificado"],
+  ["IMG_8092", "Jabón de panal y abeja", "Jabones", "cjXqhYGENXHnNSSq.png", "Diseño recibido"],
+  ["IMG_8094", "Jabón artesanal rosa", "Jabones", "XncbeftxROyqSnSU.png", "Variante por confirmar"],
+  ["IMG_8097", "Jabón fresa champagne", "Jabones", "IbraseDUEzHLDVvZ.png", "Producto identificado"],
+  ["IMG_8103", "Jabón de tepezcohuite", "Jabones", "yHdJgNQqEyJbjCzN.png", "Producto identificado"],
+  ["IMG_8105", "Tepezcohuite · vista alternativa", "Jabones", "SokZdvQlOIRrbxNA.png", "Vista complementaria"],
+  ["IMG_8111", "Jabón azul", "Jabones", "iaVAwyMqheEVuhrG.png", "Fórmula por identificar"],
+  ["IMG_8115", "Jabón de lavanda y miel", "Jabones", "JqqJWmQbuLLeDbPG.png", "Producto nuevo"],
+  ["IMG_8116", "Kit caja flor", "Kits", "unzopUKhjvxvgdNU.png", "Contenido por confirmar"],
+  ["IMG_8134", "Elixir de miel y cacao", "Mieles y elixires", "eAfHqBTggGtYVuny.png", "Producto identificado"],
+  ["IMG_8136", "Repelente de neem", "Cuidado personal", "FCcSMVSoBoukJMSV.png", "Producto nuevo"],
+  ["IMG_8139", "Crema RCH · vista lateral", "Cremas", "lVStLKQNIEkBTXKZ.png", "Vista complementaria"],
+  ["IMG_8141", "Crema regeneradora RCH", "Cremas", "XgBmlNTBkuUxDfPC.png", "Producto identificado"],
+  ["IMG_8149", "Dúo de jabones", "Kits", "oQoFOOhWJEQeUlvP.png", "Composición por confirmar"],
+  ["IMG_8158", "Shampoo preventivo de miel, romero y neem", "Cuidado personal", "gOZwFMgbmADoRoVU.png", "Producto nuevo"],
+  ["IMG_8159", "Shampoo mascarilla · presentación", "Cuidado personal", "LiPgbsxrjpooUXfa.png", "Producto identificado"],
+  ["IMG_8160", "Shampoo mascarilla · reverso", "Cuidado personal", "hlWxpNDpheDinwEC.png", "Vista complementaria"],
+  ["IMG_8161", "Shampoo mascarilla · frente", "Cuidado personal", "UoVzqQLvAohzabTi.png", "Vista complementaria"],
+  ["IMG_8162", "Repelente de neem · vista", "Cuidado personal", "CmTOVoijXMjKgRRW.png", "Vista complementaria"],
+  ["IMG_8163", "Propóleo con eucalipto", "Mieles y elixires", "ECzpgLjrKCNVKmfR.png", "Producto nuevo"],
+  ["IMG_8167", "Mezcla apícola", "Mieles y elixires", "CgeGQYnmuiRTHmeR.png", "Producto por identificar"],
+  ["IMG_8169", "Hidromiel de la Selva", "Mieles y elixires", "MCntVvPuNkpHMABQ.png", "Producto nuevo"],
+  ["IMG_8173", "Miel de abejas meliponas", "Mieles y elixires", "aKOGcxRygmNcGPRQ.png", "Producto identificado"],
+  ["abejajabon", "Jabón diseño abeja", "Jabones", "tdPQCvHhwktiTsvU.png", "Producto identificado"],
+  ["curcuma", "Jabón de cúrcuma", "Jabones", "nrlTawmSqzKJDjpK.png", "Producto identificado"],
+  ["jabondemiel", "Jabón de neem y miel", "Jabones", "tHPfKyyWZZqrrwZs.png", "Producto identificado"],
+] as const;
+
+const galleryImageUrl = (file: string) =>
+  `https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/${file}`;
+const GALLERY_FILTERS = ["Todas", "Jabones", "Cremas", "Cuidado personal", "Mieles y elixires", "Kits"] as const;
+type GalleryFilter = (typeof GALLERY_FILTERS)[number];
+
 const imagenProducto = (producto: Producto) => {
+  if (PRODUCT_IMAGE_URLS[producto.id]) return PRODUCT_IMAGE_URLS[producto.id];
   if (producto.id === "miel-abejas-meliponas") return xuumiel2;
   if (producto.marca === "XUUMIEL") return xuumiel1;
   if (producto.categoria === "Cremas" || producto.categoria === "Cuidado personal") {
@@ -89,6 +146,7 @@ const imagenProducto = (producto: Producto) => {
 function Index() {
   const [idioma, setIdioma] = useState<Idioma>("es");
   const [filtro, setFiltro] = useState<Filtro>("Todo");
+  const [galleryFiltro, setGalleryFiltro] = useState<GalleryFilter>("Todas");
   const [detalle, setDetalle] = useState<Producto | null>(null);
   const copy = textos[idioma];
   const NAV = NAV_KEYS.map((n) => ({ ...n, label: copy.nav[n.key] }));
@@ -102,6 +160,11 @@ function Index() {
     () =>
       filtro === "Todo" ? productosActivos : productosActivos.filter((p) => p.categoria === filtro),
     [filtro, productosActivos],
+  );
+
+  const fotosVisibles = useMemo(
+    () => galleryFiltro === "Todas" ? GALLERY_PHOTOS : GALLERY_PHOTOS.filter((photo) => photo[2] === galleryFiltro),
+    [galleryFiltro],
   );
 
   const conteoXuumiel = productosActivos.filter((p) => CAT_XUUMIEL.includes(p.categoria)).length;
@@ -618,6 +681,64 @@ function Index() {
                     </button>
                      </div>
                    </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Galería completa de fotografías recibidas */}
+        <section id="fotos-productos" className="border-b border-border bg-secondary/40">
+          <div className="mx-auto max-w-6xl px-5 py-16">
+            <p className="text-xs uppercase tracking-[0.3em] text-terracotta">Galería de productos</p>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl">Todas las presentaciones.</h2>
+            <p className="mt-3 max-w-2xl text-muted-foreground">
+              Aquí están las fotografías nuevas de XUUMIEL y XUUJÁAB, organizadas por tipo de producto. Las imágenes pendientes de identificar permanecen visibles para no perder ninguna.
+            </p>
+
+            <div className="mt-8 flex gap-2 overflow-x-auto pb-2" role="group" aria-label="Filtrar fotografías por tipo">
+              {GALLERY_FILTERS.map((category) => (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => setGalleryFiltro(category)}
+                  aria-pressed={galleryFiltro === category}
+                  className={`shrink-0 rounded-full border px-4 py-2 text-sm transition-colors ${
+                    galleryFiltro === category
+                      ? "border-primary bg-primary text-primary-foreground"
+                      : "border-border bg-card text-foreground hover:border-honey"
+                  }`}
+                >
+                  {category}
+                  <span className="ml-2 text-xs opacity-70">
+                    {category === "Todas" ? GALLERY_PHOTOS.length : GALLERY_PHOTOS.filter((photo) => photo[2] === category).length}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            <p aria-live="polite" className="mt-3 text-sm text-muted-foreground">
+              {fotosVisibles.length} imágenes visibles
+            </p>
+
+            <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {fotosVisibles.map((photo) => (
+                <li key={photo[0]} className="overflow-hidden rounded-sm border border-border bg-card">
+                  <div className="flex aspect-square items-center justify-center bg-secondary/40 p-3">
+                    <img
+                      src={galleryImageUrl(photo[3])}
+                      alt={`${photo[1]} · ${photo[2]}`}
+                      width={800}
+                      height={800}
+                      loading="lazy"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <p className="text-[0.64rem] uppercase tracking-[0.2em] text-terracotta">{photo[2]}</p>
+                    <h3 className="mt-2 font-display text-lg leading-snug">{photo[1]}</h3>
+                    <p className="mt-2 text-xs uppercase tracking-[0.12em] text-muted-foreground">{photo[4]}</p>
+                  </div>
                 </li>
               ))}
             </ul>
