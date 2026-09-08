@@ -88,7 +88,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "kit-cartera": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/oQoFOOhWJEQeUlvP.png",
   "kit-flor": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/unzopUKhjvxvgdNU.png",
   "crema-rch": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/XgBmlNTBkuUxDfPC.png",
-  "crema-rf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/QDWEUpZtexsyzXxS.png",
+  "crema-rf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/lVStLKQNIEkBTXKZ.png",
   "miel-abejas-meliponas": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/aKOGcxRygmNcGPRQ.png",
   "elixir-miel-melipona-cacao": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/eAfHqBTggGtYVuny.png",
   "multivitaminico-polen-propoleo-miel": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/CgeGQYnmuiRTHmeR.png",
