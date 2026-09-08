@@ -76,6 +76,16 @@ const NAV_KEYS = [
 
 const CAT_XUUMIEL: Categoria[] = ["Mieles y elixires"];
 
+const imagenProducto = (producto: Producto) => {
+  if (producto.id === "miel-abejas-meliponas") return xuumiel2;
+  if (producto.marca === "XUUMIEL") return xuumiel1;
+  if (producto.categoria === "Cremas" || producto.categoria === "Cuidado personal") {
+    return xuujaab3;
+  }
+  if (producto.categoria === "Kits") return xuujaab2;
+  return xuujaab1;
+};
+
 function Index() {
   const [idioma, setIdioma] = useState<Idioma>("es");
   const [filtro, setFiltro] = useState<Filtro>("Todo");
@@ -445,29 +455,39 @@ function Index() {
                   .map((p) => (
                     <li
                       key={p.id}
-                      className="flex flex-col rounded-sm border border-border bg-background p-5"
+                       className="flex flex-col overflow-hidden rounded-sm border border-border bg-background"
                     >
-                      <h4 className="font-display text-lg leading-snug">{p.nombre}</h4>
-                      <p className="mt-2 text-sm text-muted-foreground">
-                        {p.variantes.map((v) => v.tamano).join(" · ")}
-                      </p>
-                      <div className="mt-auto flex items-center justify-between gap-2 pt-4">
-                        <span className="font-display text-lg">
-                          {p.variantes.length > 1
-                            ? `${idioma === "es" ? "Desde" : "From"} ${precio(Math.min(...p.variantes.map((v) => v.precio)), idioma)}`
-                            : precio(p.variantes[0]!.precio, idioma)}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => setDetalle(p)}
-                          className="rounded-sm border border-primary px-3 py-1.5 text-sm transition-colors hover:bg-primary hover:text-primary-foreground"
-                        >
-                          {copy.viewDetail}
-                          <span className="sr-only">
-                            {copy.detailOf}
-                            {p.nombre}
-                          </span>
-                        </button>
+                       <img
+                         src={imagenProducto(p)}
+                         alt={p.nombre}
+                         width={800}
+                         height={600}
+                         loading="lazy"
+                         className="aspect-[4/3] w-full border-b border-border object-cover"
+                       />
+                       <div className="flex flex-1 flex-col p-5">
+                         <h4 className="font-display text-lg leading-snug">{p.nombre}</h4>
+                         <p className="mt-2 text-sm text-muted-foreground">
+                           {p.variantes.map((v) => v.tamano).join(" · ")}
+                         </p>
+                         <div className="mt-auto flex items-center justify-between gap-2 pt-4">
+                           <span className="font-display text-lg">
+                             {p.variantes.length > 1
+                               ? `${idioma === "es" ? "Desde" : "From"} ${precio(Math.min(...p.variantes.map((v) => v.precio)), idioma)}`
+                               : precio(p.variantes[0]?.precio ?? 0, idioma)}
+                           </span>
+                           <button
+                             type="button"
+                             onClick={() => setDetalle(p)}
+                             className="rounded-sm border border-primary px-3 py-1.5 text-sm transition-colors hover:bg-primary hover:text-primary-foreground"
+                           >
+                             {copy.viewDetail}
+                             <span className="sr-only">
+                               {copy.detailOf}
+                               {p.nombre}
+                             </span>
+                           </button>
+                         </div>
                       </div>
                     </li>
                   ))}
@@ -531,34 +551,43 @@ function Index() {
               {lista.map((p) => (
                 <li
                   key={p.id}
-                  className="flex flex-col rounded-sm border border-border bg-card p-6"
+                   className="flex flex-col overflow-hidden rounded-sm border border-border bg-card"
                 >
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
-                      {copy.category[p.categoria]}
-                    </p>
-                    {p.marca === "XUUJÁAB" ? (
-                      <img
-                        src={logoXuujaab}
-                        alt={copy.alt.xuujaabLogo}
-                        width={28}
-                        height={41}
-                        loading="lazy"
-                        className="h-9 w-auto object-contain"
-                      />
-                    ) : (
-                      <img
-                        src={logo}
-                        alt={copy.alt.xuumielLogo}
-                        width={32}
-                        height={32}
-                        loading="lazy"
-                        className="h-8 w-8 object-contain"
-                      />
-                    )}
-                  </div>
-                  <h3 className="mt-3 font-display text-xl leading-snug">{p.nombre}</h3>
-                  <dl className="mt-4 space-y-1 text-sm text-muted-foreground">
+                   <img
+                     src={imagenProducto(p)}
+                     alt={p.nombre}
+                     width={800}
+                     height={600}
+                     loading="lazy"
+                     className="aspect-[4/3] w-full border-b border-border object-cover"
+                   />
+                   <div className="flex flex-1 flex-col p-6">
+                     <div className="flex items-center justify-between gap-3">
+                       <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
+                         {copy.category[p.categoria]}
+                       </p>
+                       {p.marca === "XUUJÁAB" ? (
+                         <img
+                           src={logoXuujaab}
+                           alt={copy.alt.xuujaabLogo}
+                           width={28}
+                           height={41}
+                           loading="lazy"
+                           className="h-9 w-auto object-contain"
+                         />
+                       ) : (
+                         <img
+                           src={logo}
+                           alt={copy.alt.xuumielLogo}
+                           width={44}
+                           height={35}
+                           loading="lazy"
+                           className="h-9 w-auto object-contain"
+                         />
+                       )}
+                     </div>
+                     <h3 className="mt-3 font-display text-xl leading-snug">{p.nombre}</h3>
+                     <dl className="mt-4 space-y-1 text-sm text-muted-foreground">
                     <div className="flex justify-between gap-3">
                       <dt>{p.variantes.length > 1 ? copy.sizes : copy.size}</dt>
                       <dd className="text-right text-foreground">
@@ -569,12 +598,12 @@ function Index() {
                       <dt>{copy.ingredient}</dt>
                       <dd className="text-right text-foreground">{p.ingrediente}</dd>
                     </div>
-                  </dl>
-                  <div className="mt-6 flex items-center justify-between gap-3 border-t border-border pt-4">
+                     </dl>
+                     <div className="mt-auto flex items-center justify-between gap-3 border-t border-border pt-4">
                     <span className="font-display text-xl">
                       {p.variantes.length > 1
                         ? `${idioma === "es" ? "Desde" : "From"} ${precio(Math.min(...p.variantes.map((v) => v.precio)), idioma)}`
-                        : precio(p.variantes[0]!.precio, idioma)}
+                         : precio(p.variantes[0]?.precio ?? 0, idioma)}
                     </span>
                     <button
                       type="button"
@@ -587,7 +616,8 @@ function Index() {
                         {p.nombre}
                       </span>
                     </button>
-                  </div>
+                     </div>
+                   </div>
                 </li>
               ))}
             </ul>
@@ -697,6 +727,13 @@ function Index() {
         <DialogContent className="max-w-lg bg-card">
           {detalle && (
             <>
+               <img
+                 src={imagenProducto(detalle)}
+                 alt={detalle.nombre}
+                 width={900}
+                 height={540}
+                 className="aspect-[5/3] w-full rounded-sm border border-border object-cover"
+               />
               <DialogHeader>
                 <div className="flex items-center gap-3">
                   {detalle.marca === "XUUJÁAB" ? (
