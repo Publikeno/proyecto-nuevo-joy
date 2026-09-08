@@ -63,6 +63,9 @@ const precio = (n: number, idioma: Idioma) =>
 
 type Filtro = Categoria | "Todo";
 
+const WHATSAPP_URL =
+  "https://wa.me/5219984070222?text=Hola%20XUUMIEL%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20productos.";
+
 const NAV_KEYS = [
   { href: "#ruta", key: "ruta" },
   { href: "#cultura", key: "cultura" },
@@ -780,9 +783,16 @@ function Index() {
               <p className="mt-3 text-primary-foreground/75">{copy.contactDescription}</p>
               <ul className="mt-5 space-y-2 text-sm text-primary-foreground/85">
                 <li>{copy.representative}</li>
-                <li className="flex items-center gap-2">
-                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                  {copy.whatsapp}
+                <li>
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 underline-offset-4 hover:underline"
+                  >
+                    <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                    {copy.whatsapp}
+                  </a>
                 </li>
                 <li className="text-primary-foreground/60">{copy.inbox}</li>
               </ul>
@@ -798,6 +808,18 @@ function Index() {
           </div>
         </section>
       </main>
+
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Escribir por WhatsApp al +52 1 998 407 0222"
+        title="Escríbenos por WhatsApp"
+        className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-black/20 transition-transform hover:scale-105 hover:bg-[#20bd5a] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
+      >
+        <MessageCircle className="h-6 w-6" aria-hidden="true" />
+        <span className="hidden sm:inline">WhatsApp</span>
+      </a>
 
       <footer className="border-t border-border">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-3">

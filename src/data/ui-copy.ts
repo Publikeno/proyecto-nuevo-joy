@@ -119,7 +119,7 @@ export const textos = {
     contactDescription:
       "Escríbenos para conocer la ruta, coordinar una visita al meliponario o preguntar por el catálogo.",
     representative: "Representante en Cancún: Karely · número por confirmar.",
-    whatsapp: "WhatsApp: enlace listo; falta confirmar el número de celular para activarlo.",
+    whatsapp: "Escríbenos por WhatsApp al +52 1 998 407 0222.",
     inbox: "El buzón info@xuumiel.com quedará activo cuando se configure el correo del dominio.",
     sections: "Secciones",
     workshop: "Taller en Leona Vicario, Quintana Roo",
@@ -261,7 +261,7 @@ export const textos = {
     contactDescription:
       "Write to us to learn about the route, arrange a visit to the meliponary or ask about the catalog.",
     representative: "Cancún representative: Karely · phone number to be confirmed.",
-    whatsapp: "WhatsApp: link ready; mobile number still needs to be confirmed.",
+    whatsapp: "Write to us on WhatsApp at +52 1 998 407 0222.",
     inbox: "The info@xuumiel.com inbox will be active once the domain email is configured.",
     sections: "Sections",
     workshop: "Workshop in Leona Vicario, Quintana Roo",
