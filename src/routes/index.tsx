@@ -901,9 +901,11 @@ function Index() {
                   </p>
                 </div>
                 <DialogTitle className="font-display text-2xl">{detalle.nombre}</DialogTitle>
-                <DialogDescription className="text-muted-foreground">
-                  {detalle.descripcion}
-                </DialogDescription>
+                {detalle.descripcion.trim() !== "" && (
+                  <DialogDescription className="whitespace-pre-line text-muted-foreground">
+                    {detalle.descripcion}
+                  </DialogDescription>
+                )}
               </DialogHeader>
               <div className="mt-2 border-y border-border py-4 text-sm">
                 <table className="w-full">
@@ -967,12 +969,14 @@ function Index() {
                   </section>
                 )}
 
-                <section>
-                  <h3 className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
-                    {copy.catalogHighlights}
-                  </h3>
-                  <p className="mt-2 leading-relaxed text-muted-foreground">{detalle.destaca}</p>
-                </section>
+                {detalle.destaca.trim() !== "" && (
+                  <section>
+                    <h3 className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
+                      {copy.catalogHighlights}
+                    </h3>
+                    <p className="mt-2 whitespace-pre-line leading-relaxed text-muted-foreground">{detalle.destaca}</p>
+                  </section>
+                )}
 
                 <p className="rounded-sm border border-border bg-secondary/60 p-3 text-xs leading-relaxed text-muted-foreground">
                   {idioma === "es" ? NOTA_CATALOGO : NOTA_CATALOGO_EN}
