@@ -38,10 +38,10 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Arroz y base de coco",
     ingredientes: ["Arroz", "Coco"],
-    descripcion: "Jabón de arroz con base de coco.",
+    descripcion: "Exfoliante, suavizante y estabiliza el tono de piel\nAstringente para piel normal y grasa",
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
-      "Exfoliante y suavizante. Ayuda a estabilizar el tono de la piel y se presenta como astringente para piel normal y grasa.",
+      "" ,
     variantes: [{ tamano: "70 g", precio: 70 }],
   },
   {
@@ -51,10 +51,10 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Avena",
     ingredientes: ["Avena"],
-    descripcion: "Jabón de avena en barra de 70 g.",
+    descripcion: "Y más beneficios",
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
-      "La ficha del catálogo identifica el producto y su presentación; no añade una descripción de beneficios independiente.",
+      "" ,
     variantes: [{ tamano: "70 g", precio: 50 }],
   },
   {
@@ -65,10 +65,10 @@ export const productos: Producto[] = [
     ingrediente: "Tepezcohuite y miel melipona",
     ingredientes: ["Tepezcohuite", "Miel de abejas meliponas"],
     descripcion:
-      "Jabón de tepezcohuite con miel de abejas meliponas, en presentación individual de 100 g.",
+      "Cicatriza y seca acné severo, acelera la regeneración  celular",
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
-      "La ficha lo presenta como cicatrizante, útil para secar acné severo y para acelerar la regeneración celular.",
+      "" ,
     variantes: [{ tamano: "100 g", precio: 120 }],
   },
   {
@@ -78,9 +78,9 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Miel de abejas meliponas",
     ingredientes: ["Miel de abejas meliponas", "Aroma a madera"],
-    descripcion: "Jabón elaborado con miel de abejas meliponas y aroma a madera.",
+    descripcion: "",
     ritual: "No especificado en la ficha del catálogo.",
-    destaca: "La ficha destaca su aroma refrescante a madera.",
+    destaca: "" ,
     variantes: [{ tamano: "100 g", precio: 60 }],
   },
   {
@@ -90,10 +90,10 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Neem y base de coco",
     ingredientes: ["Neem", "Base de coco"],
-    descripcion: "Jabón de neem con base de coco, en barra de 70 g.",
+    descripcion: "Para piel seca, suaviza la piel\nFungicida, mata las bacterias que se presentan en granos en la piel. Para aliviar de chechén y sarna",
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
-      "La ficha lo presenta para piel seca. También lo describe como fungicida y como apoyo para aliviar chechén y sarna.",
+      "" ,
     variantes: [{ tamano: "70 g", precio: 70 }],
   },
   {
@@ -103,10 +103,10 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Cúrcuma, coco y miel melipona",
     ingredientes: ["Cúrcuma", "Coco", "Miel de abejas meliponas"],
-    descripcion: "Jabón de cúrcuma, coco y miel de abejas meliponas en presentación de 90 g.",
+    descripcion: "ayuda a curar el acné\nCorrige la piel opaca\nReduce las ojeras\nProtege contra los daños ambientales\nEn algunos casos ayuda a quitar psoriasis y al eccema\nEvita el envejecimiento prematuro\nEficaz para combatir la hiperpigmentación en la piel, ya que inhibe la producción de melanina, el pigmento responsable de la aparición de las temidas manchas marrones",
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
-      "La ficha lo presenta como apoyo para combatir la hiperpigmentación, ayudar a curar el acné, corregir la piel opaca, reducir ojeras y proteger frente a daños ambientales. También menciona apoyo en algunos casos de psoriasis y eccema y la prevención del envejecimiento prematuro.",
+      "" ,
     variantes: [{ tamano: "90 g", precio: 90 }],
   },
   {
@@ -116,10 +116,10 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Leche de cabra, fresa champagne y miel melipona",
     ingredientes: ["Leche de cabra", "Miel de abejas meliponas", "Fresa champagne"],
-    descripcion: "Jabón con base de leche de cabra, miel de abejas meliponas y fresa champagne.",
+    descripcion: "piel madura a normal, restaura la vitalidad de la piel. Fresa champagne. Activa y eleva la energía vital\nActiva la energía dormida / revitaliza la textura de la piel",
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
-      "La ficha lo dirige a piel madura o normal, y lo presenta como revitalizante: activa y eleva la energía vital y ayuda a restaurar la vitalidad de la piel.",
+      "" ,
     variantes: [
       { tamano: "20 g · tamaño viaje", precio: 20 },
       { tamano: "70 g", precio: 60 },
@@ -133,10 +133,10 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Sábila y menta",
     ingredientes: ["Sábila", "Menta"],
-    descripcion: "Jabón de sábila y menta en presentación de 80 g.",
+    descripcion: "Antioxidante, contribuye a eliminar manchas de la piel y suaviza",
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
-      "La ficha lo describe como antioxidante, útil para contribuir a eliminar manchas de la piel y suavizarla.",
+      "" ,
     variantes: [{ tamano: "80 g", precio: 30 }],
   },
   {
@@ -146,14 +146,9 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Selección de viaje",
     ingredientes: ["Miel de bolsillo"],
-    descripcion: "Kit de viaje con jabón, cartera de yute y miel de bolsillo.",
+    descripcion: "",
     ritual: "No especificado en la ficha del catálogo.",
-    destaca: "La cartera está hecha a mano en yute natural.",
-    componentes: [
-      "Jabón de tepezcohuite con miel de abejas meliponas, 100 g",
-      "Cartera hecha a mano en yute natural",
-      "Miel de bolsillo en gotero de 5 ml",
-    ],
+    destaca: "" ,
     variantes: [{ tamano: "Kit cartera", precio: 210 }],
   },
   {
@@ -163,14 +158,9 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Sábila, menta y miel de bolsillo",
     ingredientes: ["Sábila", "Menta", "Miel de bolsillo"],
-    descripcion: "Kit flor con jabón de sábila, miel de bolsillo y envoltura de tela de algodón.",
+    descripcion: "Antioxidante, contribuye a eliminar manchas de la piel y suaviza",
     ritual: "No especificado en la ficha del catálogo.",
-    destaca: "La ficha destaca su formato de regalo y sus componentes artesanales.",
-    componentes: [
-      "Jabón de sábila, 80 g",
-      "Miel de bolsillo en gotero de 5 ml",
-      "Envoltura de tela de algodón",
-    ],
+    destaca: "" ,
     variantes: [{ tamano: "Kit flor", precio: 90 }],
   },
   {
@@ -181,11 +171,11 @@ export const productos: Producto[] = [
     ingrediente: "Semilla de sésamo, miel melipona y colágeno",
     ingredientes: ["Semilla de sésamo", "Miel melipona", "Colágeno"],
     descripcion:
-      "Crema regeneradora celular hidratante para rostro y cuello, elaborada con semilla de sésamo, miel melipona y colágeno.",
+      "Los beneficios en tu piel son  protegerla de los radicales libres que pueden dañarla y causar envejecimiento prematuro al. exponerte en tu vida diaria en forma de polución del aire, humo de cigarrillos y daños provocados al exponerse por largo tiempo ante los rayos UV del sol, la contaminación o el frío. Previene, disminuye arrugas, líneas de expresión,  estrías, con el uso constante. Contribuye a que la piel se mantenga hidratada, y regenere células de manera rápida y eficaz con notables resultados. Es útil como protector solar, base de maquillaje, incluso para limpiar del maquillaje, en piel “quemada” de sol, incluso aliviar quemaduras con fuego y aceite caliente. Nota recomendale potenciar con el uso de jabón de arroz, para unificar el color de piel del rostro y cuello.\nLos beneficios en tu piel son  protegerla de los radicales libres que pueden dañarla y causar envejecimiento prematuro al. exponerte en tu vida diaria en forma de polución del aire, humo de cigarrillos y daños provocados al exponerse por largo tiempo ante los rayos UV del sol, la contaminación o el frío. Previene, disminuye arrugas, líneas de expresión,  estrías, con el uso constante. Contribuye a que la piel se mantenga hidratada, y regenere células de manera rápida y eficaz con notables resultados. Es útil para sellar los poros al rasurar, eliminando sangrado e irritación.\nAntioxidante, útil para después de afeitar, quemadas por exposición al sol",
     ritual:
       "Aplicar en rostro y cuello. La ficha también menciona su uso después de afeitar para sellar poros y aliviar sangrado e irritación.",
     destaca:
-      "Antioxidante. La ficha indica que protege contra radicales libres, polución, humo, rayos UV y frío; previene y disminuye arrugas, líneas de expresión y estrías; mantiene la piel hidratada y favorece la regeneración celular. También menciona su uso como protector solar, base y limpiador de maquillaje, y para aliviar quemaduras por sol, fuego o aceite caliente.",
+      "" ,
     variantes: [
       { tamano: "30 g · presentación 1", precio: 170 },
       { tamano: "60 g", precio: 320 },
@@ -203,10 +193,10 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Miel de abejas meliponas Beecheii, romero y vitamina E",
     ingredientes: ["Miel de abejas Meliponas Beecheii", "Romero", "Vitamina E"],
-    descripcion: "Crema reafirmante para rostro y cuello, potenciada con romero y vitamina E.",
+    descripcion: "La crema REAFIRMANTE XUUJAB es creada por la  acción y efectividad de la Miel de las abejas Meliponas Beeheii en la piel,  potenciada con  el Romero , así como la Vitamina E están ya comprobados. Beneficios: son regenerar la células dañadas de manera acelerada, que logra reparar la piel afectada por diversos factores.\nInstrucciones de uso:     Aplicar por ls noches 15 minutos antes de dormir para que la piel absorba los nutrientes al máximo.\nRecomendaciones alternas: evitar el humo de cigarrillos. Consuma agua suero (agua gotas de limón y pizca de sal marina), consuma frutas y verduras, de preferencia crudas...Alternar con la crema de dia HIDRATANTE XUUMIEL y COLAGENO + SONREIR A LA VIDA",
     ritual: "Aplicar por las noches 15 minutos antes de dormir.",
     destaca:
-      "La ficha la presenta como reafirmante, con regeneración acelerada de células dañadas y reparación de la piel.",
+      "" ,
     variantes: [{ tamano: "50 g", precio: 280 }],
   },
   {
@@ -217,11 +207,11 @@ export const productos: Producto[] = [
     ingrediente: "Miel de Melipona beecheii",
     ingredientes: ["Miel de Melipona beecheii"],
     descripcion:
-      "Miel de la especie de abeja sin aguijón Melipona beecheii, originaria de la Península de Yucatán y de Quintana Roo.",
+      "Salud Ocular: Utilizada tradicionalmente en gotas para tratar \nvista cansada, conjuntivitis, carnosidades (pterigión) y cataratas.\nAfecciones Respiratorias: Ayuda a aliviar la garganta irritada, tos y asma.\nProblemas Digestivos: Auxiliar en el tratamiento de úlceras gástricas y gastritis.\nCicatrización y Piel: Útil para tratar heridas, quemaduras, manchas en la piel y picaduras, actuando como cicatrizante y regenerador celular.\nFortalecimiento Inmune: Su consumo regular fortalece las defensas debido a su alta actividad biológica.",
     ritual:
       "La ficha la presenta como alimento natural; el catálogo no especifica una dosis de uso.",
     destaca:
-      "La ficha menciona compuestos bioactivos como proteínas, flavonoides y polifenoles, con alta actividad antioxidante. También describe usos tradicionales relacionados con cuidado ocular, garganta, tos, asma, úlceras gástricas, gastritis, heridas, quemaduras y manchas.",
+      "" ,
     variantes: [
       { tamano: "5 ml", precio: 60 },
       { tamano: "10 ml", precio: 120 },
@@ -238,10 +228,10 @@ export const productos: Producto[] = [
     marca: "XUUMIEL",
     ingrediente: "Miel de abejas meliponas y cacao puro",
     ingredientes: ["Miel de abejas meliponas", "Cacao puro 100% desgrasado y sin azúcar"],
-    descripcion: "Elixir de miel de abejas meliponas y cacao puro, en envases de cristal oscuro.",
+    descripcion: "La gran cantidad de antioxidantes y polifenoles, sumadoEl cacao puro (100% desgrasado, sin azúcar) es un superalimento rico en antioxidantes (flavonoides), minerales como magnesio, hierro y zinc, y compuestos estimulantes como la teobromina. Mejora la salud cardiovascular al aumentar la elasticidad vascular, reduce la inflamación, mejora el estado de ánimo y aporta energía sostenida",
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
-      "La ficha menciona antioxidantes y polifenoles, así como minerales del cacao —magnesio, hierro y zinc— y teobromina. También describe aportes relacionados con elasticidad vascular, inflamación, estado de ánimo y energía sostenida.",
+      "" ,
     variantes: [
       { tamano: "30 ml", precio: 260 },
       { tamano: "50 ml", precio: 340 },
@@ -254,10 +244,10 @@ export const productos: Producto[] = [
     marca: "XUUMIEL",
     ingrediente: "Polen, propóleo y miel de abejas apidea",
     ingredientes: ["Polen", "Propóleo", "Miel de abejas apidea"],
-    descripcion: "Multivitamínico en envase de cristal oscuro de 200 g.",
+    descripcion: "La función del propóleo es encapsular virus y bacterias para proteger, en este caso células. El polen como fuente de energía, la base donde las abejas producen la miel, mas la composición de la miel   fuente de energía rápida, y remedio tradicional para aliviar la tos y el dolor de garganta gracias a sus propiedades antisépticas, antibacterianas y antioxidantes. También es utilizada para mejorar la digestión, cicatrizar heridas",
     ritual: "La ficha lo presenta como remedio tradicional; no especifica una dosis de uso.",
     destaca:
-      "El catálogo describe el propóleo como encapsulador de virus y bacterias y al producto como fuente de energía rápida, con propiedades antisépticas, antibacterianas y antioxidantes. También menciona usos tradicionales para tos, dolor de garganta, digestión y cicatrización de heridas.",
+      "" ,
     variantes: [{ tamano: "200 g · envase de cristal oscuro", precio: 180 }],
   },
   {
@@ -267,9 +257,9 @@ export const productos: Producto[] = [
     marca: "XUUMIEL",
     ingrediente: "Propóleo con eucalipto",
     ingredientes: ["Propóleo", "Eucalipto"],
-    descripcion: "Propóleo con eucalipto en envase con atomizador.",
+    descripcion: "",
     ritual: "No especificado en la ficha del catálogo.",
-    destaca: "Presentación en atomizador para aplicación práctica.",
+    destaca: "" ,
     variantes: [{ tamano: "25 ml", precio: 180 }],
   },
   {
@@ -279,10 +269,10 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Miel, romero y canela",
     ingredientes: ["Miel", "Romero", "Canela"],
-    descripcion: "Shampoo mascarilla para cabello de miel, romero y canela.",
+    descripcion: "ESTIMULA EL CRECIMIENTO \nDEL CABELLO  Y LO FORTALECE\nSHAMPOO MASCARILLA PARA CABELLO \nDE MIEL, ROMERO Y  CANELA. RESTAURA, REPARA, SE OBTIENE SUAVIDAD NATURAL, BRILLO",
     ritual: "Usar como shampoo mascarilla. La ficha no especifica una frecuencia de aplicación.",
     destaca:
-      "La ficha indica que estimula el crecimiento del cabello y lo fortalece; restaura, repara y aporta suavidad natural y brillo.",
+      "" ,
     variantes: [
       { tamano: "125 ml", precio: 75 },
       { tamano: "250 ml", precio: 150 },
@@ -296,9 +286,9 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Fórmula repelente en crema",
     ingredientes: ["No especificados en la ficha del catálogo"],
-    descripcion: "Repelente en crema para zancudos, moscos y tábanos.",
+    descripcion: "REPELENTE DE ZANCUDOS Y MOSCOS, TÁBANOS",
     ritual: "No especificado en la ficha del catálogo.",
-    destaca: "Presentación en crema.",
+    destaca: "" ,
     variantes: [{ tamano: "60 ml", precio: 90 }],
   },
   {
@@ -308,9 +298,9 @@ export const productos: Producto[] = [
     marca: "XUUJÁAB",
     ingrediente: "Fórmula líquida hidroalcohólica",
     ingredientes: ["No especificados en la ficha del catálogo"],
-    descripcion: "Repelente líquido hidroalcohólico para zancudos, moscos y tábanos.",
+    descripcion: "REPELENTE DE ZANCUDOS Y MOSCOS, TÁBANOS",
     ritual: "No especificado en la ficha del catálogo.",
-    destaca: "Presentación líquida hidroalcohólica.",
+    destaca: "" ,
     variantes: [{ tamano: "60 ml", precio: 70 }],
   },
 ];
