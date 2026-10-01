@@ -22,6 +22,10 @@ import { BotonCarrito, PanelCarrito, type ItemCarrito } from "@/components/Carri
 
 import { MessageCircle, Store } from "lucide-react";
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
+import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
+import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
+import albumLeonaVicario from "@/assets/album/tienda-leona-vicario.jpg.asset.json";
+import albumHechoEnQr from "@/assets/album/hecho-en-quintana-roo.jpg.asset.json";
 import logo from "@/assets/xuumiel-logo-3x-transparent-shadow.png";
 import logoXuujaab from "@/assets/xuujaab-logo.jpeg";
 import culturaImg from "@/assets/ruta/cultura.jpg";
@@ -805,6 +809,35 @@ function Index() {
                 <h3 className="font-display text-xl">{copy.stationTitle}</h3>
                 <p className="text-sm text-muted-foreground">{copy.stationDescription}</p>
               </article>
+            </div>
+          </div>
+        </section>
+
+        {/* Álbum */}
+        <section id="album" className="border-b border-border">
+          <div className="mx-auto max-w-6xl px-5 py-16">
+            <p className="text-xs uppercase tracking-[0.3em] text-terracotta">{copy.albumLabel}</p>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl">{copy.albumTitle}</h2>
+            <p className="mt-4 max-w-2xl text-muted-foreground">{copy.albumIntro}</p>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { src: albumEstantes.url, alt: copy.altAlbum.estantes },
+                { src: albumProductos.url, alt: copy.altAlbum.productos },
+                { src: albumLeonaVicario.url, alt: copy.altAlbum.leonaVicario },
+                { src: albumHechoEnQr.url, alt: copy.altAlbum.hechoEnQr },
+              ].map((foto) => (
+                <figure
+                  key={foto.src}
+                  className="overflow-hidden rounded-sm border border-border bg-card"
+                >
+                  <img
+                    src={foto.src}
+                    alt={foto.alt}
+                    loading="lazy"
+                    className="aspect-[3/4] w-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </figure>
+              ))}
             </div>
           </div>
         </section>
