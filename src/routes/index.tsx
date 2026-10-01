@@ -18,6 +18,7 @@ import { NOTA_CATALOGO_EN, productosEn } from "@/data/catalogo-en";
 import { textos, type Idioma } from "@/data/ui-copy";
 import { HeroRuta } from "@/components/HeroRuta";
 import { FranjaGeo } from "@/components/FranjaGeo";
+import { BotonCarrito, PanelCarrito, type ItemCarrito } from "@/components/Carrito";
 
 import { MessageCircle, Store } from "lucide-react";
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
@@ -151,6 +152,8 @@ function Index() {
   const [filtro, setFiltro] = useState<Filtro>("Todo");
   const [galleryFiltro, setGalleryFiltro] = useState<GalleryFilter>("Todas");
   const [detalle, setDetalle] = useState<Producto | null>(null);
+  const [carrito, setCarrito] = useState<ItemCarrito[]>([]);
+  const [carritoAbierto, setCarritoAbierto] = useState(false);
   const copy = textos[idioma];
   const NAV = NAV_KEYS.map((n) => ({ ...n, label: copy.nav[n.key] }));
   const productosActivos = idioma === "en" ? productosEn : productos;
@@ -158,6 +161,37 @@ function Index() {
   useEffect(() => {
     document.documentElement.lang = idioma;
   }, [idioma]);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("xuumiel-carrito");
+      if (raw) setCarrito(JSON.parse(raw));
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("xuumiel-carrito", JSON.stringify(carrito));
+  }, [carrito]);
+
+  const agregar = (p: Producto, tamano: string, monto: number) => {
+    const key = `${p.id}::${tamano}`;
+    setCarrito((c) => {
+      const existe = c.find((i) => i.key === key);
+      if (existe) return c.map((i) => (i.key === key ? { ...i, cantidad: i.cantidad + 1 } : i));
+      return [...c, { key, nombre: p.nombre, tamano, precio: monto, imagen: imagenProducto(p), cantidad: 1 }];
+    });
+    setDetalle(null);
+    setCarritoAbierto(true);
+  };
+
+  const cambiarCantidad = (key: string, delta: number) =>
+    setCarrito((c) =>
+      c
+        .map((i) => (i.key === key ? { ...i, cantidad: i.cantidad + delta } : i))
+        .filter((i) => i.cantidad > 0),
+    );
 
   const lista = useMemo(
     () =>
@@ -821,6 +855,20 @@ function Index() {
         <span className="hidden sm:inline">WhatsApp</span>
       </a>
 
+      <BotonCarrito
+        count={carrito.reduce((s, i) => s + i.cantidad, 0)}
+        onClick={() => setCarritoAbierto(true)}
+        en={idioma === "en"}
+      />
+      <PanelCarrito
+        open={carritoAbierto}
+        onOpenChange={setCarritoAbierto}
+        items={carrito}
+        onCantidad={cambiarCantidad}
+        onQuitar={(k) => setCarrito((c) => c.filter((i) => i.key !== k))}
+        en={idioma === "en"}
+      />
+
       <footer className="border-t border-border">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-3">
           <div>
@@ -930,6 +978,15 @@ function Index() {
                         <td className="py-2 font-display text-lg">{v.tamano}</td>
                         <td className="py-2 text-right font-display text-lg">
                           {precio(v.precio, idioma)}
+                        </td>
+                        <td className="py-2 pl-3 text-right">
+                          <button
+                            type="button"
+                            onClick={() => agregar(detalle, v.tamano, v.precio)}
+                            className="rounded-sm bg-cacao px-3 py-1.5 text-xs font-medium text-background hover:opacity-90"
+                          >
+                            {idioma === "es" ? "Agregar" : "Add"}
+                          </button>
                         </td>
                       </tr>
                     ))}
