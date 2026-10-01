@@ -109,6 +109,16 @@ export const textos = {
     catalogHighlights: "Lo que destaca el catálogo",
     viewDetail: "Ver detalle",
     detailOf: " de ",
+    albumLabel: "Álbum",
+    albumTitle: "Un álbum para recordar dónde hemos estado",
+    albumIntro:
+      "Momentos de la ruta: la tienda de la estación del Tren Maya en Leona Vicario, nuestros productos en los estantes y el sello Hecho en Quintana Roo.",
+    altAlbum: {
+      estantes: "Estantes de madera con productos artesanales en la tienda de la estación del Tren Maya",
+      productos: "Jabones, cremas y miel melipona XUUMIEL y XUUJÁAB exhibidos en la tienda",
+      leonaVicario: "Interior de la estación del Tren Maya de Leona Vicario con la mesa de productos",
+      hechoEnQr: "Reconocimiento Hecho en Quintana Roo otorgado a XUUMIEL",
+    },
     alliesLabel: "Aliados",
     alliesTitle: "Dónde encontrarnos y con quién trabajamos",
     allyDescription: "Aliado de la ruta. Datos de contacto por confirmar.",
@@ -251,6 +261,16 @@ export const textos = {
     catalogHighlights: "What the catalog highlights",
     viewDetail: "View details",
     detailOf: " of ",
+    albumLabel: "Album",
+    albumTitle: "An album to remember where we have been",
+    albumIntro:
+      "Moments along the route: the Tren Maya station store in Leona Vicario, our products on the shelves and the Made in Quintana Roo seal.",
+    altAlbum: {
+      estantes: "Wooden shelves with handcrafted products at the Tren Maya station store",
+      productos: "XUUMIEL and XUUJÁAB soaps, creams and melipona honey on display at the store",
+      leonaVicario: "Inside the Leona Vicario Tren Maya station with the product table",
+      hechoEnQr: "Made in Quintana Roo recognition awarded to XUUMIEL",
+    },
     alliesLabel: "Partners",
     alliesTitle: "Where to find us and who we work with",
     allyDescription: "Route partner. Contact details to be confirmed.",
