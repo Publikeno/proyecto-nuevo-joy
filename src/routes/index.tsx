@@ -180,7 +180,7 @@ function Index() {
     setCarrito((c) => {
       const existe = c.find((i) => i.key === key);
       if (existe) return c.map((i) => (i.key === key ? { ...i, cantidad: i.cantidad + 1 } : i));
-      return [...c, { key, nombre: p.nombre, tamano, precio: monto, imagen: imagenProducto(p), cantidad: 1 }];
+      return [...c, { key, nombre: p.nombre, tamano, precio: monto, imagen: imagenProducto(p) ?? logo, cantidad: 1 }];
     });
     setDetalle(null);
     setCarritoAbierto(true);
