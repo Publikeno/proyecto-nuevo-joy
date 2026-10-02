@@ -187,6 +187,24 @@ export const productos: Producto[] = [
     ],
   },
   {
+    id: "crema-rch-caballero",
+    nombre: "Crema Regeneradora Celular para Caballero – Aroma Madera (RCH)",
+    categoria: "Cremas",
+    marca: "XUUJÁAB",
+    ingrediente: "Semilla de sésamo, miel melipona y colágeno",
+    ingredientes: ["Semilla de sésamo", "Miel melipona", "Colágeno", "Aroma a madera fina"],
+    descripcion:
+      "Crema regeneradora masculina elaborada artesanalmente para las necesidades de la piel del hombre, con un delicioso aroma a madera fina.\nEspecial after-shave: sella los poros inmediatamente después del rasurado, eliminando la irritación y el sangrado.\nEscudo antioxidante: calma las quemaduras por exposición al sol y protege contra el desgaste del aire y la contaminación.\nNutrición sin grasa: textura ligera que hidrata a profundidad sin dejar sensación mantecosa.",
+    ritual:
+      "Aplicar como after-shave inmediatamente después del rasurado para sellar los poros; usar también en rostro y cuello tras la exposición al sol.",
+    destaca:
+      "Aroma a madera fina · especial after-shave para piel de caballero",
+    variantes: [
+      { tamano: "30 g · envase básico", precio: 196 },
+      { tamano: "50 g · envase mediano", precio: 380 },
+    ],
+  },
+  {
     id: "crema-rf",
     nombre: "RF crema reafirmante para rostro y cuello",
     categoria: "Cremas",
