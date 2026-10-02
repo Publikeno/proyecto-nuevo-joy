@@ -127,6 +127,17 @@ const traducciones: Record<string, TraduccionProducto> = {
       { tamano: "50 g · with dispenser", precio: 240 },
     ],
   },
+  "crema-rch-caballero": {
+    nombre: "Gentlemen's cellular regenerating cream – wood aroma (RCH)",
+    ingrediente: "Sesame seed, melipona honey and collagen",
+    ingredientes: ["Sesame seed", "Melipona honey", "Collagen", "Fine wood aroma"],
+    descripcion: "",
+    destaca: "",
+    variantes: [
+      { tamano: "30 g · basic container", precio: 196 },
+      { tamano: "50 g · medium container", precio: 380 },
+    ],
+  },
   "crema-rf": {
     nombre: "RF firming cream for face and neck",
     ingrediente: "Melipona bee honey Beecheii, rosemary and vitamin E",
