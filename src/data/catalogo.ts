@@ -180,7 +180,7 @@ export const productos: Producto[] = [
       { tamano: "30 g · presentación 1", precio: 170 },
       { tamano: "60 g", precio: 320 },
       { tamano: "120 g", precio: 590 },
-      { tamano: "250 g", precio: 1100 },
+      { tamano: "240 g", precio: 1100 },
       { tamano: "30 g · presentación 2", precio: 120 },
       { tamano: "50 g", precio: 220 },
       { tamano: "50 g · con dispensador", precio: 240 },
