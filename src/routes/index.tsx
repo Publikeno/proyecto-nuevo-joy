@@ -22,6 +22,7 @@ import { BotonCarrito, PanelCarrito, type ItemCarrito } from "@/components/Carri
 
 import { MessageCircle, Store } from "lucide-react";
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
+import cremaCaballeroAsset from "@/assets/crema-caballero.png.asset.json";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
 import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
 import albumLeonaVicario from "@/assets/album/tienda-leona-vicario.jpg.asset.json";
@@ -96,6 +97,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "kit-cartera": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/oQoFOOhWJEQeUlvP.png",
   "kit-flor": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/unzopUKhjvxvgdNU.png",
   "crema-rch": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/XgBmlNTBkuUxDfPC.png",
+  "crema-rch-caballero": cremaCaballeroAsset.url,
   "crema-rf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/lVStLKQNIEkBTXKZ.png",
   "miel-abejas-meliponas": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/aKOGcxRygmNcGPRQ.png",
   "elixir-miel-melipona-cacao": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/eAfHqBTggGtYVuny.png",
