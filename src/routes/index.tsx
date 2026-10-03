@@ -26,6 +26,7 @@ import cremaCaballeroAsset from "@/assets/crema-caballero.png.asset.json";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
 import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
 import albumLeonaVicario from "@/assets/album/tienda-leona-vicario.jpg.asset.json";
+import albumAbejas from "@/assets/album/abejas-meliponas.jpg.asset.json";
 import albumHechoEnQr from "@/assets/album/hecho-en-quintana-roo.jpg.asset.json";
 import albumEventoStand1 from "@/assets/album/evento-stand-1.jpg.asset.json";
 import albumEventoStand2 from "@/assets/album/evento-stand-2.jpg.asset.json";
@@ -847,6 +848,7 @@ function Index() {
                 { src: albumEstantes.url, alt: copy.altAlbum.estantes },
                 { src: albumProductos.url, alt: copy.altAlbum.productos },
                 { src: albumLeonaVicario.url, alt: copy.altAlbum.leonaVicario },
+                { src: albumAbejas.url, alt: copy.altAlbum.abejas },
                 { src: albumHechoEnQr.url, alt: copy.altAlbum.hechoEnQr },
                 { src: albumEventoStand1.url, alt: copy.altAlbum.eventoStand1 },
                 { src: albumEventoStand2.url, alt: copy.altAlbum.eventoStand2 },
