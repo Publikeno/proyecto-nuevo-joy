@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep product presentation imagery selected in the catalog detail dialog rather than replacing the shared product photo; one product may have several package sizes and only the matching presentation should show its specific bottle.
