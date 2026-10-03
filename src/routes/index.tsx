@@ -966,6 +966,39 @@ function Index() {
               <li>{copy.workshop}</li>
             </ul>
           </div>
+          <div>
+            <h2 className="text-sm font-semibold">Caribbean Like's</h2>
+            <img
+              src={caribbeanLikes.url}
+              alt={copy.alt.caribbean}
+              width={160}
+              height={160}
+              loading="lazy"
+              className="mt-3 h-16 w-auto object-contain"
+            />
+            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+              <li>
+                <a
+                  className="hover:text-foreground"
+                  href="https://wa.me/529985039554"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {copy.caribbeanWhatsApp}
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-foreground"
+                  href="https://www.caribbeanlikes.com.mx"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {copy.caribbeanWeb}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
         <p className="border-t border-border px-5 py-5 text-center text-xs text-muted-foreground">
           © {new Date().getFullYear()} XUUMIEL · XUUJÁAB. {copy.footerCopyright}
