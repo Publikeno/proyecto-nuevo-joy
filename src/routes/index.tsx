@@ -27,6 +27,8 @@ import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
 import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
 import albumLeonaVicario from "@/assets/album/tienda-leona-vicario.jpg.asset.json";
 import albumHechoEnQr from "@/assets/album/hecho-en-quintana-roo.jpg.asset.json";
+import albumEventoStand1 from "@/assets/album/evento-stand-1.jpg.asset.json";
+import albumEventoStand2 from "@/assets/album/evento-stand-2.jpg.asset.json";
 import logo from "@/assets/xuumiel-logo-3x-transparent-shadow.png";
 import logoXuujaab from "@/assets/xuujaab-logo.jpeg";
 import culturaImg from "@/assets/ruta/cultura.jpg";
@@ -821,12 +823,14 @@ function Index() {
             <p className="text-xs uppercase tracking-[0.3em] text-terracotta">{copy.albumLabel}</p>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl">{copy.albumTitle}</h2>
             <p className="mt-4 max-w-2xl text-muted-foreground">{copy.albumIntro}</p>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 { src: albumEstantes.url, alt: copy.altAlbum.estantes },
                 { src: albumProductos.url, alt: copy.altAlbum.productos },
                 { src: albumLeonaVicario.url, alt: copy.altAlbum.leonaVicario },
                 { src: albumHechoEnQr.url, alt: copy.altAlbum.hechoEnQr },
+                { src: albumEventoStand1.url, alt: copy.altAlbum.eventoStand1 },
+                { src: albumEventoStand2.url, alt: copy.altAlbum.eventoStand2 },
               ].map((foto) => (
                 <figure
                   key={foto.src}
