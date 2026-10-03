@@ -24,6 +24,7 @@ import { MessageCircle, Store } from "lucide-react";
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaCaballeroAsset from "@/assets/crema-caballero.png.asset.json";
 import gotero50ml from "@/assets/gotero-50ml-original.png";
+import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
 import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
 import albumLeonaVicario from "@/assets/album/tienda-leona-vicario.jpg.asset.json";
@@ -109,7 +110,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "propoleo-eucalipto": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/ECzpgLjrKCNVKmfR.png",
   "shampoo-mascarilla-miel-romero-canela": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LiPgbsxrjpooUXfa.png",
   "repelente-crema": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FCcSMVSoBoukJMSV.png",
-  "repelente-liquido-hidroalcoholico": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/CmTOVoijXMjKgRRW.png",
+  "repelente-liquido-hidroalcoholico": repelenteLiquido,
 };
 
 const GALLERY_PHOTOS = [
@@ -675,7 +676,7 @@ function Index() {
                      width={800}
                      height={600}
                      loading="lazy"
-                     className="aspect-[4/3] w-full border-b border-border object-cover"
+                     className={`aspect-[4/3] w-full border-b border-border ${p.id === "repelente-liquido-hidroalcoholico" ? "bg-card object-contain" : "object-cover"}`}
                    />
                    <div className="flex flex-1 flex-col p-6">
                      <div className="flex items-center justify-between gap-3">
@@ -1023,7 +1024,7 @@ function Index() {
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml" ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${detalle.id === "repelente-liquido-hidroalcoholico" || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") ? "bg-card object-contain" : "object-cover"}`}
                />
               <DialogHeader>
                 <div className="flex items-center gap-3">
