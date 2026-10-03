@@ -123,7 +123,9 @@ export const textos = {
     },
     alliesLabel: "Aliados",
     alliesTitle: "Dónde encontrarnos y con quién trabajamos",
-    allyDescription: "Aliado de la ruta. Datos de contacto por confirmar.",
+    allyDescription: "Agencia aliada de la ruta. Llámanos o escríbenos por WhatsApp al +52 998 503 9554 o visita www.caribbeanlikes.com.mx.",
+    caribbeanWhatsApp: "Llamadas y WhatsApp: +52 998 503 9554",
+    caribbeanWeb: "www.caribbeanlikes.com.mx",
     stationTitle: "Tienda Estación Tren Maya",
     stationDescription:
       "Encuentra los productos en la tienda de la estación del Tren Maya de Leona Vicario, municipio de Puerto Morelos.",
@@ -277,7 +279,9 @@ export const textos = {
     },
     alliesLabel: "Partners",
     alliesTitle: "Where to find us and who we work with",
-    allyDescription: "Route partner. Contact details to be confirmed.",
+    allyDescription: "Partner agency of the route. Call or WhatsApp us at +52 998 503 9554 or visit www.caribbeanlikes.com.mx.",
+    caribbeanWhatsApp: "Calls and WhatsApp: +52 998 503 9554",
+    caribbeanWeb: "www.caribbeanlikes.com.mx",
     stationTitle: "Tren Maya Station Store",
     stationDescription:
       "Find the products at the Tren Maya station store in Leona Vicario, municipality of Puerto Morelos.",
