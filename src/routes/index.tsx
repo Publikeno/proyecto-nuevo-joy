@@ -807,6 +807,25 @@ function Index() {
                 />
                 <h3 className="font-display text-xl">Caribbean Like's</h3>
                 <p className="text-sm text-muted-foreground">{copy.allyDescription}</p>
+                <div className="mt-auto space-y-1.5 text-sm">
+                  <a
+                    href="https://wa.me/529985039554"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 font-medium text-foreground underline-offset-4 hover:underline"
+                  >
+                    <MessageCircle className="h-4 w-4 text-[#25D366]" aria-hidden="true" />
+                    {copy.caribbeanWhatsApp}
+                  </a>
+                  <a
+                    href="https://www.caribbeanlikes.com.mx"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block underline-offset-4 hover:underline"
+                  >
+                    {copy.caribbeanWeb}
+                  </a>
+                </div>
               </article>
               <article className="flex flex-col items-start gap-4 rounded-sm border border-border bg-card p-6">
                 <Store className="h-10 w-10 text-terracotta" aria-hidden="true" />
@@ -909,7 +928,7 @@ function Index() {
       />
 
       <footer className="border-t border-border">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <div>
               <img
