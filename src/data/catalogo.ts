@@ -42,7 +42,7 @@ export const productos: Producto[] = [
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
       "" ,
-    variantes: [{ tamano: "70 g", precio: 70 }],
+    variantes: [{ tamano: "70 g", precio: 77 }],
   },
   {
     id: "jabon-avena",
@@ -55,7 +55,7 @@ export const productos: Producto[] = [
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
       "" ,
-    variantes: [{ tamano: "70 g", precio: 50 }],
+    variantes: [{ tamano: "70 g", precio: 37 }],
   },
   {
     id: "jabon-tepezcohuite-melipona",
@@ -69,7 +69,7 @@ export const productos: Producto[] = [
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
       "" ,
-    variantes: [{ tamano: "100 g", precio: 120 }],
+    variantes: [{ tamano: "100 g", precio: 90 }],
   },
   {
     id: "jabon-miel-melipona-madera",
@@ -94,7 +94,7 @@ export const productos: Producto[] = [
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
       "" ,
-    variantes: [{ tamano: "70 g", precio: 70 }],
+    variantes: [{ tamano: "70 g", precio: 77 }],
   },
   {
     id: "jabon-curcuma-coco-melipona",
@@ -107,7 +107,7 @@ export const productos: Producto[] = [
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
       "" ,
-    variantes: [{ tamano: "90 g", precio: 90 }],
+    variantes: [{ tamano: "90 g", precio: 70 }],
   },
   {
     id: "jabon-fresa-champagne",
@@ -123,7 +123,7 @@ export const productos: Producto[] = [
     variantes: [
       { tamano: "20 g · tamaño viaje", precio: 20 },
       { tamano: "70 g", precio: 60 },
-      { tamano: "90 g", precio: 90 },
+      { tamano: "90 g", precio: 77 },
     ],
   },
   {
@@ -137,7 +137,7 @@ export const productos: Producto[] = [
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
       "" ,
-    variantes: [{ tamano: "80 g", precio: 30 }],
+    variantes: [{ tamano: "80 g", precio: 50 }],
   },
   {
     id: "kit-cartera",
@@ -180,7 +180,7 @@ export const productos: Producto[] = [
       { tamano: "30 g · presentación 1", precio: 170 },
       { tamano: "60 g", precio: 320 },
       { tamano: "120 g", precio: 590 },
-      { tamano: "240 g", precio: 1100 },
+      { tamano: "240 g", precio: 1170 },
       { tamano: "30 g · presentación 2", precio: 120 },
       { tamano: "50 g", precio: 220 },
       { tamano: "50 g · con dispensador", precio: 240 },
@@ -215,7 +215,7 @@ export const productos: Producto[] = [
     ritual: "Aplicar por las noches 15 minutos antes de dormir.",
     destaca:
       "" ,
-    variantes: [{ tamano: "50 g", precio: 280 }],
+    variantes: [{ tamano: "50 g", precio: 290 }],
   },
   {
     id: "miel-abejas-meliponas",
@@ -232,10 +232,10 @@ export const productos: Producto[] = [
       "" ,
     variantes: [
       { tamano: "5 ml", precio: 60 },
-      { tamano: "10 ml", precio: 120 },
+      { tamano: "10 ml", precio: 130 },
       { tamano: "15 ml", precio: 180 },
-      { tamano: "20 ml", precio: 220 },
-      { tamano: "30 ml", precio: 290 },
+      { tamano: "20 ml", precio: 230 },
+      { tamano: "30 ml", precio: 320 },
       { tamano: "50 ml", precio: 440 },
     ],
   },
@@ -251,7 +251,7 @@ export const productos: Producto[] = [
     destaca:
       "" ,
     variantes: [
-      { tamano: "30 ml", precio: 260 },
+      { tamano: "30 ml", precio: 210 },
       { tamano: "50 ml", precio: 340 },
     ],
   },
@@ -266,7 +266,7 @@ export const productos: Producto[] = [
     ritual: "La ficha lo presenta como remedio tradicional; no especifica una dosis de uso.",
     destaca:
       "" ,
-    variantes: [{ tamano: "200 g · envase de cristal oscuro", precio: 180 }],
+    variantes: [{ tamano: "200 g · envase de cristal oscuro", precio: 150 }],
   },
   {
     id: "propoleo-eucalipto",

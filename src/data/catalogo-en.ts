@@ -72,7 +72,7 @@ const traducciones: Record<string, TraduccionProducto> = {
     variantes: [
       { tamano: "20 g · travel size", precio: 20 },
       { tamano: "70 g", precio: 60 },
-      { tamano: "90 g", precio: 90 },
+      { tamano: "90 g", precio: 77 },
     ],
   },
   "jabon-sabila-menta": {
@@ -121,7 +121,7 @@ const traducciones: Record<string, TraduccionProducto> = {
       { tamano: "30 g · format 1", precio: 170 },
       { tamano: "60 g", precio: 320 },
       { tamano: "120 g", precio: 590 },
-      { tamano: "250 g", precio: 1100 },
+      { tamano: "250 g", precio: 1170 },
       { tamano: "30 g · format 2", precio: 120 },
       { tamano: "50 g", precio: 220 },
       { tamano: "50 g · with dispenser", precio: 240 },
@@ -168,7 +168,7 @@ const traducciones: Record<string, TraduccionProducto> = {
     ingrediente: "Pollen, propolis and apidea bee honey",
     ingredientes: ["Pollen", "Propolis", "Apidea bee honey"],
     descripcion: "" ,
-    variantes: [{ tamano: "200 g · dark glass container", precio: 180 }],
+    variantes: [{ tamano: "200 g · dark glass container", precio: 150 }],
     destaca:
       "" ,
   },
