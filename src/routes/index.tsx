@@ -23,6 +23,7 @@ import { BotonCarrito, PanelCarrito, type ItemCarrito } from "@/components/Carri
 import { MessageCircle, Store } from "lucide-react";
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaCaballeroAsset from "@/assets/crema-caballero.png.asset.json";
+import gotero50ml from "@/assets/gotero-50ml-original.png";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
 import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
 import albumLeonaVicario from "@/assets/album/tienda-leona-vicario.jpg.asset.json";
@@ -161,11 +162,17 @@ function Index() {
   const [filtro, setFiltro] = useState<Filtro>("Todo");
   const [galleryFiltro, setGalleryFiltro] = useState<GalleryFilter>("Todas");
   const [detalle, setDetalle] = useState<Producto | null>(null);
+  const [presentacionSeleccionada, setPresentacionSeleccionada] = useState<string | null>(null);
   const [carrito, setCarrito] = useState<ItemCarrito[]>([]);
   const [carritoAbierto, setCarritoAbierto] = useState(false);
   const copy = textos[idioma];
   const NAV = NAV_KEYS.map((n) => ({ ...n, label: copy.nav[n.key] }));
   const productosActivos = idioma === "en" ? productosEn : productos;
+
+  const abrirDetalle = (producto: Producto) => {
+    setPresentacionSeleccionada(null);
+    setDetalle(producto);
+  };
 
   useEffect(() => {
     document.documentElement.lang = idioma;
@@ -587,7 +594,7 @@ function Index() {
                            </span>
                            <button
                              type="button"
-                             onClick={() => setDetalle(p)}
+                             onClick={() => abrirDetalle(p)}
                              className="rounded-sm border border-primary px-3 py-1.5 text-sm transition-colors hover:bg-primary hover:text-primary-foreground"
                            >
                              {copy.viewDetail}
@@ -716,7 +723,7 @@ function Index() {
                     </span>
                     <button
                       type="button"
-                      onClick={() => setDetalle(p)}
+                      onClick={() => abrirDetalle(p)}
                       className="rounded-sm border border-primary px-3 py-2 text-sm transition-colors hover:bg-primary hover:text-primary-foreground"
                     >
                       {copy.viewDetail}
@@ -1012,11 +1019,11 @@ function Index() {
           {detalle && (
             <>
                <img
-                 src={imagenProducto(detalle)}
+                 src={detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml" ? gotero50ml : imagenProducto(detalle)}
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className="aspect-[5/3] w-full rounded-sm border border-border object-cover"
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml" ? "bg-card object-contain" : "object-cover"}`}
                />
               <DialogHeader>
                 <div className="flex items-center gap-3">
@@ -1068,7 +1075,19 @@ function Index() {
                   <tbody>
                     {detalle.variantes.map((v) => (
                       <tr key={v.tamano} className="border-t border-border/60">
-                        <td className="py-2 font-display text-lg">{v.tamano}</td>
+                        <td className="py-2 font-display text-lg">
+                          {detalle.id === "miel-abejas-meliponas" ? (
+                            <button
+                              type="button"
+                              onClick={() => setPresentacionSeleccionada(v.tamano)}
+                              aria-pressed={presentacionSeleccionada === v.tamano}
+                              className="inline-flex items-center gap-2 text-left underline-offset-4 hover:underline aria-pressed:underline"
+                            >
+                              {v.tamano === "50 ml" && <img src={gotero50ml} alt="" width={36} height={36} className="h-9 w-9 shrink-0 object-contain" />}
+                              {v.tamano}
+                            </button>
+                          ) : v.tamano}
+                        </td>
                         <td className="py-2 text-right font-display text-lg">
                           {precio(v.precio, idioma)}
                         </td>
