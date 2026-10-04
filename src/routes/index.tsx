@@ -1042,6 +1042,7 @@ function Index() {
         </div>
         <p className="border-t border-border px-5 py-5 text-center text-xs text-muted-foreground">
           © {new Date().getFullYear()} XUUMIEL · XUUJÁAB. {copy.footerCopyright}
+          <ContadorVisitas />
         </p>
       </footer>
 
