@@ -14,13 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      site_counter: {
+        Row: {
+          id: number
+          visits: number
+        }
+        Insert: {
+          id?: number
+          visits?: number
+        }
+        Update: {
+          id?: number
+          visits?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_visits: { Args: never; Returns: number }
     }
     Enums: {
       [_ in never]: never
