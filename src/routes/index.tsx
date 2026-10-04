@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ContadorVisitas } from "@/components/ContadorVisitas";
 import { useEffect, useMemo, useState } from "react";
 import {
   Dialog,
