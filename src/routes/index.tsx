@@ -965,6 +965,14 @@ function Index() {
                 className="h-24 w-auto object-contain"
               />
               <img
+                src={logoXuujaab}
+                alt={copy.alt.xuujaabLogo}
+                width={396}
+                height={503}
+                loading="lazy"
+                className="h-24 w-auto object-contain"
+              />
+              <img
                 src={logoHechoQr.url}
                 alt="Hecho en Quintana Roo"
                 width={554}
