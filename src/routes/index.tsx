@@ -23,6 +23,10 @@ import { BotonCarrito, PanelCarrito, type ItemCarrito } from "@/components/Carri
 import { MessageCircle, Store } from "lucide-react";
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaCaballeroAsset from "@/assets/crema-caballero.png.asset.json";
+import cremaRchAzul from "@/assets/crema-rch-etiqueta-azul.jpeg.asset.json";
+import jabonNeem from "@/assets/jabon-neem-melipona.jpeg.asset.json";
+import jabonFresa from "@/assets/jabon-fresa-champagne.jpg.asset.json";
+import shampooMiel from "@/assets/shampoo-miel-romero-canela.jpg.asset.json";
 import gotero50ml from "@/assets/gotero-50ml-original.png";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
@@ -95,20 +99,20 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "jabon-avena": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/cjXqhYGENXHnNSSq.png",
   "jabon-tepezcohuite-melipona": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/yHdJgNQqEyJbjCzN.png",
   "jabon-miel-melipona-madera": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/tdPQCvHhwktiTsvU.png",
-  "jabon-neem-coco": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/tHPfKyyWZZqrrwZs.png",
+  "jabon-neem-coco": jabonNeem.url,
   "jabon-curcuma-coco-melipona": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/nrlTawmSqzKJDjpK.png",
-  "jabon-fresa-champagne": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/IbraseDUEzHLDVvZ.png",
+  "jabon-fresa-champagne": jabonFresa.url,
   "jabon-sabila-menta": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/iaVAwyMqheEVuhrG.png",
   "kit-cartera": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/oQoFOOhWJEQeUlvP.png",
   "kit-flor": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/unzopUKhjvxvgdNU.png",
-  "crema-rch": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/XgBmlNTBkuUxDfPC.png",
+  "crema-rch": cremaRchAzul.url,
   "crema-rch-caballero": cremaCaballeroAsset.url,
   "crema-rf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/lVStLKQNIEkBTXKZ.png",
   "miel-abejas-meliponas": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/aKOGcxRygmNcGPRQ.png",
   "elixir-miel-melipona-cacao": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/eAfHqBTggGtYVuny.png",
   "multivitaminico-polen-propoleo-miel": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/CgeGQYnmuiRTHmeR.png",
   "propoleo-eucalipto": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/ECzpgLjrKCNVKmfR.png",
-  "shampoo-mascarilla-miel-romero-canela": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LiPgbsxrjpooUXfa.png",
+  "shampoo-mascarilla-miel-romero-canela": shampooMiel.url,
   "repelente-crema": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FCcSMVSoBoukJMSV.png",
   "repelente-liquido-hidroalcoholico": repelenteLiquido,
 };
@@ -676,7 +680,7 @@ function Index() {
                      width={800}
                      height={600}
                      loading="lazy"
-                     className={`aspect-[4/3] w-full border-b border-border ${p.id === "repelente-liquido-hidroalcoholico" ? "bg-card object-contain" : "object-cover"}`}
+                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "crema-rch", "jabon-neem-coco", "jabon-fresa-champagne", "shampoo-mascarilla-miel-romero-canela"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
                    />
                    <div className="flex flex-1 flex-col p-6">
                      <div className="flex items-center justify-between gap-3">
@@ -1024,7 +1028,7 @@ function Index() {
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${detalle.id === "repelente-liquido-hidroalcoholico" || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "crema-rch", "jabon-neem-coco", "jabon-fresa-champagne", "shampoo-mascarilla-miel-romero-canela"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") ? "bg-card object-contain" : "object-cover"}`}
                />
               <DialogHeader>
                 <div className="flex items-center gap-3">
