@@ -25,7 +25,7 @@ import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaCaballeroAsset from "@/assets/crema-caballero.png.asset.json";
 import cremaRchAzul from "@/assets/crema-rch-etiqueta-azul.jpeg.asset.json";
 import jabonNeem from "@/assets/jabon-neem-melipona.jpeg.asset.json";
-import shampooMiel from "@/assets/shampoo-miel-romero-canela.jpg.asset.json";
+import shampooMiel from "@/assets/shampoo-miel-romero-canela-actual.jpeg.asset.json";
 import gotero50ml from "@/assets/gotero-50ml-original.png";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
