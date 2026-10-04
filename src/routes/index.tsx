@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ContadorVisitas } from "@/components/ContadorVisitas";
 import { useEffect, useMemo, useState } from "react";
 import {
   Dialog,
@@ -1042,6 +1043,7 @@ function Index() {
         </div>
         <p className="border-t border-border px-5 py-5 text-center text-xs text-muted-foreground">
           © {new Date().getFullYear()} XUUMIEL · XUUJÁAB. {copy.footerCopyright}
+          <ContadorVisitas />
         </p>
       </footer>
 
