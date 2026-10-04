@@ -915,10 +915,10 @@ function Index() {
             </div>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:info@xuumiel.com"
+                href="mailto:admin@xuumiel.com"
                 className="rounded-sm bg-honey px-6 py-3 text-center text-sm font-medium text-cacao transition-opacity hover:opacity-90"
               >
-                info@xuumiel.com
+                admin@xuumiel.com
               </a>
             </div>
           </div>
@@ -999,8 +999,8 @@ function Index() {
             <h2 className="text-sm font-semibold">{copy.contactTitle}</h2>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li>
-                <a className="hover:text-foreground" href="mailto:info@xuumiel.com">
-                  info@xuumiel.com
+                <a className="hover:text-foreground" href="mailto:admin@xuumiel.com">
+                  admin@xuumiel.com
                 </a>
               </li>
               <li>{copy.workshop}</li>
