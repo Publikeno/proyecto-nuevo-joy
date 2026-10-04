@@ -24,7 +24,10 @@ import { MessageCircle, Store } from "lucide-react";
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaCaballeroAsset from "@/assets/crema-caballero.png.asset.json";
 import cremaRchAzul from "@/assets/crema-rch-etiqueta-azul.jpeg.asset.json";
+import jabonAvenaActual from "@/assets/jabon-avena-70g-actual.jpeg.asset.json";
 import jabonNeem from "@/assets/jabon-neem-melipona.jpeg.asset.json";
+import jabonSabilaMentaActual from "@/assets/jabon-sabila-menta-80g-actual.jpeg.asset.json";
+import jabonTepezcohuiteActual from "@/assets/jabon-tepezcohuite-100g-actual.jpeg.asset.json";
 import shampooMiel from "@/assets/shampoo-miel-romero-canela-actual.jpeg.asset.json";
 import gotero50ml from "@/assets/gotero-50ml-original.png";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
@@ -95,13 +98,13 @@ const CAT_XUUMIEL: Categoria[] = ["Mieles y elixires"];
 
 const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "jabon-arroz-coco": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FVjiYoRnRUOswewl.png",
-  "jabon-avena": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/cjXqhYGENXHnNSSq.png",
-  "jabon-tepezcohuite-melipona": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/yHdJgNQqEyJbjCzN.png",
+  "jabon-avena": jabonAvenaActual.url,
+  "jabon-tepezcohuite-melipona": jabonTepezcohuiteActual.url,
   "jabon-miel-melipona-madera": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/tdPQCvHhwktiTsvU.png",
   "jabon-neem-coco": jabonNeem.url,
   "jabon-curcuma-coco-melipona": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/nrlTawmSqzKJDjpK.png",
   "jabon-fresa-champagne": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/IbraseDUEzHLDVvZ.png",
-  "jabon-sabila-menta": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/iaVAwyMqheEVuhrG.png",
+  "jabon-sabila-menta": jabonSabilaMentaActual.url,
   "kit-cartera": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/oQoFOOhWJEQeUlvP.png",
   "kit-flor": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/unzopUKhjvxvgdNU.png",
   "crema-rch": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/XgBmlNTBkuUxDfPC.png",
