@@ -23,6 +23,9 @@ import { BotonCarrito, PanelCarrito, type ItemCarrito } from "@/components/Carri
 import { MessageCircle, Store } from "lucide-react";
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaCaballeroAsset from "@/assets/crema-caballero.png.asset.json";
+import cremaRchAzul from "@/assets/crema-rch-etiqueta-azul.jpeg.asset.json";
+import jabonNeem from "@/assets/jabon-neem-melipona.jpeg.asset.json";
+import shampooMiel from "@/assets/shampoo-miel-romero-canela.jpg.asset.json";
 import gotero50ml from "@/assets/gotero-50ml-original.png";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
@@ -95,7 +98,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "jabon-avena": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/cjXqhYGENXHnNSSq.png",
   "jabon-tepezcohuite-melipona": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/yHdJgNQqEyJbjCzN.png",
   "jabon-miel-melipona-madera": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/tdPQCvHhwktiTsvU.png",
-  "jabon-neem-coco": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/tHPfKyyWZZqrrwZs.png",
+  "jabon-neem-coco": jabonNeem.url,
   "jabon-curcuma-coco-melipona": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/nrlTawmSqzKJDjpK.png",
   "jabon-fresa-champagne": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/IbraseDUEzHLDVvZ.png",
   "jabon-sabila-menta": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/iaVAwyMqheEVuhrG.png",
@@ -108,7 +111,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "elixir-miel-melipona-cacao": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/eAfHqBTggGtYVuny.png",
   "multivitaminico-polen-propoleo-miel": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/CgeGQYnmuiRTHmeR.png",
   "propoleo-eucalipto": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/ECzpgLjrKCNVKmfR.png",
-  "shampoo-mascarilla-miel-romero-canela": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/LiPgbsxrjpooUXfa.png",
+  "shampoo-mascarilla-miel-romero-canela": shampooMiel.url,
   "repelente-crema": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FCcSMVSoBoukJMSV.png",
   "repelente-liquido-hidroalcoholico": repelenteLiquido,
 };
@@ -676,7 +679,7 @@ function Index() {
                      width={800}
                      height={600}
                      loading="lazy"
-                     className={`aspect-[4/3] w-full border-b border-border ${p.id === "repelente-liquido-hidroalcoholico" ? "bg-card object-contain" : "object-cover"}`}
+                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
                    />
                    <div className="flex flex-1 flex-col p-6">
                      <div className="flex items-center justify-between gap-3">
@@ -1020,11 +1023,11 @@ function Index() {
           {detalle && (
             <>
                <img
-                 src={detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml" ? gotero50ml : imagenProducto(detalle)}
+                 src={detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml" ? gotero50ml : detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador" ? cremaRchAzul.url : imagenProducto(detalle)}
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${detalle.id === "repelente-liquido-hidroalcoholico" || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
                />
               <DialogHeader>
                 <div className="flex items-center gap-3">
@@ -1077,14 +1080,15 @@ function Index() {
                     {detalle.variantes.map((v) => (
                       <tr key={v.tamano} className="border-t border-border/60">
                         <td className="py-2 font-display text-lg">
-                          {detalle.id === "miel-abejas-meliponas" ? (
+                           {detalle.id === "miel-abejas-meliponas" || (detalle.id === "crema-rch" && v.tamano === "50 g · con dispensador") ? (
                             <button
                               type="button"
                               onClick={() => setPresentacionSeleccionada(v.tamano)}
                               aria-pressed={presentacionSeleccionada === v.tamano}
                               className="inline-flex items-center gap-2 text-left underline-offset-4 hover:underline aria-pressed:underline"
                             >
-                              {v.tamano === "50 ml" && <img src={gotero50ml} alt="" width={36} height={36} className="h-9 w-9 shrink-0 object-contain" />}
+                               {detalle.id === "miel-abejas-meliponas" && v.tamano === "50 ml" && <img src={gotero50ml} alt="" width={36} height={36} className="h-9 w-9 shrink-0 object-contain" />}
+                               {detalle.id === "crema-rch" && <img src={cremaRchAzul.url} alt="" width={36} height={36} className="h-9 w-9 shrink-0 object-contain" />}
                               {v.tamano}
                             </button>
                           ) : v.tamano}
