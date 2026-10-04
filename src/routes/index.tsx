@@ -39,6 +39,7 @@ import albumHechoEnQr from "@/assets/album/hecho-en-quintana-roo.jpg.asset.json"
 import albumEventoStand1 from "@/assets/album/evento-stand-1.jpg.asset.json";
 import albumEventoStand2 from "@/assets/album/evento-stand-2.jpg.asset.json";
 import logo from "@/assets/xuumiel-logo-3x-transparent-shadow.png";
+import logoHechoQr from "@/assets/logo-hecho-en-quintana-roo.jpeg.asset.json";
 import logoXuujaab from "@/assets/xuujaab-logo.jpeg";
 import culturaImg from "@/assets/ruta/cultura.jpg";
 import educacionImg from "@/assets/ruta/educacion.jpg";
@@ -241,12 +242,19 @@ function Index() {
 
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-3 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex items-center">
+          <div className="flex shrink-0 items-center gap-4">
             <img
               src={logo}
               alt={copy.alt.xuumielLogo}
               width={120}
               height={164}
+              className="h-24 w-auto object-contain"
+            />
+            <img
+              src={logoHechoQr.url}
+              alt="Hecho en Quintana Roo"
+              width={554}
+              height={554}
               className="h-24 w-auto object-contain"
             />
           </div>
@@ -946,13 +954,21 @@ function Index() {
       <footer className="border-t border-border">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div>
+            <div className="flex items-center gap-4">
               <img
                 src={logo}
                 alt=""
                 aria-hidden="true"
                 width={120}
                 height={164}
+                loading="lazy"
+                className="h-24 w-auto object-contain"
+              />
+              <img
+                src={logoHechoQr.url}
+                alt="Hecho en Quintana Roo"
+                width={554}
+                height={554}
                 loading="lazy"
                 className="h-24 w-auto object-contain"
               />
