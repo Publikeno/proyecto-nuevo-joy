@@ -52,7 +52,7 @@ export const textos = {
     historyP2:
       "Es una historia que se sigue escribiendo día con día, en el taller y en el meliponario.",
     projectsLabel: "05 · Proyectos",
-    projectsTitle: "Lo que estamos construyendo",
+    projectsTitle: "Acciones de consciencia",
     projects: [
       {
         title: "Elaboración artesanal",
