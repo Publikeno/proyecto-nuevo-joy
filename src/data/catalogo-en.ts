@@ -85,12 +85,13 @@ const traducciones: Record<string, TraduccionProducto> = {
   },
   "kit-cartera": {
     nombre: "Purse kit",
-    ingrediente: "Travel selection",
-    ingredientes: ["Pocket honey"],
+    ingrediente: "20 g traveler soaps (tepezcohuite and coconut)",
+    ingredientes: ["Tepezcohuite traveler soap 20 g", "Coconut traveler soap 20 g", "Pocket honey"],
     descripcion: "" ,
     destaca: "" ,
     componentes: [
-      "Tepezcohuite soap with melipona bee honey, 100 g",
+      "Tepezcohuite traveler soap, 20 g",
+      "Coconut traveler soap, 20 g",
       "Handmade natural jute purse",
       "Pocket honey in a 5 ml dropper",
     ],
