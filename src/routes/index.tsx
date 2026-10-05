@@ -31,6 +31,7 @@ import jabonSabilaMentaActual from "@/assets/jabon-sabila-menta-80g-actual.jpeg.
 import jabonTepezcohuiteActual from "@/assets/jabon-tepezcohuite-100g-actual.jpeg.asset.json";
 import shampooMiel from "@/assets/shampoo-miel-romero-canela-actual.jpeg.asset.json";
 import gotero50ml from "@/assets/gotero-50ml-original.png";
+import jabonAzul from "@/assets/jabon-azul-sin-fondo.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
 import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
@@ -102,7 +103,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "jabon-arroz-coco": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FVjiYoRnRUOswewl.png",
   "jabon-avena": jabonAvenaActual.url,
   "jabon-tepezcohuite-melipona": jabonTepezcohuiteActual.url,
-  "jabon-miel-melipona-madera": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/tdPQCvHhwktiTsvU.png",
+  "jabon-miel-melipona-madera": jabonAzul.url,
   "jabon-neem-coco": jabonNeem.url,
   "jabon-curcuma-coco-melipona": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/nrlTawmSqzKJDjpK.png",
   "jabon-fresa-champagne": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/IbraseDUEzHLDVvZ.png",
@@ -691,7 +692,7 @@ function Index() {
                      width={800}
                      height={600}
                      loading="lazy"
-                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
+                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "jabon-miel-melipona-madera"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
                    />
                    <div className="flex flex-1 flex-col p-6">
                      <div className="flex items-center justify-between gap-3">
@@ -1056,7 +1057,7 @@ function Index() {
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "jabon-miel-melipona-madera"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
                />
               <DialogHeader>
                 <div className="flex items-center gap-3">
