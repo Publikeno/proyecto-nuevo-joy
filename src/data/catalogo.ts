@@ -274,6 +274,18 @@ export const productos: Producto[] = [
     variantes: [{ tamano: "200 g · envase de cristal oscuro", precio: 150 }],
   },
   {
+    id: "cacao-puro-en-polvo",
+    nombre: "Cacao puro en polvo",
+    categoria: "Mieles y elixires",
+    marca: "XUUMIEL",
+    ingrediente: "Cacao puro en polvo",
+    ingredientes: ["Cacao puro"],
+    descripcion: "",
+    ritual: "No especificado en la ficha del catálogo.",
+    destaca: "",
+    variantes: [{ tamano: "100 g", precio: 30 }],
+  },
+  {
     id: "propoleo-eucalipto",
     nombre: "Propóleo con eucalipto",
     categoria: "Mieles y elixires",
