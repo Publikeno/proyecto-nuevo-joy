@@ -11,3 +11,4 @@
 
 - Keep product presentation imagery selected in the catalog detail dialog rather than replacing the shared product photo; one product may have several package sizes and only the matching presentation should show its specific bottle.
 - The public custom domain is served by GitHub Pages via `.github/workflows/deploy-pages.yml`; it copies Lovable-hosted `*.asset.json` files into the static build with `scripts/copy-lovable-assets.mjs`, because `/__l5e/` asset URLs only resolve on Lovable hosting.
+- `public/sw.js` is a kill-switch that unregisters the legacy site's service worker and clears its caches; keep it so returning visitors stop seeing the old cached site.
