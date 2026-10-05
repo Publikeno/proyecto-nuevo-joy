@@ -237,7 +237,6 @@ export const productos: Producto[] = [
     destaca:
       "" ,
     variantes: [
-      { tamano: "5 ml", precio: 60 },
       { tamano: "10 ml", precio: 130 },
       { tamano: "15 ml", precio: 180 },
       { tamano: "20 ml", precio: 230 },
