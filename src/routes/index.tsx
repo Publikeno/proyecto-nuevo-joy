@@ -32,6 +32,7 @@ import jabonTepezcohuiteActual from "@/assets/jabon-tepezcohuite-100g-actual.jpe
 import shampooMiel from "@/assets/shampoo-miel-romero-canela-actual.jpeg.asset.json";
 import gotero50ml from "@/assets/gotero-50ml-original.png";
 import jabonAzul from "@/assets/jabon-azul-sin-fondo.png.asset.json";
+import kitCarteraYute from "@/assets/kit-cartera-yute.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
 import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
@@ -108,7 +109,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "jabon-curcuma-coco-melipona": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/nrlTawmSqzKJDjpK.png",
   "jabon-fresa-champagne": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/IbraseDUEzHLDVvZ.png",
   "jabon-sabila-menta": jabonSabilaMentaActual.url,
-  "kit-cartera": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/oQoFOOhWJEQeUlvP.png",
+  "kit-cartera": kitCarteraYute.url,
   "kit-flor": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/unzopUKhjvxvgdNU.png",
   "crema-rch": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/XgBmlNTBkuUxDfPC.png",
   "crema-rch-caballero": cremaCaballeroAsset.url,
