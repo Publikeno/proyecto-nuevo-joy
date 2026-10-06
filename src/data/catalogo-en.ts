@@ -97,18 +97,18 @@ const traducciones: Record<string, TraduccionProducto> = {
     ],
     variantes: [{ tamano: "Purse kit", precio: 210 }],
   },
-  "kit-flor": {
+"kit-flor": {
     nombre: "Flower kit",
-    ingrediente: "Aloe vera, mint and pocket honey",
-    ingredientes: ["Aloe vera", "Mint", "Pocket honey"],
-    descripcion: "" ,
+    ingrediente: "Engraved cedar wood box with soap and Melipona Beecheii honey",
+    ingredientes: ["Engraved cedar wood box", "Handmade soap", "Melipona Beecheii honey"],
+    descripcion: "Engraved cedar wood box with a handmade soap and a 10 ml dropper bottle of Melipona honey.",
     destaca: "" ,
     componentes: [
-      "Aloe vera soap, 80 g",
-      "Pocket honey in a 5 ml dropper",
-      "Cotton fabric wrapping",
+      "Engraved cedar wood box",
+      "Handmade soap",
+      "10 ml dropper bottle of Melipona honey",
     ],
-    variantes: [{ tamano: "Flower kit", precio: 90 }],
+    variantes: [{ tamano: "Flower kit", precio: 320 }],
   },
   "crema-rch": {
     nombre: "RCH regenerating cellular moisturizing cream for face and neck",
