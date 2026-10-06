@@ -173,15 +173,6 @@ const traducciones: Record<string, TraduccionProducto> = {
     destaca:
       "" ,
   },
-  "cacao-puro-en-polvo": {
-    nombre: "Pure cacao powder",
-    ingrediente: "Pure cacao powder",
-    ingredientes: ["Pure cacao"],
-    descripcion: "" ,
-    variantes: [{ tamano: "100 g", precio: 30 }],
-    destaca:
-      "" ,
-  },
   "propoleo-eucalipto": {
     nombre: "Propolis with eucalyptus",
     ingrediente: "Propolis with eucalyptus",
