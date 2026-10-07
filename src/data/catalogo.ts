@@ -254,7 +254,7 @@ export const productos: Producto[] = [
     nombre: "Elixir de miel de abejas meliponas",
     categoria: "Mieles y elixires",
     marca: "XUUMIEL",
-    ingrediente: "Miel de abejas meliponas y cacao puro",
+    ingrediente: "Miel de abejas meliponas",
     ingredientes: ["Miel de abejas meliponas", "Cacao puro 100% desgrasado y sin azúcar"],
     descripcion: "La gran cantidad de antioxidantes y polifenoles, sumadoEl cacao puro (100% desgrasado, sin azúcar) es un superalimento rico en antioxidantes (flavonoides), minerales como magnesio, hierro y zinc, y compuestos estimulantes como la teobromina. Mejora la salud cardiovascular al aumentar la elasticidad vascular, reduce la inflamación, mejora el estado de ánimo y aporta energía sostenida",
     ritual: "No especificado en la ficha del catálogo.",
