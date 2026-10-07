@@ -133,7 +133,7 @@ const GALLERY_PHOTOS = [
   ["IMG_8111", "Jabón azul", "Jabones", "iaVAwyMqheEVuhrG.png", "Fórmula por identificar"],
   ["IMG_8115", "Jabón de lavanda y miel", "Jabones", "JqqJWmQbuLLeDbPG.png", "Producto nuevo"],
   ["IMG_8116", "Kit caja flor", "Kits", "unzopUKhjvxvgdNU.png", "Contenido por confirmar"],
-  ["IMG_8134", "Elixir de miel y cacao", "Mieles y elixires", "eAfHqBTggGtYVuny.png", "Producto identificado"],
+  ["IMG_8134", "Elixir de miel", "Mieles y elixires", "eAfHqBTggGtYVuny.png", "Producto identificado"],
   ["IMG_8136", "Repelente de neem", "Cuidado personal", "FCcSMVSoBoukJMSV.png", "Producto nuevo"],
   ["IMG_8139", "Crema RCH · vista lateral", "Cremas", "lVStLKQNIEkBTXKZ.png", "Vista complementaria"],
   ["IMG_8141", "Crema regeneradora RCH", "Cremas", "XgBmlNTBkuUxDfPC.png", "Producto identificado"],
