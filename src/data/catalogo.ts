@@ -251,7 +251,7 @@ export const productos: Producto[] = [
   },
   {
     id: "elixir-miel-melipona-cacao",
-    nombre: "Elixir de miel de abejas meliponas y cacao",
+    nombre: "Elixir de miel de abejas meliponas",
     categoria: "Mieles y elixires",
     marca: "XUUMIEL",
     ingrediente: "Miel de abejas meliponas y cacao puro",
