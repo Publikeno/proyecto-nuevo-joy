@@ -158,7 +158,7 @@ const traducciones: Record<string, TraduccionProducto> = {
   },
   "elixir-miel-melipona-cacao": {
     nombre: "Melipona bee honey elixir",
-    ingrediente: "Melipona bee honey and pure cacao",
+    ingrediente: "Melipona bee honey",
     ingredientes: ["Melipona bee honey", "100% defatted, sugar-free pure cacao"],
     descripcion: "" ,
     destaca:
