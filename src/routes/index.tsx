@@ -34,6 +34,7 @@ import gotero50ml from "@/assets/gotero-50ml-original.png";
 import jabonAzul from "@/assets/jabon-azul-sin-fondo.png.asset.json";
 import kitCarteraYute from "@/assets/kit-cartera-yute.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
+import frascosXuumiel from "@/assets/frascos-xuumiel.jpg.asset.json";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
 import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
 import albumLeonaVicario from "@/assets/album/tienda-leona-vicario.jpg.asset.json";
