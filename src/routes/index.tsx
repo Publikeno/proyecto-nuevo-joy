@@ -313,6 +313,13 @@ function Index() {
                 <span aria-hidden="true"> EN</span>
               </button>
             </div>
+            <img
+              src={logoHechoQr.url}
+              alt="Hecho en Quintana Roo"
+              width={554}
+              height={554}
+              className="hidden h-16 w-auto shrink-0 object-contain lg:block"
+            />
           </div>
         </div>
       </header>
