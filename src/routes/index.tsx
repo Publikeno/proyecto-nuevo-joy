@@ -253,13 +253,6 @@ function Index() {
               height={164}
               className="h-24 w-auto object-contain"
             />
-            <img
-              src={logoHechoQr.url}
-              alt="Hecho en Quintana Roo"
-              width={554}
-              height={554}
-              className="h-16 w-auto object-contain"
-            />
           </div>
           <div className="flex items-center gap-3">
             <nav aria-label={copy.navAria} className="-mx-1 overflow-x-auto">
@@ -313,6 +306,13 @@ function Index() {
               </button>
             </div>
           </div>
+          <img
+            src={logoHechoQr.url}
+            alt="Hecho en Quintana Roo"
+            width={554}
+            height={554}
+            className="h-[3.25rem] w-auto shrink-0 object-contain"
+          />
         </div>
       </header>
 

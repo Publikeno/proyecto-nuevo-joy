@@ -14,7 +14,7 @@ export const textos = {
       cultura: "Cultura",
       educacion: "Educación ambiental",
       historia: "Historia",
-      proyectos: "Proyectos",
+      proyectos: "Acciones de consciencia",
       meliponario: "Meliponario",
       tienda: "Compra en línea",
       contacto: "Contacto",
@@ -51,7 +51,7 @@ export const textos = {
       "La historia de esta ruta la sostienen mujeres artesanas de Leona Vicario. Su trabajo mantiene viva la continuidad del saber de la miel: aprender del monte, cuidar la colmena y transformar lo cosechado con las manos.",
     historyP2:
       "Es una historia que se sigue escribiendo día con día, en el taller y en el meliponario.",
-    projectsLabel: "05 · Proyectos",
+    projectsLabel: "05 · Acciones de consciencia",
     projectsTitle: "Acciones de consciencia",
     projects: [
       {
@@ -173,7 +173,7 @@ export const textos = {
       cultura: "Culture",
       educacion: "Environmental education",
       historia: "History",
-      proyectos: "Projects",
+      proyectos: "Conscious actions",
       meliponario: "Meliponary",
       tienda: "Shop online",
       contacto: "Contact",
@@ -208,8 +208,8 @@ export const textos = {
     historyP1:
       "The story of this route is sustained by women artisans from Leona Vicario. Their work keeps the knowledge of honey alive: learning from the forest, caring for the hive and transforming the harvest by hand.",
     historyP2: "It is a story still being written day by day, in the workshop and the meliponary.",
-    projectsLabel: "05 · Projects",
-    projectsTitle: "What we are building",
+    projectsLabel: "05 · Conscious actions",
+    projectsTitle: "Conscious actions",
     projects: [
       {
         title: "Handcrafted production",

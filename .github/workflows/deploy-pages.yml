@@ -26,16 +26,16 @@ jobs:
       - run: bun install
       - run: bun run build
       - name: Copiar fotos y videos al sitio
-        run: node scripts/copy-lovable-assets.mjs dist/client
+        run: node scripts/copy-lovable-assets.mjs .output/public
       - name: Dominio y página 404
         run: |
-          echo "xuumiel.com" > dist/client/CNAME
-          touch dist/client/.nojekyll
-          cp dist/client/index.html dist/client/404.html
+          echo "xuumiel.com" > .output/public/CNAME
+          touch .output/public/.nojekyll
+          cp .output/public/index.html .output/public/404.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: .output/public
 
   deploy:
     needs: build
