@@ -262,8 +262,8 @@ function Index() {
               className="h-16 w-auto object-contain lg:hidden"
             />
           </div>
-          <div className="flex items-center gap-3">
-            <nav aria-label={copy.navAria} className="-mx-1 overflow-x-auto">
+          <div className="flex min-w-0 items-center gap-3">
+            <nav aria-label={copy.navAria} className="-mx-1 min-w-0 overflow-x-auto">
               <ul className="flex gap-1 whitespace-nowrap text-sm">
                 {NAV.map((n) => (
                   <li key={n.href}>
