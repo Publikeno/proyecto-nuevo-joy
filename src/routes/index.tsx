@@ -246,7 +246,7 @@ function Index() {
 
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-3 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex shrink-0 items-center gap-4">
+          <div className="flex shrink-0 items-center justify-between gap-4 lg:justify-start">
             <img
               src={logo}
               alt={copy.alt.xuumielLogo}
@@ -259,11 +259,11 @@ function Index() {
               alt="Hecho en Quintana Roo"
               width={554}
               height={554}
-              className="h-16 w-auto object-contain"
+              className="h-16 w-auto object-contain lg:hidden"
             />
           </div>
-          <div className="flex items-center gap-3">
-            <nav aria-label={copy.navAria} className="-mx-1 overflow-x-auto">
+          <div className="flex min-w-0 items-center gap-3">
+            <nav aria-label={copy.navAria} className="-mx-1 min-w-0 overflow-x-auto">
               <ul className="flex gap-1 whitespace-nowrap text-sm">
                 {NAV.map((n) => (
                   <li key={n.href}>
@@ -313,6 +313,13 @@ function Index() {
                 <span aria-hidden="true"> EN</span>
               </button>
             </div>
+            <img
+              src={logoHechoQr.url}
+              alt="Hecho en Quintana Roo"
+              width={554}
+              height={554}
+              className="hidden h-16 w-auto shrink-0 object-contain lg:block"
+            />
           </div>
         </div>
       </header>
