@@ -311,7 +311,7 @@ function Index() {
             alt="Hecho en Quintana Roo"
             width={554}
             height={554}
-            className="h-[3.25rem] w-auto shrink-0 object-contain"
+            className="h-[2.6rem] w-auto shrink-0 object-contain"
           />
         </div>
       </header>
