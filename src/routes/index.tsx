@@ -259,7 +259,7 @@ function Index() {
               alt="Hecho en Quintana Roo"
               width={554}
               height={554}
-              className="h-16 w-auto object-contain lg:hidden"
+              className="h-[3.6rem] w-auto object-contain lg:hidden"
             />
           </div>
           <div className="flex min-w-0 items-center gap-3">
@@ -318,7 +318,7 @@ function Index() {
               alt="Hecho en Quintana Roo"
               width={554}
               height={554}
-              className="hidden h-16 w-auto shrink-0 object-contain lg:block"
+              className="hidden h-[3.6rem] w-auto shrink-0 object-contain lg:block"
             />
           </div>
         </div>
@@ -989,7 +989,7 @@ function Index() {
                 width={554}
                 height={554}
                 loading="lazy"
-                className="h-16 w-auto object-contain"
+                className="h-[3.6rem] w-auto object-contain"
               />
             </div>
             <p className="mt-4 text-sm text-muted-foreground">{copy.footerLine}</p>
