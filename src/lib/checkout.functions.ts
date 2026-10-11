@@ -17,7 +17,7 @@ function precioCatalogo(id: string, tamano: string) {
 }
 
 export const crearPagoCarrito = createServerFn({ method: "POST" })
-  .inputValidator((data: { lineas: Linea[]; returnUrl: string; environment: "sandbox" | "live" }) => {
+  .inputValidator((data: { lineas: Linea[]; envio: boolean; returnUrl: string; environment: "sandbox" | "live" }) => {
     if (!Array.isArray(data.lineas) || data.lineas.length === 0 || data.lineas.length > 50) {
       throw new Error("Carrito vacío o inválido");
     }
@@ -25,6 +25,7 @@ export const crearPagoCarrito = createServerFn({ method: "POST" })
       if (typeof l.id !== "string" || typeof l.tamano !== "string") throw new Error("Producto inválido");
       if (!Number.isInteger(l.cantidad) || l.cantidad < 1 || l.cantidad > 99) throw new Error("Cantidad inválida");
     }
+    if (typeof data.envio !== "boolean") throw new Error("Envío inválido");
     if (data.environment !== "sandbox" && data.environment !== "live") throw new Error("Entorno inválido");
     return data;
   })
@@ -36,33 +37,36 @@ export const crearPagoCarrito = createServerFn({ method: "POST" })
         if (!info) throw new Error(`Producto no encontrado: ${l.id} ${l.tamano}`);
         return { ...info, tamano: l.tamano, cantidad: l.cantidad };
       });
-      const { subtotal, total } = calcularTotales(items);
+      const { subtotal, total } = calcularTotales(items, data.envio);
       const stripe = createStripeClient(data.environment);
 
-      const envio = await stripe.prices.list({ lookup_keys: ["envio_nacional_150"] });
-      if (!envio.data.length) throw new Error("Precio de envío no encontrado");
+      const lineItems: Parameters<ReturnType<typeof createStripeClient>["checkout"]["sessions"]["create"]>[0]["line_items"] =
+        items.map((i) => ({
+          price_data: {
+            currency: "mxn",
+            product_data: { name: `${i.nombre} · ${i.tamano}`, tax_code: "txcd_99999999" },
+            unit_amount: i.precio * 100,
+            tax_behavior: "inclusive" as const,
+          },
+          quantity: i.cantidad,
+        }));
+
+      if (data.envio) {
+        const envio = await stripe.prices.list({ lookup_keys: ["envio_nacional_150"] });
+        if (!envio.data.length) throw new Error("Precio de envío no encontrado");
+        lineItems.push({ price: envio.data[0]!.id, quantity: 1 });
+      }
 
       const session = await stripe.checkout.sessions.create({
         mode: "payment",
         ui_mode: "embedded_page",
         return_url: data.returnUrl,
         locale: "es-419",
-        line_items: [
-          ...items.map((i) => ({
-            price_data: {
-              currency: "mxn",
-              product_data: { name: `${i.nombre} · ${i.tamano}`, tax_code: "txcd_99999999" },
-              unit_amount: i.precio * 100,
-              tax_behavior: "inclusive" as const,
-            },
-            quantity: i.cantidad,
-          })),
-          { price: envio.data[0]!.id, quantity: 1 },
-        ],
-        shipping_address_collection: { allowed_countries: ["MX"] },
+        line_items: lineItems,
+        ...(data.envio && { shipping_address_collection: { allowed_countries: ["MX"] } }),
         phone_number_collection: { enabled: true },
         payment_intent_data: { description: `Pedido XUUMIEL (${items.length} productos)` },
-        metadata: { subtotal: String(subtotal), envio: String(ENVIO_NACIONAL_MXN), total: String(total) },
+        metadata: { subtotal: String(subtotal), envio: String(data.envio ? ENVIO_NACIONAL_MXN : 0), total: String(total) },
       });
       return { clientSecret: session.client_secret ?? "" };
     } catch (error) {
