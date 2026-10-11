@@ -40,16 +40,25 @@ export const crearPagoCarrito = createServerFn({ method: "POST" })
       const { subtotal, total } = calcularTotales(items, data.envio);
       const stripe = createStripeClient(data.environment);
 
-      const lineItems: Parameters<ReturnType<typeof createStripeClient>["checkout"]["sessions"]["create"]>[0]["line_items"] =
-        items.map((i) => ({
-          price_data: {
-            currency: "mxn",
-            product_data: { name: `${i.nombre} · ${i.tamano}`, tax_code: "txcd_99999999" },
-            unit_amount: i.precio * 100,
-            tax_behavior: "inclusive" as const,
-          },
-          quantity: i.cantidad,
-        }));
+      type ItemPrecio = {
+        price_data: {
+          currency: "mxn";
+          product_data: { name: string; tax_code: string };
+          unit_amount: number;
+          tax_behavior: "inclusive";
+        };
+        quantity: number;
+      };
+      type ItemEnvio = { price: string; quantity: number };
+      const lineItems: Array<ItemPrecio | ItemEnvio> = items.map((i) => ({
+        price_data: {
+          currency: "mxn",
+          product_data: { name: `${i.nombre} · ${i.tamano}`, tax_code: "txcd_99999999" },
+          unit_amount: i.precio * 100,
+          tax_behavior: "inclusive" as const,
+        },
+        quantity: i.cantidad,
+      }));
 
       if (data.envio) {
         const envio = await stripe.prices.list({ lookup_keys: ["envio_nacional_150"] });
