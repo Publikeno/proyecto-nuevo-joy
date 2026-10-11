@@ -71,7 +71,7 @@ export function PanelCarrito({
   const fetchClientSecret = async () => {
     const lineas = items.map((i) => {
       const [id, ...resto] = i.key.split("::");
-      return { id, tamano: resto.join("::") || i.tamano, cantidad: i.cantidad };
+      return { id: id ?? "", tamano: resto.join("::") || i.tamano, cantidad: i.cantidad };
     });
     const r = await crearPagoCarrito({
       data: {

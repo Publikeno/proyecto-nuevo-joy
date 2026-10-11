@@ -57,7 +57,7 @@ export const crearPagoCarrito = createServerFn({ method: "POST" })
             },
             quantity: i.cantidad,
           })),
-          { price: envio.data[0].id, quantity: 1 },
+          { price: envio.data[0]!.id, quantity: 1 },
         ],
         shipping_address_collection: { allowed_countries: ["MX"] },
         phone_number_collection: { enabled: true },
