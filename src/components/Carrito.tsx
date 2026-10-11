@@ -1,4 +1,9 @@
-import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
+import { EmbeddedCheckout, EmbeddedCheckoutProvider } from "@stripe/react-stripe-js";
+import { getStripe, getStripeEnvironment } from "@/lib/stripe";
+import { crearPagoCarrito } from "@/lib/checkout.functions";
+import { ENVIO_NACIONAL_MXN, calcularTotales } from "@/lib/pedido";
 import {
   Sheet,
   SheetContent,
@@ -7,7 +12,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 
-export const ENVIO_FIJO = 150;
+export const ENVIO_FIJO = ENVIO_NACIONAL_MXN;
 
 export type ItemCarrito = {
   key: string;
@@ -59,12 +64,31 @@ export function PanelCarrito({
   onQuitar: (key: string) => void;
   en: boolean;
 }) {
-  const subtotal = items.reduce((s, i) => s + i.precio * i.cantidad, 0);
-  const envio = items.length > 0 ? ENVIO_FIJO : 0;
-  const total = subtotal + envio;
+  const { subtotal, envio, total } = calcularTotales(items);
+  const [pagando, setPagando] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchClientSecret = async () => {
+    const lineas = items.map((i) => {
+      const [id, ...resto] = i.key.split("::");
+      return { id: id ?? "", tamano: resto.join("::") || i.tamano, cantidad: i.cantidad };
+    });
+    const r = await crearPagoCarrito({
+      data: {
+        lineas,
+        returnUrl: `${window.location.origin}/pago-completado?session_id={CHECKOUT_SESSION_ID}`,
+        environment: getStripeEnvironment(),
+      },
+    });
+    if ("error" in r) {
+      setError(r.error);
+      throw new Error(r.error);
+    }
+    return r.clientSecret;
+  };
 
   return (
-    <Sheet open={open} onOpenChange={onOpenChange}>
+    <Sheet open={open} onOpenChange={(o) => { if (!o) setPagando(false); onOpenChange(o); }}>
       <SheetContent className="flex w-full flex-col bg-card sm:max-w-md">
         <SheetHeader>
           <SheetTitle className="font-display text-2xl">{en ? "Your cart" : "Tu carrito"}</SheetTitle>
@@ -73,7 +97,18 @@ export function PanelCarrito({
           </SheetDescription>
         </SheetHeader>
 
-        {items.length === 0 ? (
+        {pagando ? (
+          <div className="mt-2 flex-1 overflow-y-auto">
+            <button type="button" onClick={() => setPagando(false)} className="mb-3 flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
+              <ArrowLeft className="h-4 w-4" /> {en ? "Back to cart" : "Volver al carrito"}
+            </button>
+            <p className="mb-3 text-sm">{en ? "Total to pay" : "Total a pagar"}: <strong>{fmt(total, en)}</strong></p>
+            {error && <p className="mb-3 text-sm text-terracotta">{error}</p>}
+            <EmbeddedCheckoutProvider stripe={getStripe()} options={{ fetchClientSecret }}>
+              <EmbeddedCheckout />
+            </EmbeddedCheckoutProvider>
+          </div>
+        ) : items.length === 0 ? (
           <p className="mt-10 text-center text-sm text-muted-foreground">
             {en ? "Your cart is empty." : "Tu carrito está vacío."}
           </p>
@@ -119,17 +154,17 @@ export function PanelCarrito({
           </ul>
         )}
 
-        {items.length > 0 && (
+        {!pagando && items.length > 0 && (
           <div className="mt-4 space-y-2 border-t border-border pt-4 text-sm">
             <div className="flex justify-between"><span>Subtotal</span><span>{fmt(subtotal, en)}</span></div>
             <div className="flex justify-between"><span>{en ? "Shipping" : "Envío"}</span><span>{fmt(envio, en)}</span></div>
             <div className="flex justify-between font-display text-xl"><span>Total</span><span>{fmt(total, en)}</span></div>
             <button
               type="button"
-              disabled
-              className="mt-3 w-full cursor-not-allowed rounded-sm bg-honey px-6 py-3 text-sm font-medium text-cacao opacity-60"
+              onClick={() => { setError(null); setPagando(true); }}
+              className="mt-3 w-full rounded-sm bg-honey px-6 py-3 text-sm font-medium text-cacao hover:opacity-90"
             >
-              {en ? "Pay with Mercado Pago (coming soon)" : "Pagar con Mercado Pago (próximamente)"}
+              {en ? `Pay ${fmt(total, en)} with card` : `Pagar ${fmt(total, en)} con tarjeta`}
             </button>
           </div>
         )}
