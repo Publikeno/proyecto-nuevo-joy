@@ -64,7 +64,8 @@ export function PanelCarrito({
   onQuitar: (key: string) => void;
   en: boolean;
 }) {
-  const { subtotal, envio, total } = calcularTotales(items);
+  const [conEnvio, setConEnvio] = useState(true);
+  const { subtotal, envio, total } = calcularTotales(items, conEnvio);
   const [pagando, setPagando] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -76,6 +77,7 @@ export function PanelCarrito({
     const r = await crearPagoCarrito({
       data: {
         lineas,
+        envio: conEnvio,
         returnUrl: `${window.location.origin}/pago-completado?session_id={CHECKOUT_SESSION_ID}`,
         environment: getStripeEnvironment(),
       },
@@ -93,7 +95,7 @@ export function PanelCarrito({
         <SheetHeader>
           <SheetTitle className="font-display text-2xl">{en ? "Your cart" : "Tu carrito"}</SheetTitle>
           <SheetDescription>
-            {en ? "Fixed national shipping: $150 MXN." : "Envío fijo nacional: $150 MXN."}
+            {en ? "Shipping is optional: $150 MXN nationwide, or choose pickup." : "El envío es opcional: $150 MXN a toda la República, o recojo en tienda."}
           </SheetDescription>
         </SheetHeader>
 
@@ -157,7 +159,23 @@ export function PanelCarrito({
         {!pagando && items.length > 0 && (
           <div className="mt-4 space-y-2 border-t border-border pt-4 text-sm">
             <div className="flex justify-between"><span>Subtotal</span><span>{fmt(subtotal, en)}</span></div>
-            <div className="flex justify-between"><span>{en ? "Shipping" : "Envío"}</span><span>{fmt(envio, en)}</span></div>
+            <label className="flex cursor-pointer items-center justify-between gap-2">
+              <span className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={conEnvio}
+                  onChange={(e) => setConEnvio(e.target.checked)}
+                  className="h-4 w-4 accent-honey"
+                />
+                <span>
+                  {en ? "Shipping nationwide" : "Envío a toda la República"}
+                  <span className="block text-xs text-muted-foreground">
+                    {en ? "Uncheck for pickup" : "Desmarca si recojes en tienda"}
+                  </span>
+                </span>
+              </span>
+              <span>{envio > 0 ? fmt(envio, en) : en ? "Free" : "Gratis"}</span>
+            </label>
             <div className="flex justify-between font-display text-xl"><span>Total</span><span>{fmt(total, en)}</span></div>
             <button
               type="button"
