@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
+import { confirmarPedido } from "@/lib/pedido-emails.functions";
+import { getStripeEnvironment } from "@/lib/stripe";
 
 export const Route = createFileRoute("/pago-completado")({
   head: () => ({
@@ -19,6 +21,14 @@ export const Route = createFileRoute("/pago-completado")({
 function PagoCompletado() {
   useEffect(() => {
     localStorage.removeItem("xuumiel-carrito");
+    const sessionId = new URLSearchParams(window.location.search).get("session_id");
+    if (sessionId) {
+      confirmarPedido({
+        data: { sessionId, environment: getStripeEnvironment() },
+      }).catch(() => {
+        // El correo de confirmación es informativo; no bloquea la página.
+      });
+    }
   }, []);
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-4 bg-background px-6 text-center">
