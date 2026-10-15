@@ -107,7 +107,7 @@ export const productos: Producto[] = [
     ritual: "No especificado en la ficha del catálogo.",
     destaca:
       "" ,
-    variantes: [{ tamano: "90 g", precio: 90 }],
+    variantes: [{ tamano: "90 g", precio: 77 }],
   },
   {
     id: "jabon-fresa-champagne",
