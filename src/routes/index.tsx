@@ -1070,7 +1070,7 @@ function Index() {
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
                />
               <DialogHeader>
                 <div className="flex items-center gap-3">
