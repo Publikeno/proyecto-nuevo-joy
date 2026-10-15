@@ -151,12 +151,14 @@ const GALLERY_PHOTOS = [
   ["IMG_8169", "Hidromiel de la Selva", "Mieles y elixires", "MCntVvPuNkpHMABQ.png", "Producto nuevo"],
   ["IMG_8173", "Miel de abejas meliponas", "Mieles y elixires", "aKOGcxRygmNcGPRQ.png", "Producto identificado"],
   ["abejajabon", "Jabón diseño abeja", "Jabones", "tdPQCvHhwktiTsvU.png", "Producto identificado"],
-  ["curcuma", "Jabón de cúrcuma", "Jabones", "nrlTawmSqzKJDjpK.png", "Producto identificado"],
+  ["curcuma", "Jabón de cúrcuma", "Jabones", jabonCurcumaFoto.url, "Producto identificado"],
   ["jabondemiel", "Jabón de neem y miel", "Jabones", "tHPfKyyWZZqrrwZs.png", "Producto identificado"],
 ] as const;
 
 const galleryImageUrl = (file: string) =>
-  `https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/${file}`;
+  file.startsWith("/")
+    ? file
+    : `https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/${file}`;
 const GALLERY_FILTERS = ["Todas", "Jabones", "Cremas", "Cuidado personal", "Mieles y elixires", "Kits"] as const;
 type GalleryFilter = (typeof GALLERY_FILTERS)[number];
 
