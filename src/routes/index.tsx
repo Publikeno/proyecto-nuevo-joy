@@ -21,7 +21,7 @@ import { HeroRuta } from "@/components/HeroRuta";
 import { FranjaGeo } from "@/components/FranjaGeo";
 import { BotonCarrito, PanelCarrito, type ItemCarrito } from "@/components/Carrito";
 
-import { MessageCircle, Store } from "lucide-react";
+import { ChevronLeft, ChevronRight, Images, MessageCircle, Store } from "lucide-react";
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaCaballeroAsset from "@/assets/crema-caballero.png.asset.json";
 import cremaRchAzul from "@/assets/crema-rch-etiqueta-azul.jpeg.asset.json";
@@ -37,6 +37,7 @@ import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import frascosXuumiel from "@/assets/frascos-xuumiel.jpg.asset.json";
 import multivitaminicoFrasco from "@/assets/multivitaminico-frasco-recortado.png";
 import jabonCurcumaFoto from "@/assets/jabon-curcuma-sin-fondo.png.asset.json";
+import jabonArrozCocoGaleria from "@/assets/jabon-arroz-coco-galeria.png.asset.json";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
 import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
 import albumLeonaVicario from "@/assets/album/tienda-leona-vicario.jpg.asset.json";
@@ -126,6 +127,13 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "repelente-liquido-hidroalcoholico": repelenteLiquido,
 };
 
+const GALERIA_PRODUCTOS: Record<string, { src: string; label: string }[]> = {
+  "jabon-arroz-coco": [
+    { src: PRODUCT_IMAGE_URLS["jabon-arroz-coco"] ?? "", label: "Jabón cúrcuma, coco y miel de abejas meliponas" },
+    { src: jabonArrozCocoGaleria.url, label: "Jabón de arroz, base coco y miel de abejas meliponas" },
+  ],
+};
+
 const GALLERY_PHOTOS = [
   ["IMG_8090", "Jabón cúrcuma, coco y miel de abejas meliponas", "Jabones", "FVjiYoRnRUOswewl.png", "Producto identificado"],
   ["IMG_8092", "Jabón de panal y abeja", "Jabones", "cjXqhYGENXHnNSSq.png", "Diseño recibido"],
@@ -179,6 +187,8 @@ function Index() {
   const [galleryFiltro, setGalleryFiltro] = useState<GalleryFilter>("Todas");
   const [detalle, setDetalle] = useState<Producto | null>(null);
   const [presentacionSeleccionada, setPresentacionSeleccionada] = useState<string | null>(null);
+  const [galeria, setGaleria] = useState<{ titulo: string; fotos: { src: string; label: string }[] } | null>(null);
+  const [galeriaIndice, setGaleriaIndice] = useState(0);
   const [carrito, setCarrito] = useState<ItemCarrito[]>([]);
   const [carritoAbierto, setCarritoAbierto] = useState(false);
   const copy = textos[idioma];
@@ -707,6 +717,7 @@ function Index() {
                   key={p.id}
                    className="flex flex-col overflow-hidden rounded-sm border border-border bg-card"
                 >
+                  <div className="relative">
                    <img
                      src={imagenProducto(p)}
                      alt={p.nombre}
@@ -715,6 +726,24 @@ function Index() {
                      loading="lazy"
                      className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
                    />
+                  {GALERIA_PRODUCTOS[p.id] && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const fotos = GALERIA_PRODUCTOS[p.id];
+                        if (!fotos) return;
+                        setGaleria({ titulo: p.nombre, fotos });
+                        setGaleriaIndice(0);
+                      }}
+                      aria-label={`${idioma === "es" ? "Ver galería de" : "View gallery of"} ${p.nombre}`}
+                      className="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-sm border border-border bg-background/90 px-2.5 py-1.5 text-xs font-medium text-foreground shadow-sm transition-colors hover:bg-primary hover:text-primary-foreground"
+                    >
+                      <Images size={14} />
+                      {idioma === "es" ? "Galería" : "Gallery"}
+                      <ChevronRight size={14} />
+                    </button>
+                  )}
+                  </div>
                    <div className="flex flex-1 flex-col p-6">
                      <div className="flex items-center justify-between gap-3">
                        <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
@@ -1086,6 +1115,7 @@ function Index() {
         <DialogContent className="max-w-lg bg-card">
           {detalle && (
             <>
+              <div className="relative">
                <img
                  src={detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml" ? gotero50ml : detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador" ? cremaRchAzul.url : imagenProducto(detalle)}
                  alt={detalle.nombre}
@@ -1093,6 +1123,24 @@ function Index() {
                  height={540}
                  className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
                />
+              {GALERIA_PRODUCTOS[detalle.id] && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    const fotos = GALERIA_PRODUCTOS[detalle.id];
+                    if (!fotos) return;
+                    setGaleria({ titulo: detalle.nombre, fotos });
+                    setGaleriaIndice(0);
+                  }}
+                  aria-label={`${idioma === "es" ? "Ver galería de" : "View gallery of"} ${detalle.nombre}`}
+                  className="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-sm border border-border bg-background/90 px-2.5 py-1.5 text-xs font-medium text-foreground shadow-sm transition-colors hover:bg-primary hover:text-primary-foreground"
+                >
+                  <Images size={14} />
+                  {idioma === "es" ? "Galería" : "Gallery"}
+                  <ChevronRight size={14} />
+                </button>
+              )}
+              </div>
               <DialogHeader>
                 <div className="flex items-center gap-3">
                   {detalle.marca === "XUUJÁAB" ? (
@@ -1220,6 +1268,72 @@ function Index() {
                   {idioma === "es" ? NOTA_CATALOGO : NOTA_CATALOGO_EN}
                 </p>
               </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={galeria !== null} onOpenChange={(o) => !o && setGaleria(null)}>
+        <DialogContent className="max-w-2xl bg-card">
+          {galeria && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="font-display text-xl">{galeria.titulo}</DialogTitle>
+                <DialogDescription className="text-muted-foreground">
+                  {idioma === "es"
+                    ? `Galería de fotografías de este producto`
+                    : `Photo gallery of this product`}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="relative">
+                <img
+                  src={galeria.fotos[galeriaIndice]?.src}
+                  alt={`${galeria.titulo} · ${galeria.fotos[galeriaIndice]?.label ?? ""}`}
+                  className="aspect-[4/3] w-full rounded-sm border border-border bg-card object-cover"
+                />
+                {galeria.fotos.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => setGaleriaIndice((i) => (i - 1 + galeria.fotos.length) % galeria.fotos.length)}
+                      aria-label={idioma === "es" ? "Fotografía anterior" : "Previous photo"}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 rounded-sm border border-border bg-background/90 p-2 text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                    >
+                      <ChevronLeft size={18} />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setGaleriaIndice((i) => (i + 1) % galeria.fotos.length)}
+                      aria-label={idioma === "es" ? "Fotografía siguiente" : "Next photo"}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 rounded-sm border border-border bg-background/90 p-2 text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+                    >
+                      <ChevronRight size={18} />
+                    </button>
+                  </>
+                )}
+              </div>
+              <div className="flex items-center justify-between gap-3 text-sm text-muted-foreground">
+                <span>
+                  {galeriaIndice + 1} / {galeria.fotos.length}
+                </span>
+                <p className="text-right">{galeria.fotos[galeriaIndice]?.label}</p>
+              </div>
+              {galeria.fotos.length > 1 && (
+                <div className="flex gap-2">
+                  {galeria.fotos.map((f, i) => (
+                    <button
+                      key={f.src}
+                      type="button"
+                      onClick={() => setGaleriaIndice(i)}
+                      aria-label={f.label}
+                      aria-current={i === galeriaIndice}
+                      className={`overflow-hidden rounded-sm border ${i === galeriaIndice ? "border-primary" : "border-border"}`}
+                    >
+                      <img src={f.src} alt="" className="h-14 w-20 object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
             </>
           )}
         </DialogContent>
