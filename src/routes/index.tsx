@@ -36,6 +36,7 @@ import kitCarteraYute from "@/assets/kit-cartera-yute.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import frascosXuumiel from "@/assets/frascos-xuumiel.jpg.asset.json";
 import multivitaminicoFrasco from "@/assets/multivitaminico-frasco-recortado.png";
+import jabonCurcumaFoto from "@/assets/jabon-curcuma-sin-fondo.png.asset.json";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
 import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
 import albumLeonaVicario from "@/assets/album/tienda-leona-vicario.jpg.asset.json";
@@ -108,7 +109,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "jabon-tepezcohuite-melipona": jabonTepezcohuiteActual.url,
   "jabon-miel-melipona-madera": jabonAzul.url,
   "jabon-neem-coco": jabonNeem.url,
-  "jabon-curcuma-coco-melipona": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/nrlTawmSqzKJDjpK.png",
+  "jabon-curcuma-coco-melipona": jabonCurcumaFoto.url,
   "jabon-fresa-champagne": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/IbraseDUEzHLDVvZ.png",
   "jabon-sabila-menta": jabonSabilaMentaActual.url,
   "kit-cartera": kitCarteraYute.url,
@@ -150,12 +151,14 @@ const GALLERY_PHOTOS = [
   ["IMG_8169", "Hidromiel de la Selva", "Mieles y elixires", "MCntVvPuNkpHMABQ.png", "Producto nuevo"],
   ["IMG_8173", "Miel de abejas meliponas", "Mieles y elixires", "aKOGcxRygmNcGPRQ.png", "Producto identificado"],
   ["abejajabon", "Jabón diseño abeja", "Jabones", "tdPQCvHhwktiTsvU.png", "Producto identificado"],
-  ["curcuma", "Jabón de cúrcuma", "Jabones", "nrlTawmSqzKJDjpK.png", "Producto identificado"],
+  ["curcuma", "Jabón de cúrcuma", "Jabones", jabonCurcumaFoto.url, "Producto identificado"],
   ["jabondemiel", "Jabón de neem y miel", "Jabones", "tHPfKyyWZZqrrwZs.png", "Producto identificado"],
 ] as const;
 
 const galleryImageUrl = (file: string) =>
-  `https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/${file}`;
+  file.startsWith("/")
+    ? file
+    : `https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/${file}`;
 const GALLERY_FILTERS = ["Todas", "Jabones", "Cremas", "Cuidado personal", "Mieles y elixires", "Kits"] as const;
 type GalleryFilter = (typeof GALLERY_FILTERS)[number];
 
@@ -702,7 +705,7 @@ function Index() {
                      width={800}
                      height={600}
                      loading="lazy"
-                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
+                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
                    />
                    <div className="flex flex-1 flex-col p-6">
                      <div className="flex items-center justify-between gap-3">
@@ -1067,7 +1070,7 @@ function Index() {
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
                />
               <DialogHeader>
                 <div className="flex items-center gap-3">
