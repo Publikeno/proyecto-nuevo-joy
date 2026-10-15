@@ -705,7 +705,7 @@ function Index() {
                      width={800}
                      height={600}
                      loading="lazy"
-                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
+                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
                    />
                    <div className="flex flex-1 flex-col p-6">
                      <div className="flex items-center justify-between gap-3">
