@@ -36,6 +36,7 @@ import kitCarteraYute from "@/assets/kit-cartera-yute.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import frascosXuumiel from "@/assets/frascos-xuumiel.jpg.asset.json";
 import multivitaminicoFrasco from "@/assets/multivitaminico-frasco-recortado.png";
+import jabonCurcumaFoto from "@/assets/jabon-curcuma-sin-fondo.png.asset.json";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
 import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
 import albumLeonaVicario from "@/assets/album/tienda-leona-vicario.jpg.asset.json";
@@ -108,7 +109,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "jabon-tepezcohuite-melipona": jabonTepezcohuiteActual.url,
   "jabon-miel-melipona-madera": jabonAzul.url,
   "jabon-neem-coco": jabonNeem.url,
-  "jabon-curcuma-coco-melipona": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/nrlTawmSqzKJDjpK.png",
+  "jabon-curcuma-coco-melipona": jabonCurcumaFoto.url,
   "jabon-fresa-champagne": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/IbraseDUEzHLDVvZ.png",
   "jabon-sabila-menta": jabonSabilaMentaActual.url,
   "kit-cartera": kitCarteraYute.url,
