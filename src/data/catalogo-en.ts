@@ -16,7 +16,7 @@ type TraduccionProducto = Partial<
 
 const traducciones: Record<string, TraduccionProducto> = {
   "jabon-arroz-coco": {
-    nombre: "Coconut-base rice soap",
+    nombre: "Turmeric, coconut and melipona bee honey soap",
     ingrediente: "Rice and coconut base",
     ingredientes: ["Rice", "Coconut"],
     descripcion: "" ,
