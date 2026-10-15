@@ -33,7 +33,7 @@ export const categorias: Categoria[] = [
 export const productos: Producto[] = [
   {
     id: "jabon-arroz-coco",
-    nombre: "Jabón de arroz base coco",
+    nombre: "Jabón cúrcuma, coco y miel de abejas meliponas",
     categoria: "Jabones",
     marca: "XUUJÁAB",
     ingrediente: "Arroz y base de coco",

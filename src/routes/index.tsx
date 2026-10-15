@@ -127,7 +127,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
 };
 
 const GALLERY_PHOTOS = [
-  ["IMG_8090", "Jabón de arroz", "Jabones", "FVjiYoRnRUOswewl.png", "Producto identificado"],
+  ["IMG_8090", "Jabón cúrcuma, coco y miel de abejas meliponas", "Jabones", "FVjiYoRnRUOswewl.png", "Producto identificado"],
   ["IMG_8092", "Jabón de panal y abeja", "Jabones", "cjXqhYGENXHnNSSq.png", "Diseño recibido"],
   ["IMG_8094", "Jabón artesanal rosa", "Jabones", "XncbeftxROyqSnSU.png", "Variante por confirmar"],
   ["IMG_8097", "Jabón fresa champagne", "Jabones", "IbraseDUEzHLDVvZ.png", "Producto identificado"],
