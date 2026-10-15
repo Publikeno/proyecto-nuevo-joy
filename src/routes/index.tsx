@@ -689,6 +689,14 @@ function Index() {
               })}
             </div>
 
+            {(filtro === "Todo" || filtro === "Jabones") && (
+              <p className="mt-5 rounded-sm border border-honey/40 bg-honey/10 px-4 py-3 text-sm">
+                <span className="font-semibold uppercase tracking-[0.18em] text-terracotta">
+                  {copy.soapNoteLead}
+                </span>{" "}
+                <span className="text-muted-foreground">{copy.soapNoteBody}</span>
+              </p>
+            )}
             <p aria-live="polite" className="mt-4 text-sm text-muted-foreground">
               {lista.length} {lista.length === 1 ? copy.pieceSingular : copy.piecePlural}
             </p>

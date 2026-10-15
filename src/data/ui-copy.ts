@@ -94,6 +94,9 @@ export const textos = {
     catalogTitle: "Catálogo 2026",
     catalogIntro:
       "Filtra por familia de producto. Cada ficha incluye precio, tamaño e ingrediente principal.",
+    soapNoteLead: "JABONES XUUJÁAB",
+    soapNoteBody:
+      "todos están elaborados con miel de abejas Meliponas Beecheii, así potencian los otros ingredientes naturales.",
     all: "Todo",
     categoryAria: "Filtrar catálogo por categoría",
     pieceSingular: "pieza",
@@ -255,6 +258,9 @@ export const textos = {
     comingSoonItems: ["Beeswax candles", "Mead", "Propolis lollipops"],
     catalogTitle: "2026 Catalog",
     catalogIntro: "Filter by product family. Each card includes price, size and main ingredient.",
+    soapNoteLead: "XUUJÁAB SOAPS",
+    soapNoteBody:
+      "all of them are made with Melipona beecheii bee honey, which boosts the other natural ingredients.",
     all: "All",
     categoryAria: "Filter catalog by category",
     pieceSingular: "item",
