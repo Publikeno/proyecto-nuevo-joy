@@ -925,6 +925,19 @@ function Index() {
                     {copy.whatsapp}
                   </a>
                 </li>
+                {copy.contactPhones.map((f) => (
+                  <li key={f.wa}>
+                    <a
+                      href={`https://wa.me/${f.wa}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 underline-offset-4 hover:underline"
+                    >
+                      <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                      {f.display}
+                    </a>
+                  </li>
+                ))}
                 <li className="text-primary-foreground/60">{copy.inbox}</li>
               </ul>
             </div>
