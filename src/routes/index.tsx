@@ -982,8 +982,14 @@ function Index() {
             </div>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:admin@xuumiel.com"
+                href="mailto:atnclientes@xuumiel.com"
                 className="rounded-sm bg-honey px-6 py-3 text-center text-sm font-medium text-cacao transition-opacity hover:opacity-90"
+              >
+                atnclientes@xuumiel.com
+              </a>
+              <a
+                href="mailto:admin@xuumiel.com"
+                className="rounded-sm border border-primary-foreground/30 px-6 py-3 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"
               >
                 admin@xuumiel.com
               </a>
@@ -1065,6 +1071,11 @@ function Index() {
           <div>
             <h2 className="text-sm font-semibold">{copy.contactTitle}</h2>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+              <li>
+                <a className="hover:text-foreground" href="mailto:atnclientes@xuumiel.com">
+                  atnclientes@xuumiel.com
+                </a>
+              </li>
               <li>
                 <a className="hover:text-foreground" href="mailto:admin@xuumiel.com">
                   admin@xuumiel.com
