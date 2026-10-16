@@ -136,7 +136,6 @@ export const textos = {
     contactTitle: "Contacto",
     contactDescription:
       "Escríbenos para conocer la ruta, coordinar una visita al meliponario o preguntar por el catálogo.",
-    representative: "Representante en Cancún: Karely · número por confirmar.",
     whatsapp: "Escríbenos por WhatsApp al +52 1 998 407 0222.",
     contactPhones: [
       {
@@ -308,7 +307,6 @@ export const textos = {
     contactTitle: "Contact",
     contactDescription:
       "Write to us to learn about the route, arrange a visit to the meliponary or ask about the catalog.",
-    representative: "Cancún representative: Karely · phone number to be confirmed.",
     whatsapp: "Write to us on WhatsApp at +52 1 998 407 0222.",
     contactPhones: [
       {
