@@ -160,7 +160,6 @@ const GALLERY_PHOTOS = [
   ["IMG_8169", "Hidromiel de la Selva", "Mieles y elixires", "MCntVvPuNkpHMABQ.png", "Producto nuevo"],
   ["IMG_8173", "Miel de abejas meliponas", "Mieles y elixires", "aKOGcxRygmNcGPRQ.png", "Producto identificado"],
   ["abejajabon", "Jabón diseño abeja", "Jabones", "tdPQCvHhwktiTsvU.png", "Producto identificado"],
-  ["curcuma", "Jabón cúrcuma, coco y miel de abejas meliponas", "Jabones", jabonCurcumaFoto.url, "Producto identificado"],
   ["jabondemiel", "Jabón de neem y miel", "Jabones", "tHPfKyyWZZqrrwZs.png", "Producto identificado"],
 ] as const;
 
