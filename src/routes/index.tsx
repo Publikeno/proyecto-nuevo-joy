@@ -961,7 +961,6 @@ function Index() {
               <h2 className="font-display text-3xl">{copy.contactTitle}</h2>
               <p className="mt-3 text-primary-foreground/75">{copy.contactDescription}</p>
               <ul className="mt-5 space-y-2 text-sm text-primary-foreground/85">
-                <li>{copy.representative}</li>
                 <li>
                   <a
                     href={WHATSAPP_URL}
