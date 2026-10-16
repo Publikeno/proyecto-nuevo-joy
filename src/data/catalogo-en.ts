@@ -193,6 +193,15 @@ const traducciones: Record<string, TraduccionProducto> = {
       { tamano: "500 ml", precio: 270 },
     ],
   },
+  "shampoo-preventivo-miel-romero-neem": {
+    nombre: "Preventive honey, rosemary and neem shampoo",
+    ingrediente: "Honey, rosemary and neem",
+    ingredientes: ["Honey", "Rosemary", "Neem"],
+    descripcion:
+      "Shampoo for pets: fungicidal (to remove fungus) and fleas. It also works to remove lice in humans (school-age girls and boys). The base shampoo is high quality, salt-free.",
+    destaca: "",
+    variantes: [{ tamano: "500 ml", precio: 88 }],
+  },
   "repelente-crema": {
     nombre: "Cream insect repellent",
     ingrediente: "Cream repellent formula",

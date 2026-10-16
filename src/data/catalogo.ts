@@ -309,6 +309,19 @@ export const productos: Producto[] = [
     ],
   },
   {
+    id: "shampoo-preventivo-miel-romero-neem",
+    nombre: "Shampoo preventivo de miel, romero y neem",
+    categoria: "Cuidado personal",
+    marca: "XUUJÁAB",
+    ingrediente: "Miel, romero y neem",
+    ingredientes: ["Miel", "Romero", "Neem"],
+    descripcion:
+      "Shampoo para peludos: fungicida (para quitar hongos) y pulgas. También funciona para quitar piojos en humanos (niñas y niños en edad escolar). El shampoo base es de alta calidad, sin sales.",
+    ritual: "No especificado en la ficha del catálogo.",
+    destaca: "",
+    variantes: [{ tamano: "500 ml", precio: 88 }],
+  },
+  {
     id: "repelente-crema",
     nombre: "Repelente en crema",
     categoria: "Cuidado personal",
