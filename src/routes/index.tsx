@@ -844,12 +844,20 @@ function Index() {
             </p>
 
             <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {fotosVisibles.map((photo) => (
+              {fotosVisibles.map((photo) => {
+                const soloLogo = photo[3] === "oQoFOOhWJEQeUlvP.png";
+                return (
                 <li key={photo[0]} className="overflow-hidden rounded-sm border border-border bg-card">
                   <div className="flex aspect-square items-center justify-center bg-secondary/40 p-3">
                     <img
-                      src={galleryImageUrl(photo[3])}
-                      alt={`${photo[1]} · ${photo[2]}`}
+                      src={soloLogo ? logo : galleryImageUrl(photo[3])}
+                      alt={
+                        soloLogo
+                          ? idioma === "es"
+                            ? "Logotipo de XUUMIEL"
+                            : "XUUMIEL logo"
+                          : `${photo[1]} · ${photo[2]}`
+                      }
                       width={800}
                       height={800}
                       loading="lazy"
@@ -862,7 +870,8 @@ function Index() {
                     <p className="mt-2 text-xs uppercase tracking-[0.12em] text-muted-foreground">{photo[4]}</p>
                   </div>
                 </li>
-              ))}
+                );
+              })}
             </ul>
           </div>
         </section>
