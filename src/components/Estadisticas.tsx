@@ -72,7 +72,7 @@ export function Estadisticas() {
         type="button"
         onClick={alClickBoton}
         aria-label="Ver estadísticas de la página"
-        className="fixed bottom-5 right-5 z-40 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground shadow-sm transition-colors hover:text-foreground"
+        className="fixed bottom-5 left-5 z-40 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground shadow-sm transition-colors hover:text-foreground"
       >
         Estadísticas
       </button>
