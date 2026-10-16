@@ -38,7 +38,6 @@ import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import frascosXuumiel from "@/assets/frascos-xuumiel.jpg.asset.json";
 import multivitaminicoFrasco from "@/assets/multivitaminico-frasco-recortado.png";
 import jabonCurcumaFoto from "@/assets/jabon-curcuma-sin-fondo.png.asset.json";
-import jabonArrozCocoGaleria from "@/assets/jabon-arroz-coco-galeria.png.asset.json";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
 import albumProductos from "@/assets/album/tienda-productos.jpeg.asset.json";
 import albumLeonaVicario from "@/assets/album/tienda-leona-vicario.jpg.asset.json";
@@ -106,7 +105,6 @@ const NAV_KEYS = [
 const CAT_XUUMIEL: Categoria[] = ["Mieles y elixires"];
 
 const PRODUCT_IMAGE_URLS: Record<string, string> = {
-  "jabon-arroz-coco": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FVjiYoRnRUOswewl.png",
   "jabon-avena": jabonAvenaActual.url,
   "jabon-tepezcohuite-melipona": jabonTepezcohuiteActual.url,
   "jabon-miel-melipona-madera": jabonAzul.url,
@@ -128,12 +126,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "repelente-liquido-hidroalcoholico": repelenteLiquido,
 };
 
-const GALERIA_PRODUCTOS: Record<string, { src: string; label: string }[]> = {
-  "jabon-arroz-coco": [
-    { src: PRODUCT_IMAGE_URLS["jabon-arroz-coco"] ?? "", label: "Jabón cúrcuma, coco y miel de abejas meliponas" },
-    { src: jabonArrozCocoGaleria.url, label: "Jabón de arroz, base coco y miel de abejas meliponas" },
-  ],
-};
+const GALERIA_PRODUCTOS: Record<string, { src: string; label: string }[]> = {};
 
 const GALLERY_PHOTOS = [
   ["IMG_8090", "Jabón cúrcuma, coco y miel de abejas meliponas", "Jabones", "FVjiYoRnRUOswewl.png", "Producto identificado"],

@@ -32,19 +32,6 @@ export const categorias: Categoria[] = [
 
 export const productos: Producto[] = [
   {
-    id: "jabon-arroz-coco",
-    nombre: "Jabón cúrcuma, coco y miel de abejas meliponas",
-    categoria: "Jabones",
-    marca: "XUUJÁAB",
-    ingrediente: "Arroz y base de coco",
-    ingredientes: ["Arroz", "Coco"],
-    descripcion: "Exfoliante, suavizante y estabiliza el tono de piel\nAstringente para piel normal y grasa",
-    ritual: "No especificado en la ficha del catálogo.",
-    destaca:
-      "" ,
-    variantes: [{ tamano: "90 g", precio: 90 }],
-  },
-  {
     id: "jabon-avena",
     nombre: "Jabón de avena",
     categoria: "Jabones",
