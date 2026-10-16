@@ -20,7 +20,7 @@ import { textos, type Idioma } from "@/data/ui-copy";
 import { HeroRuta } from "@/components/HeroRuta";
 import { FranjaGeo } from "@/components/FranjaGeo";
 import { BotonCarrito, PanelCarrito, type ItemCarrito } from "@/components/Carrito";
-import { PuertaAcceso } from "@/components/PuertaAcceso";
+import { Estadisticas } from "@/components/Estadisticas";
 
 import { ChevronLeft, ChevronRight, Images, MessageCircle, Store } from "lucide-react";
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
@@ -251,7 +251,6 @@ function Index() {
   const conteoXuujaab = productosActivos.length - conteoXuumiel;
 
   return (
-    <PuertaAcceso>
     <div className="min-h-screen bg-background text-foreground">
       <a
         href="#ruta"
@@ -1132,7 +1131,6 @@ function Index() {
         </div>
         <p className="border-t border-border px-5 py-5 text-center text-xs text-muted-foreground">
           © {new Date().getFullYear()} XUUMIEL · XUUJÁAB. {copy.footerCopyright}
-          <ContadorVisitas />
         </p>
       </footer>
 
@@ -1363,7 +1361,9 @@ function Index() {
           )}
         </DialogContent>
       </Dialog>
+
+      <ContadorVisitas />
+      <Estadisticas />
     </div>
-    </PuertaAcceso>
   );
 }
