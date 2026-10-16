@@ -1361,6 +1361,9 @@ function Index() {
           )}
         </DialogContent>
       </Dialog>
+
+      <ContadorVisitas />
+      <Estadisticas />
     </div>
   );
 }
