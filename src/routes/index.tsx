@@ -973,7 +973,11 @@ function Index() {
                       className="inline-flex items-center gap-2 underline-offset-4 hover:underline"
                     >
                       <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                      {f.display}
+                      <span>
+                        <span className="font-semibold text-honey">{f.name}</span>
+                        <span className="text-primary-foreground/60"> · </span>
+                        {f.display}
+                      </span>
                     </a>
                   </li>
                 ))}

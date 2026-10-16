@@ -139,8 +139,16 @@ export const textos = {
     representative: "Representante en Cancún: Karely · número por confirmar.",
     whatsapp: "Escríbenos por WhatsApp al +52 1 998 407 0222.",
     contactPhones: [
-      { display: "Llamadas y WhatsApp: +52 998 419 0382", wa: "529984190382" },
-      { display: "Llamadas y WhatsApp: +52 998 476 7605", wa: "529984767605" },
+      {
+        name: "Katy",
+        display: "Llamadas y WhatsApp: +52 998 419 0382",
+        wa: "529984190382",
+      },
+      {
+        name: "Yair",
+        display: "Llamadas y WhatsApp: +52 998 476 7605",
+        wa: "529984767605",
+      },
     ],
     inbox: "Atención a clientes: atnclientes@xuumiel.com · Administración: admin@xuumiel.com.",
     sections: "Secciones",
@@ -303,8 +311,16 @@ export const textos = {
     representative: "Cancún representative: Karely · phone number to be confirmed.",
     whatsapp: "Write to us on WhatsApp at +52 1 998 407 0222.",
     contactPhones: [
-      { display: "Calls and WhatsApp: +52 998 419 0382", wa: "529984190382" },
-      { display: "Calls and WhatsApp: +52 998 476 7605", wa: "529984767605" },
+      {
+        name: "Katy",
+        display: "Calls and WhatsApp: +52 998 419 0382",
+        wa: "529984190382",
+      },
+      {
+        name: "Yair",
+        display: "Calls and WhatsApp: +52 998 476 7605",
+        wa: "529984767605",
+      },
     ],
     inbox: "Customer service: atnclientes@xuumiel.com · Administration: admin@xuumiel.com.",
     sections: "Sections",
