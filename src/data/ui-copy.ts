@@ -139,6 +139,7 @@ export const textos = {
     contactDescription:
       "Escríbenos para conocer la ruta, coordinar una visita al meliponario o preguntar por el catálogo.",
     whatsapp: "Escríbenos por WhatsApp al +52 1 998 407 0222.",
+    contactZone: "Atención y entregas en Cancún.",
     contactPhones: [
       {
         name: "Katy",
@@ -312,6 +313,7 @@ export const textos = {
     contactDescription:
       "Write to us to learn about the route, arrange a visit to the meliponary or ask about the catalog.",
     whatsapp: "Write to us on WhatsApp at +52 1 998 407 0222.",
+    contactZone: "Service and deliveries in Cancún.",
     contactPhones: [
       {
         name: "Katy",
