@@ -4,6 +4,8 @@ import { validarAcceso } from "@/lib/acceso.functions";
 import { clave, etiquetaCorta, resumenVisitas, type Dia } from "@/lib/estadisticas";
 import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/xuumiel-logo-3x-transparent-shadow.png";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const STORAGE_KEY = "xuumiel-stats-ok";
 
@@ -66,7 +68,7 @@ export function Estadisticas() {
   };
 
   useEffect(() => {
-    if (estado !== "abierto") return;
+    if (estado === "cerrado") return;
     const alEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") setEstado("cerrado");
     };
@@ -99,6 +101,11 @@ export function Estadisticas() {
             className="w-full max-w-md rounded-sm border border-border bg-card p-6 text-center shadow-sm sm:p-8"
             onClick={(e) => e.stopPropagation()}
           >
+            <div className="mb-4 text-left">
+              <Button type="button" variant="ghost" onClick={() => setEstado("cerrado")}>
+                <ArrowLeft /> Regresar
+              </Button>
+            </div>
             <img src={logo} alt="XUUMIEL" className="mx-auto h-16 w-auto object-contain" />
 
             {estado === "codigo" ? (
@@ -205,13 +212,14 @@ export function Estadisticas() {
                   empezó a guardarse hoy; los días anteriores provienen del registro de visitas de
                   la página.
                 </p>
-                <button
+                <Button
                   type="button"
+                  variant="outline"
                   onClick={() => setEstado("cerrado")}
                   className="mt-6 w-full rounded-sm border border-border px-4 py-2 font-medium transition-colors hover:bg-background"
                 >
-                  Cerrar
-                </button>
+                  <ArrowLeft /> Regresar
+                </Button>
               </>
             )}
           </div>
