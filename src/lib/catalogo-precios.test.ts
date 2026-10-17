@@ -45,6 +45,15 @@ describe("Cremas HRCM agregadas por la usuaria", () => {
       "Cellular regenerating moisturizing cream made with sesame seeds, collagen and Melipona Beecheii honey, ADRN formula.",
     );
   });
+
+  it("la Crema HRCM Bambú lista sésamo, colágeno y miel Meliponas Beecheii, fórmula ADRN en su línea de ingrediente", () => {
+    expect(productos.find((p) => p.id === "crema-bambu")!.ingrediente).toBe(
+      "Sésamo, colágeno y miel Meliponas Beecheii, fórmula ADRN",
+    );
+    expect(productosEn.find((p) => p.id === "crema-bambu")!.ingrediente).toBe(
+      "Sesame, collagen and Melipona Beecheii honey, ADRN formula",
+    );
+  });
 });
 
 describe("RF crema reafirmante corregida por la usuaria", () => {
