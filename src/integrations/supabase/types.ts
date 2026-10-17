@@ -29,6 +29,21 @@ export type Database = {
         }
         Relationships: []
       }
+      site_visits: {
+        Row: {
+          dia: string
+          visitas: number
+        }
+        Insert: {
+          dia: string
+          visitas?: number
+        }
+        Update: {
+          dia?: string
+          visitas?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
