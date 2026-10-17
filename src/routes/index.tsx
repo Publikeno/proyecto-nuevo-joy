@@ -11,11 +11,10 @@ import {
 import {
   categorias,
   productos,
-  NOTA_CATALOGO,
   type Categoria,
   type Producto,
 } from "@/data/catalogo";
-import { NOTA_CATALOGO_EN, productosEn } from "@/data/catalogo-en";
+import { productosEn } from "@/data/catalogo-en";
 import { textos, type Idioma } from "@/data/ui-copy";
 import { HeroRuta } from "@/components/HeroRuta";
 import { FranjaGeo } from "@/components/FranjaGeo";
@@ -1334,9 +1333,6 @@ function Index() {
                   </section>
                 )}
 
-                <p className="rounded-sm border border-border bg-secondary/60 p-3 text-xs leading-relaxed text-muted-foreground">
-                  {idioma === "es" ? NOTA_CATALOGO : NOTA_CATALOGO_EN}
-                </p>
               </div>
             </>
           )}
