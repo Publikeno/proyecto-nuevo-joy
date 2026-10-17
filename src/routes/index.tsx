@@ -1133,11 +1133,36 @@ function Index() {
       </footer>
 
       <Dialog open={detalle !== null && !carritoAbierto && galeria === null} onOpenChange={(o) => !o && setDetalle(null)}>
-        <DialogContent className="max-h-[90dvh] max-w-lg overflow-y-auto bg-card" onCloseAutoFocus={(e) => e.preventDefault()}>
-          <div className="sticky -top-6 z-10 -mx-6 -mt-6 border-b border-border bg-card px-6 py-3">
+        <DialogContent ref={detalleScrollRef} className="max-h-[90dvh] max-w-lg overflow-y-auto bg-card" onCloseAutoFocus={(e) => e.preventDefault()}>
+          <div className="sticky -top-6 z-10 -mx-6 -mt-6 flex items-center justify-between gap-2 border-b border-border bg-card px-6 py-3">
             <Button type="button" variant="ghost" onClick={() => setDetalle(null)}>
               <ArrowLeft /> {idioma === "es" ? "Regresar" : "Go back"}
             </Button>
+            <div className="flex items-center gap-1">
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                disabled={indiceDetalle <= 0}
+                onClick={() => moverDetalle(-1)}
+                aria-label={idioma === "es" ? "Producto anterior" : "Previous product"}
+              >
+                <ChevronLeft />
+              </Button>
+              <span className="min-w-14 text-center text-xs tabular-nums text-muted-foreground">
+                {detalle && indiceDetalle >= 0 ? `${indiceDetalle + 1} / ${lista.length}` : ""}
+              </span>
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                disabled={indiceDetalle < 0 || indiceDetalle >= lista.length - 1}
+                onClick={() => moverDetalle(1)}
+                aria-label={idioma === "es" ? "Producto siguiente" : "Next product"}
+              >
+                <ChevronRight />
+              </Button>
+            </div>
           </div>
           {detalle && (
             <>
