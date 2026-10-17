@@ -975,7 +975,10 @@ function Index() {
             <div className="max-w-xl">
               <h2 className="font-display text-3xl">{copy.contactTitle}</h2>
               <p className="mt-3 text-primary-foreground/75">{copy.contactDescription}</p>
-              <ul className="mt-5 space-y-2 text-sm text-primary-foreground/85">
+              <p className="mt-5 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-honey">
+                {copy.contactZone}
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-primary-foreground/85">
                 <li>
                   <a
                     href={WHATSAPP_URL}
