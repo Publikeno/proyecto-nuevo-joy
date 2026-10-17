@@ -92,7 +92,7 @@ const precio = (n: number, idioma: Idioma) =>
 type Filtro = Categoria | "Todo";
 
 const WHATSAPP_URL =
-  "https://wa.me/5219984070222?text=Hola%20XUUMIEL%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20productos.";
+  "https://wa.me/529984070222?text=Hola%20XUUMIEL%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20productos.";
 
 const NAV_KEYS = [
   { href: "#ruta", key: "ruta" },
@@ -975,21 +975,20 @@ function Index() {
             <div className="max-w-xl">
               <h2 className="font-display text-3xl">{copy.contactTitle}</h2>
               <p className="mt-3 text-primary-foreground/75">{copy.contactDescription}</p>
-              <p className="mt-5 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-honey">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-5 inline-flex items-center gap-2 text-base font-semibold text-honey underline-offset-4 hover:underline"
+              >
+                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                {copy.whatsapp}
+              </a>
+              <p className="mt-4 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-honey">
                 {copy.contactZone}
               </p>
               <ul className="mt-3 space-y-2 text-sm text-primary-foreground/85">
-                <li>
-                  <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 underline-offset-4 hover:underline"
-                  >
-                    <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                    {copy.whatsapp}
-                  </a>
-                </li>
+
                 {copy.contactPhones.map((f) => (
                   <li key={f.wa}>
                     <a
