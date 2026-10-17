@@ -238,7 +238,7 @@ export const productos: Producto[] = [
     ritual: "Aplicar por las noches 15 minutos antes de dormir.",
     destaca:
       "" ,
-    variantes: [{ tamano: "50 g", precio: 290 }],
+    variantes: [{ tamano: "60 g", precio: 290 }],
   },
   {
     id: "miel-abejas-meliponas",
