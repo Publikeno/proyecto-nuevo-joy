@@ -34,6 +34,17 @@ describe("Cremas HRCM agregadas por la usuaria", () => {
       expect(crema?.variantes).toEqual([{ tamano: "240 g", precio: 1100 }]);
     }
   });
+
+  it("la Crema HRCM Bambú se describe elaborada con semillas de sésamo, colágeno y miel Melipona Beecheii, fórmula ADRN", () => {
+    const espa = productos.find((p) => p.id === "crema-bambu")!.descripcion;
+    expect(espa).toBe(
+      "Crema hidratante regeneradora celular elaborada con semillas de sésamo, colágeno y miel Melipona Beecheii, fórmula ADRN.",
+    );
+    const ing = productosEn.find((p) => p.id === "crema-bambu")!.descripcion;
+    expect(ing).toBe(
+      "Cellular regenerating moisturizing cream made with sesame seeds, collagen and Melipona Beecheii honey, ADRN formula.",
+    );
+  });
 });
 
 describe("RF crema reafirmante corregida por la usuaria", () => {
