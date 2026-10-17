@@ -136,7 +136,7 @@ const traducciones: Record<string, TraduccionProducto> = {
     ingrediente: "Collagen and Melipona Beecheii bee honey, ADRN formula",
     ingredientes: ["Collagen", "Melipona Beecheii bee honey", "ADRN formula"],
     descripcion:
-      "Cellular regenerating moisturizing cream with collagen and Melipona Beecheii bee honey, ADRN formula.",
+      "Cellular regenerating moisturizing cream made with sesame seeds, collagen and Melipona Beecheii honey, ADRN formula.",
     destaca: "",
     variantes: [{ tamano: "240 g", precio: 1100 }],
   },
