@@ -249,8 +249,11 @@ export const productos: Producto[] = [
     destaca:
       "" ,
     variantes: [
-      { tamano: "30 ml", precio: 210 },
-      { tamano: "50 ml", precio: 340 },
+      { tamano: "10 ml", precio: 130 },
+      { tamano: "20 ml", precio: 230 },
+      { tamano: "30 ml", precio: 320 },
+      { tamano: "50 ml", precio: 440 },
+      { tamano: "50 ml · con estuche de madera", precio: 590 },
     ],
   },
   {
