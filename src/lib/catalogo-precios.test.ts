@@ -22,3 +22,12 @@ describe("presentaciones del Elixir confirmadas por la usuaria", () => {
     expect(productos.find((p) => p.id === "elixir-miel-melipona-cacao")?.variantes).toEqual(presentaciones);
   });
 });
+
+describe("Crema HRCM Bambú agregada por la usuaria", () => {
+  it("tiene una sola variante de 240 g a $1,100 MXN en ambos idiomas", () => {
+    for (const catalogo of [productos, productosEn]) {
+      const crema = catalogo.find((p) => p.id === "crema-bambu");
+      expect(crema?.variantes).toEqual([{ tamano: "240 g", precio: 1100 }]);
+    }
+  });
+});
