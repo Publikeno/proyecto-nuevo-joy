@@ -133,8 +133,8 @@ const traducciones: Record<string, TraduccionProducto> = {
   },
   "crema-bambu": {
     nombre: "HRCM bamboo cream",
-    ingrediente: "Collagen and Melipona Beecheii bee honey, ADRN formula",
-    ingredientes: ["Collagen", "Melipona Beecheii bee honey", "ADRN formula"],
+    ingrediente: "Sesame, collagen and Melipona Beecheii honey, ADRN formula",
+    ingredientes: ["Sesame seed", "Collagen", "Melipona Beecheii honey", "ADRN formula"],
     descripcion:
       "Cellular regenerating moisturizing cream made with sesame seeds, collagen and Melipona Beecheii honey, ADRN formula.",
     destaca: "",
