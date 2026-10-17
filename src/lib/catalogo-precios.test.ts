@@ -51,4 +51,15 @@ describe("RF crema reafirmante corregida por la usuaria", () => {
   });
 });
 
+describe("Multivitamínico de polen, propóleo y miel corregido por la usuaria", () => {
+  it("se vende en 200 g a $150 MXN en ambos idiomas y nada más cambió", () => {
+    const es = productos.find((p) => p.id === "multivitaminico-polen-propoleo-miel");
+    expect(es?.variantes).toEqual([{ tamano: "200 g · envase de cristal oscuro", precio: 150 }]);
+    expect(es?.nombre).toBe("Multivitamínico de polen, propóleo y miel de abejas apidea");
+    const en = productosEn.find((p) => p.id === "multivitaminico-polen-propoleo-miel");
+    expect(en?.variantes).toEqual([{ tamano: "200 g · dark glass container", precio: 150 }]);
+  });
+});
+
+
 
