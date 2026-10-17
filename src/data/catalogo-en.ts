@@ -131,6 +131,15 @@ const traducciones: Record<string, TraduccionProducto> = {
       { tamano: "50 g · medium container", precio: 380 },
     ],
   },
+  "crema-bambu": {
+    nombre: "HRCM bamboo cream",
+    ingrediente: "Collagen and Melipona Beecheii bee honey, ADRN formula",
+    ingredientes: ["Collagen", "Melipona Beecheii bee honey", "ADRN formula"],
+    descripcion:
+      "Cellular regenerating moisturizing cream with collagen and Melipona Beecheii bee honey, ADRN formula.",
+    destaca: "",
+    variantes: [{ tamano: "240 g", precio: 1100 }],
+  },
   "crema-rf": {
     nombre: "RF firming cream for face and neck",
     ingrediente: "Melipona bee honey Beecheii, rosemary and vitamin E",

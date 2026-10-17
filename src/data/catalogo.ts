@@ -204,6 +204,18 @@ export const productos: Producto[] = [
     ],
   },
   {
+    id: "crema-bambu",
+    nombre: "Crema HRCM Bambú",
+    categoria: "Cremas",
+    marca: "XUUJÁAB",
+    ingrediente: "Colágeno y miel de abejas Meliponas Beecheii, fórmula ADRN",
+    ingredientes: ["Colágeno", "Miel de abejas Meliponas Beecheii", "Fórmula ADRN"],
+    descripcion: "Crema hidratante regeneradora celular con colágeno y miel de abejas Meliponas Beecheii, fórmula ADRN.",
+    ritual: "No especificado en la ficha del catálogo.",
+    destaca: "",
+    variantes: [{ tamano: "240 g", precio: 1100 }],
+  },
+  {
     id: "crema-rf",
     nombre: "RF crema reafirmante para rostro y cuello",
     categoria: "Cremas",
