@@ -92,7 +92,7 @@ const precio = (n: number, idioma: Idioma) =>
 type Filtro = Categoria | "Todo";
 
 const WHATSAPP_URL =
-  "https://wa.me/5219984070222?text=Hola%20XUUMIEL%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20productos.";
+  "https://wa.me/529984070222?text=Hola%20XUUMIEL%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20productos.";
 
 const NAV_KEYS = [
   { href: "#ruta", key: "ruta" },
