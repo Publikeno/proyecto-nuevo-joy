@@ -1,38 +1,13 @@
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { validarAcceso } from "@/lib/acceso.functions";
+import { clave, etiquetaCorta, resumenVisitas, type Dia } from "@/lib/estadisticas";
 import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/xuumiel-logo-3x-transparent-shadow.png";
 
 const STORAGE_KEY = "xuumiel-stats-ok";
 
 type Estado = "cerrado" | "codigo" | "abierto";
-type Dia = { dia: string; visitas: number };
-
-const parsear = (s: string) => {
-  const [a, m, d] = s.split("-").map(Number);
-  return new Date(a, m - 1, d);
-};
-
-const clave = (d: Date) =>
-  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-
-const lunesDe = (d: Date) => {
-  const x = new Date(d);
-  x.setDate(x.getDate() - ((x.getDay() + 6) % 7));
-  return x;
-};
-
-const sumar = (filas: Dia[], desde: Date, hasta: Date) =>
-  filas
-    .filter((f) => {
-      const d = parsear(f.dia);
-      return d >= desde && d < hasta;
-    })
-    .reduce((acc, f) => acc + f.visitas, 0);
-
-const etiquetaCorta = (d: Date) =>
-  new Intl.DateTimeFormat("es-MX", { day: "numeric", month: "short" }).format(d).replace(".", "");
 
 export function Estadisticas() {
   const [estado, setEstado] = useState<Estado>("cerrado");
@@ -99,44 +74,7 @@ export function Estadisticas() {
     return () => window.removeEventListener("keydown", alEscape);
   }, [estado]);
 
-  const resumen = useMemo(() => {
-    const hoy = new Date();
-    hoy.setHours(0, 0, 0, 0);
-    const lunes = lunesDe(hoy);
-
-    // Últimos 14 días, con cero en los días sin visitas.
-    const mapa = new Map(dias.map((d) => [d.dia, d.visitas]));
-    const diasVista = Array.from({ length: 14 }, (_, i) => {
-      const d = new Date(hoy);
-      d.setDate(d.getDate() - i);
-      return { fecha: d, visitas: mapa.get(clave(d)) ?? 0 };
-    });
-
-    // Últimas 5 semanas, contadas de lunes a domingo.
-    const semanas = Array.from({ length: 5 }, (_, i) => {
-      const desde = new Date(lunes);
-      desde.setDate(desde.getDate() - i * 7);
-      const hasta = new Date(desde);
-      hasta.setDate(hasta.getDate() + 7);
-      return { lunes: desde, visitas: sumar(dias, desde, hasta) };
-    });
-
-    return {
-      estaSemana: semanas[0].visitas,
-      ultimos7: sumar(
-        dias,
-        (() => {
-          const d = new Date(hoy);
-          d.setDate(d.getDate() - 6);
-          return d;
-        })(),
-        new Date(hoy.getTime() + 86400000),
-      ),
-      dias: diasVista,
-      semanas,
-      maxDia: Math.max(1, ...diasVista.map((d) => d.visitas)),
-    };
-  }, [dias]);
+  const resumen = useMemo(() => resumenVisitas(dias), [dias]);
 
   return (
     <>
@@ -229,7 +167,7 @@ export function Estadisticas() {
                   <ul className="mt-3 space-y-2">
                     {resumen.semanas.map((s) => (
                       <li key={clave(s.lunes)} className="flex items-baseline gap-3 text-sm">
-                        <span className="w-28 shrink-0 text-muted-foreground">
+                        <span className="w-36 shrink-0 whitespace-nowrap text-muted-foreground">
                           {`Semana del ${etiquetaCorta(s.lunes)}`}
                         </span>
                         <span className="ml-auto font-medium tabular-nums text-foreground">
