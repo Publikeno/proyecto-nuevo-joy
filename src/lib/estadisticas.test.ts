@@ -31,23 +31,23 @@ describe("resumenVisitas", () => {
 
   it("agrupa por semana de lunes a domingo", () => {
     const r = resumenVisitas(DIAS, HOY);
-    expect(r.semanas[0].lunes).toEqual(new Date(2026, 9, 12));
-    expect(r.semanas[0].visitas).toBe(16);
-    expect(r.semanas[1].lunes).toEqual(new Date(2026, 9, 5));
-    expect(r.semanas[1].visitas).toBe(36);
-    expect(r.semanas[4].lunes).toEqual(new Date(2026, 8, 14));
-    expect(r.semanas[4].visitas).toBe(0);
+    expect(r.semanas[0]?.lunes).toEqual(new Date(2026, 9, 12));
+    expect(r.semanas[0]?.visitas).toBe(16);
+    expect(r.semanas[1]?.lunes).toEqual(new Date(2026, 9, 5));
+    expect(r.semanas[1]?.visitas).toBe(36);
+    expect(r.semanas[4]?.lunes).toEqual(new Date(2026, 8, 14));
+    expect(r.semanas[4]?.visitas).toBe(0);
   });
 
   it("lista 14 días terminando en hoy y pone cero donde no hubo visitas", () => {
     const r = resumenVisitas(DIAS, HOY);
     expect(r.dias).toHaveLength(14);
-    expect(r.dias[0].fecha).toEqual(new Date(2026, 9, 17));
-    expect(r.dias[0].visitas).toBe(1);
-    expect(r.dias[6].fecha).toEqual(new Date(2026, 9, 11)); // domingo sin visitas
-    expect(r.dias[6].visitas).toBe(0);
-    expect(r.dias[13].fecha).toEqual(new Date(2026, 9, 4));
-    expect(r.dias[13].visitas).toBe(1);
+    expect(r.dias[0]?.fecha).toEqual(new Date(2026, 9, 17));
+    expect(r.dias[0]?.visitas).toBe(1);
+    expect(r.dias[6]?.fecha).toEqual(new Date(2026, 9, 11)); // domingo sin visitas
+    expect(r.dias[6]?.visitas).toBe(0);
+    expect(r.dias[13]?.fecha).toEqual(new Date(2026, 9, 4));
+    expect(r.dias[13]?.visitas).toBe(1);
     expect(r.maxDia).toBe(11);
   });
 

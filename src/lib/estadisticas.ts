@@ -3,7 +3,7 @@
 export type Dia = { dia: string; visitas: number };
 
 export const parsear = (s: string) => {
-  const [a, m, d] = s.split("-").map(Number);
+  const [a = 1970, m = 1, d = 1] = s.split("-").map(Number);
   return new Date(a, m - 1, d);
 };
 
@@ -61,7 +61,7 @@ export const resumenVisitas = (filas: Dia[], ahora: Date = new Date()): Resumen 
   manana.setDate(manana.getDate() + 1);
 
   return {
-    estaSemana: semanas[0].visitas,
+    estaSemana: semanas[0]?.visitas ?? 0,
     ultimos7: sumar(filas, hace7, manana),
     dias,
     semanas,
