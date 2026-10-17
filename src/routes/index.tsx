@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContadorVisitas } from "@/components/ContadorVisitas";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -239,6 +239,25 @@ function Index() {
       filtro === "Todo" ? productosActivos : productosActivos.filter((p) => p.categoria === filtro),
     [filtro, productosActivos],
   );
+
+  // Flechas de la ficha: pasan al producto anterior o siguiente de la lista que se está viendo,
+  // sin cerrar la ventana ni regresar al catálogo completo.
+  const detalleScrollRef = useRef<HTMLDivElement>(null);
+  const indiceDetalle = detalle ? lista.findIndex((p) => p.id === detalle.id) : -1;
+
+  const moverDetalle = (delta: number) => {
+    if (!detalle) return;
+    const base = indiceDetalle < 0 ? (delta > 0 ? -1 : 0) : indiceDetalle;
+    const siguiente = lista[base + delta];
+    if (!siguiente) return;
+    setPresentacionSeleccionada(null);
+    setDetalle(siguiente);
+  };
+
+  useEffect(() => {
+    detalleScrollRef.current?.scrollTo({ top: 0 });
+  }, [detalle?.id]);
+
 
   const fotosVisibles = useMemo(
     () => galleryFiltro === "Todas" ? GALLERY_PHOTOS : GALLERY_PHOTOS.filter((photo) => photo[2] === galleryFiltro),
