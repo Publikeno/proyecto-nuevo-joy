@@ -230,8 +230,7 @@ export function Estadisticas() {
                     {resumen.semanas.map((s) => (
                       <li key={clave(s.lunes)} className="flex items-baseline gap-3 text-sm">
                         <span className="w-28 shrink-0 text-muted-foreground">
-                          {s.visitas > 0 && `Semana del ${etiquetaCorta(s.lunes)}`}
-                          {s.visitas === 0 && `Semana del ${etiquetaCorta(s.lunes)}`}
+                          {`Semana del ${etiquetaCorta(s.lunes)}`}
                         </span>
                         <span className="ml-auto font-medium tabular-nums text-foreground">
                           {s.visitas.toLocaleString("es-MX")}
