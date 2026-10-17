@@ -140,6 +140,15 @@ const traducciones: Record<string, TraduccionProducto> = {
     destaca: "",
     variantes: [{ tamano: "240 g", precio: 1100 }],
   },
+  "crema-maderas": {
+    nombre: "HRCM woods cream",
+    ingrediente: "Sesame seed cream, collagen and Melipona Beecheii honey, ADRN formula",
+    ingredientes: ["Sesame seed cream", "Collagen", "Melipona Beecheii honey", "ADRN formula"],
+    descripcion:
+      "Cellular regenerating moisturizing cream with collagen and Melipona Beecheii honey, ADRN formula.",
+    destaca: "",
+    variantes: [{ tamano: "240 g", precio: 1100 }],
+  },
   "crema-rf": {
     nombre: "RF firming cream for face and neck",
     ingrediente: "Melipona bee honey Beecheii, rosemary and vitamin E",

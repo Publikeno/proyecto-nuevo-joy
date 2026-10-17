@@ -23,10 +23,14 @@ describe("presentaciones del Elixir confirmadas por la usuaria", () => {
   });
 });
 
-describe("Crema HRCM Bambú agregada por la usuaria", () => {
-  it("tiene una sola variante de 240 g a $1,100 MXN en ambos idiomas", () => {
+describe("Cremas HRCM agregadas por la usuaria", () => {
+  it.each([
+    ["crema-bambu", "Crema HRCM Bambú"],
+    ["crema-maderas", "Crema HRCM Maderas"],
+  ])("%s tiene una sola variante de 240 g a $1,100 MXN en ambos idiomas", (id, nombre) => {
+    expect(productos.find((p) => p.id === id)?.nombre).toBe(nombre);
     for (const catalogo of [productos, productosEn]) {
-      const crema = catalogo.find((p) => p.id === "crema-bambu");
+      const crema = catalogo.find((p) => p.id === id);
       expect(crema?.variantes).toEqual([{ tamano: "240 g", precio: 1100 }]);
     }
   });
