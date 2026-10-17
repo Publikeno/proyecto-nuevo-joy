@@ -21,8 +21,9 @@ import { HeroRuta } from "@/components/HeroRuta";
 import { FranjaGeo } from "@/components/FranjaGeo";
 import { BotonCarrito, PanelCarrito, type ItemCarrito } from "@/components/Carrito";
 import { Estadisticas } from "@/components/Estadisticas";
+import { Button } from "@/components/ui/button";
 
-import { ChevronLeft, ChevronRight, Images, MessageCircle, Store } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Images, MessageCircle, Store } from "lucide-react";
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaCaballeroAsset from "@/assets/crema-caballero.png.asset.json";
 import cremaBambu from "@/assets/crema-bambu.jpg.asset.json";
@@ -223,7 +224,6 @@ function Index() {
       if (existe) return c.map((i) => (i.key === key ? { ...i, cantidad: i.cantidad + 1 } : i));
       return [...c, { key, nombre: p.nombre, tamano, precio: monto, imagen: imagenProducto(p) ?? logo, cantidad: 1 }];
     });
-    setDetalle(null);
     setCarritoAbierto(true);
   };
 
@@ -1132,8 +1132,13 @@ function Index() {
         </p>
       </footer>
 
-      <Dialog open={detalle !== null} onOpenChange={(o) => !o && setDetalle(null)}>
-        <DialogContent className="max-w-lg bg-card">
+      <Dialog open={detalle !== null && !carritoAbierto && galeria === null} onOpenChange={(o) => !o && setDetalle(null)}>
+        <DialogContent className="max-h-[90dvh] max-w-lg overflow-y-auto bg-card" onCloseAutoFocus={(e) => e.preventDefault()}>
+          <div className="sticky -top-6 z-10 -mx-6 -mt-6 border-b border-border bg-card px-6 py-3">
+            <Button type="button" variant="ghost" onClick={() => setDetalle(null)}>
+              <ArrowLeft /> {idioma === "es" ? "Regresar" : "Go back"}
+            </Button>
+          </div>
           {detalle && (
             <>
               <div className="relative">
@@ -1295,7 +1300,12 @@ function Index() {
       </Dialog>
 
       <Dialog open={galeria !== null} onOpenChange={(o) => !o && setGaleria(null)}>
-        <DialogContent className="max-w-2xl bg-card">
+        <DialogContent className="max-h-[90dvh] max-w-2xl overflow-y-auto bg-card" onCloseAutoFocus={(e) => e.preventDefault()}>
+          <div className="sticky -top-6 z-10 -mx-6 -mt-6 border-b border-border bg-card px-6 py-3">
+            <Button type="button" variant="ghost" onClick={() => setGaleria(null)}>
+              <ArrowLeft /> {idioma === "es" ? "Regresar" : "Go back"}
+            </Button>
+          </div>
           {galeria && (
             <>
               <DialogHeader>

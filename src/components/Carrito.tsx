@@ -4,6 +4,7 @@ import { EmbeddedCheckout, EmbeddedCheckoutProvider } from "@stripe/react-stripe
 import { getStripe, getStripeEnvironment } from "@/lib/stripe";
 import { crearPagoCarrito } from "@/lib/checkout.functions";
 import { ENVIO_NACIONAL_MXN, calcularTotales } from "@/lib/pedido";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -91,7 +92,15 @@ export function PanelCarrito({
 
   return (
     <Sheet open={open} onOpenChange={(o) => { if (!o) setPagando(false); onOpenChange(o); }}>
-      <SheetContent className="flex w-full flex-col bg-card sm:max-w-md">
+      <SheetContent className="flex w-full flex-col bg-card sm:max-w-md" onCloseAutoFocus={(e) => e.preventDefault()}>
+        <Button
+          type="button"
+          variant="ghost"
+          className="mb-3 mr-8 self-start"
+          onClick={() => pagando ? setPagando(false) : onOpenChange(false)}
+        >
+          <ArrowLeft /> {pagando ? (en ? "Back to cart" : "Regresar al carrito") : (en ? "Go back" : "Regresar")}
+        </Button>
         <SheetHeader>
           <SheetTitle className="font-display text-2xl">{en ? "Your cart" : "Tu carrito"}</SheetTitle>
           <SheetDescription>
@@ -101,9 +110,6 @@ export function PanelCarrito({
 
         {pagando ? (
           <div className="mt-2 flex-1 overflow-y-auto">
-            <button type="button" onClick={() => setPagando(false)} className="mb-3 flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
-              <ArrowLeft className="h-4 w-4" /> {en ? "Back to cart" : "Volver al carrito"}
-            </button>
             <p className="mb-3 text-sm">{en ? "Total to pay" : "Total a pagar"}: <strong>{fmt(total, en)}</strong></p>
             {error && <p className="mb-3 text-sm text-terracotta">{error}</p>}
             <EmbeddedCheckoutProvider stripe={getStripe()} options={{ fetchClientSecret }}>
