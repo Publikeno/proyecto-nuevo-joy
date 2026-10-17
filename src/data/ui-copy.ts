@@ -97,6 +97,8 @@ export const textos = {
     soapNoteLead: "JABONES XUUJÁAB",
     soapNoteBody:
       "todos están elaborados con miel de abejas Meliponas Beecheii, así potencian los otros ingredientes naturales.",
+    productNote:
+      "Producto elaborado con elementos y sustancias naturales, de manera artesanal.",
     all: "Todo",
     categoryAria: "Filtrar catálogo por categoría",
     pieceSingular: "pieza",
@@ -268,6 +270,8 @@ export const textos = {
     soapNoteLead: "XUUJÁAB SOAPS",
     soapNoteBody:
       "all of them are made with Melipona beecheii bee honey, which boosts the other natural ingredients.",
+    productNote:
+      "Product made with natural elements and substances, handcrafted.",
     all: "All",
     categoryAria: "Filter catalog by category",
     pieceSingular: "item",

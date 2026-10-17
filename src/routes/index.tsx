@@ -1333,6 +1333,9 @@ function Index() {
                   </section>
                 )}
 
+                <p className="rounded-sm border border-border bg-secondary/60 p-3 text-xs leading-relaxed text-muted-foreground">
+                  {copy.productNote}
+                </p>
               </div>
             </>
           )}
