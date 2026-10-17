@@ -216,6 +216,18 @@ export const productos: Producto[] = [
     variantes: [{ tamano: "240 g", precio: 1100 }],
   },
   {
+    id: "crema-maderas",
+    nombre: "Crema HRCM Maderas",
+    categoria: "Cremas",
+    marca: "XUUJÁAB",
+    ingrediente: "Crema de semilla de sésamo, colágeno y miel Melipona Beecheii, fórmula ADRN",
+    ingredientes: ["Crema de semilla de sésamo", "Colágeno", "Miel Melipona Beecheii", "Fórmula ADRN"],
+    descripcion: "Crema hidratante regeneradora celular con colágeno y miel Melipona Beecheii, fórmula ADRN.",
+    ritual: "No especificado en la ficha del catálogo.",
+    destaca: "",
+    variantes: [{ tamano: "240 g", precio: 1100 }],
+  },
+  {
     id: "crema-rf",
     nombre: "RF crema reafirmante para rostro y cuello",
     categoria: "Cremas",
