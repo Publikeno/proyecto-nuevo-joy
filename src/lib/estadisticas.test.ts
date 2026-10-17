@@ -42,7 +42,7 @@ describe("resumenVisitas", () => {
   it("lista 14 días terminando en hoy y pone cero donde no hubo visitas", () => {
     const r = resumenVisitas(DIAS, HOY);
     expect(r.dias).toHaveLength(14);
-    expect(r.dias[0].dia ?? r.dias[0].fecha).toEqual(new Date(2026, 9, 17));
+    expect(r.dias[0].fecha).toEqual(new Date(2026, 9, 17));
     expect(r.dias[0].visitas).toBe(1);
     expect(r.dias[6].fecha).toEqual(new Date(2026, 9, 11)); // domingo sin visitas
     expect(r.dias[6].visitas).toBe(0);
