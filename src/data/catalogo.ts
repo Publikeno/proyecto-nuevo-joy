@@ -19,9 +19,6 @@ export type Producto = {
   variantes: Variante[];
 };
 
-export const NOTA_CATALOGO =
-  "Características, usos tradicionales y beneficios transcritos del catálogo PowerPoint. No sustituyen orientación médica; para irritaciones o afecciones de salud, consulta a un profesional.";
-
 export const categorias: Categoria[] = [
   "Jabones",
   "Cremas",

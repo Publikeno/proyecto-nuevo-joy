@@ -228,9 +228,6 @@ const traducciones: Record<string, TraduccionProducto> = {
   },
 };
 
-export const NOTA_CATALOGO_EN =
-  "Product features, traditional uses and benefits transcribed from the PowerPoint catalog. They do not replace medical guidance; for irritation or health conditions, consult a professional.";
-
 export const productosEn: Producto[] = productos.map((producto) => ({
   ...producto,
   ...traducciones[producto.id],
