@@ -35,3 +35,15 @@ describe("Cremas HRCM agregadas por la usuaria", () => {
     }
   });
 });
+
+describe("RF crema reafirmante corregida por la usuaria", () => {
+  it("se vende en 60 g a $290 MXN en ambos idiomas y nada más cambió", () => {
+    for (const catalogo of [productos, productosEn]) {
+      const rf = catalogo.find((p) => p.id === "crema-rf");
+      expect(rf?.variantes).toEqual([{ tamano: "60 g", precio: 290 }]);
+      expect(rf?.nombre).toBe("RF crema reafirmante para rostro y cuello");
+      expect(rf?.ingredientes).toEqual(["Miel de abejas Meliponas Beecheii", "Romero", "Vitamina E"]);
+    }
+  });
+});
+
