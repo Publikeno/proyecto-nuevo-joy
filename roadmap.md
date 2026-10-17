@@ -9,3 +9,4 @@
 
 - [x] Fichas: leyenda «Producto elaborado con elementos y sustancias naturales, de manera artesanal.» en español e inglés.
 - [x] Contacto: aviso «Atención y entregas en Cancún» arriba de los teléfonos, en español e inglés.
+- [x] Contacto: WhatsApp general 998 407 0222 (nacional e internacional) hasta arriba, luego el aviso de Cancún, Katy y Yair.
