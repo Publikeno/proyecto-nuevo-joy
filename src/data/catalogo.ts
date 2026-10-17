@@ -291,7 +291,7 @@ export const productos: Producto[] = [
     ritual: "La ficha lo presenta como remedio tradicional; no especifica una dosis de uso.",
     destaca:
       "" ,
-    variantes: [{ tamano: "200 g · envase de cristal oscuro", precio: 80 }],
+    variantes: [{ tamano: "200 g · envase de cristal oscuro", precio: 150 }],
   },
   {
     id: "propoleo-eucalipto",
