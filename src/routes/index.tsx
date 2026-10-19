@@ -152,7 +152,7 @@ const GALLERY_PHOTOS = [
   ["IMG_8161", "Shampoo mascarilla · frente", "Cuidado personal", "UoVzqQLvAohzabTi.png", "Vista complementaria"],
   ["IMG_8162", "Repelente de neem · vista", "Cuidado personal", "CmTOVoijXMjKgRRW.png", "Vista complementaria"],
   ["IMG_8163", "Propóleo con eucalipto", "Mieles y elixires", "ECzpgLjrKCNVKmfR.png", "Producto nuevo"],
-  ["IMG_8167", "Mezcla apícola", "Mieles y elixires", "CgeGQYnmuiRTHmeR.png", "Producto por identificar"],
+  ["IMG_8167", "Cacao en polvo", "Mieles y elixires", "CgeGQYnmuiRTHmeR.png", "Producto identificado"],
   ["IMG_8169", "Hidromiel de la Selva", "Mieles y elixires", "MCntVvPuNkpHMABQ.png", "Producto nuevo"],
   ["IMG_8173", "Miel de abejas meliponas", "Mieles y elixires", "aKOGcxRygmNcGPRQ.png", "Producto identificado"],
   ["abejajabon", "Jabón diseño abeja", "Jabones", "tdPQCvHhwktiTsvU.png", "Producto identificado"],
