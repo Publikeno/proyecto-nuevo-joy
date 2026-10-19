@@ -9,4 +9,12 @@
 
 - [x] Fichas: leyenda «Producto elaborado con elementos y sustancias naturales, de manera artesanal.» en español e inglés.
 - [x] Contacto: aviso «Atención y entregas en Cancún» arriba de los teléfonos, en español e inglés.
-- [x] Contacto: WhatsApp general 998 407 0222 (nacional e internacional) hasta arriba, luego el aviso de Cancún, Katy y Yair.
+- [x] Contacto: WhatsApp general 998 407 0222 (nacional e internacional) hasta arriba, luego el aviso de Cancún, Kary y Yair.
+
+# Cambios del 19 de octubre
+
+- [x] Quitar la ficha «Crema Regeneradora Celular para Caballero – Aroma Madera (RCH)» del catálogo.
+- [x] Quitar la foto repetida «Elixir de miel» de la sección de fotos (se queda su ficha del catálogo).
+- [x] La foto «Mezcla apícola» ahora dice «Cacao en polvo».
+- [x] Contacto: el nombre se escribe Kary, no Katy.
+- [x] Publicar los cambios.
