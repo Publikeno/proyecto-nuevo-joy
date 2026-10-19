@@ -182,7 +182,6 @@ export const productos: Producto[] = [
     ],
   },
   {
-  {
     id: "crema-bambu",
     nombre: "Crema HRCM Bambú",
     categoria: "Cremas",
