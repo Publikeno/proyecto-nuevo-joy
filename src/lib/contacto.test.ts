@@ -9,8 +9,8 @@ describe("contacto", () => {
     expect(textos.en.whatsapp).toContain("national and international");
   });
 
-  it("mantiene a Katy y Yair en ese orden con sus números", () => {
-    expect(textos.es.contactPhones.map((f) => f.name)).toEqual(["Katy", "Yair"]);
+  it("mantiene a Kary y Yair en ese orden con sus números", () => {
+    expect(textos.es.contactPhones.map((f) => f.name)).toEqual(["Kary", "Yair"]);
     expect(textos.es.contactPhones.map((f) => f.wa)).toEqual(["529984190382", "529984767605"]);
     expect(textos.es.contactZone).toBe("Atención y entregas en Cancún.");
   });

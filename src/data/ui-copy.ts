@@ -142,7 +142,7 @@ export const textos = {
     contactZone: "Atención y entregas en Cancún.",
     contactPhones: [
       {
-        name: "Katy",
+        name: "Kary",
         display: "Llamadas y WhatsApp: +52 998 419 0382",
         wa: "529984190382",
       },
@@ -316,7 +316,7 @@ export const textos = {
     contactZone: "Service and deliveries in Cancún.",
     contactPhones: [
       {
-        name: "Katy",
+        name: "Kary",
         display: "Calls and WhatsApp: +52 998 419 0382",
         wa: "529984190382",
       },
