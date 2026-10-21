@@ -13,3 +13,4 @@
 - The public custom domain is served by GitHub Pages via `.github/workflows/deploy-pages.yml`; it copies Lovable-hosted `*.asset.json` files into the static build with `scripts/copy-lovable-assets.mjs`, because `/__l5e/` asset URLs only resolve on Lovable hosting.
 - `public/sw.js` is a kill-switch that unregisters the legacy site's service worker and clears its caches; keep it so returning visitors stop seeing the old cached site.
 - Preserve product detail state while the cart or its gallery is open; dismissing the overlay restores the previous view without route navigation or close-time focus scrolling.
+- Render photo-only entries from `src/data/catalogo-fotos.ts` in the same catalog grid and category filters as priced products; keep them outside commercial catalog data so missing prices cannot become zero-price purchases.

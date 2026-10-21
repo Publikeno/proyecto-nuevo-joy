@@ -15,6 +15,7 @@ import {
   type Producto,
 } from "@/data/catalogo";
 import { productosEn } from "@/data/catalogo-en";
+import { fotosCatalogo } from "@/data/catalogo-fotos";
 import { textos, type Idioma } from "@/data/ui-copy";
 import { HeroRuta } from "@/components/HeroRuta";
 import { FranjaGeo } from "@/components/FranjaGeo";
@@ -133,38 +134,8 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
 
 const GALERIA_PRODUCTOS: Record<string, { src: string; label: string }[]> = {};
 
-const GALLERY_PHOTOS = [
-  ["IMG_8090", "Jabón cúrcuma, coco y miel de abejas meliponas", "Jabones", "FVjiYoRnRUOswewl.png", "Producto identificado"],
-  ["IMG_8092", "Jabón de panal y abeja", "Jabones", "cjXqhYGENXHnNSSq.png", "Diseño recibido"],
-  ["IMG_8094", "Jabón artesanal rosa", "Jabones", "XncbeftxROyqSnSU.png", "Variante por confirmar"],
-  ["IMG_8097", "Jabón fresa champagne", "Jabones", "IbraseDUEzHLDVvZ.png", "Producto identificado"],
-  ["IMG_8103", "Jabón de tepezcohuite", "Jabones", "yHdJgNQqEyJbjCzN.png", "Producto identificado"],
-  ["IMG_8105", "Tepezcohuite · vista alternativa", "Jabones", "SokZdvQlOIRrbxNA.png", "Vista complementaria"],
-  ["IMG_8111", "Jabón azul", "Jabones", "iaVAwyMqheEVuhrG.png", "Fórmula por identificar"],
-  ["IMG_8115", "Jabón de lavanda y miel", "Jabones", "JqqJWmQbuLLeDbPG.png", "Producto nuevo"],
-  ["IMG_8116", "Kit caja flor", "Kits", "unzopUKhjvxvgdNU.png", "Contenido por confirmar"],
-  ["IMG_8136", "Repelente de neem", "Cuidado personal", "FCcSMVSoBoukJMSV.png", "Producto nuevo"],
-  ["IMG_8139", "Crema RCH · vista lateral", "Cremas", "lVStLKQNIEkBTXKZ.png", "Vista complementaria"],
-  ["IMG_8141", "Crema regeneradora RCH", "Cremas", "XgBmlNTBkuUxDfPC.png", "Producto identificado"],
-  ["IMG_8149", "Dúo de jabones", "Kits", "oQoFOOhWJEQeUlvP.png", "Composición por confirmar"],
-  ["IMG_8158", "Shampoo preventivo de miel, romero y neem", "Cuidado personal", "gOZwFMgbmADoRoVU.png", "Producto nuevo"],
-  ["IMG_8159", "Shampoo mascarilla · presentación", "Cuidado personal", "LiPgbsxrjpooUXfa.png", "Producto identificado"],
-  ["IMG_8160", "Shampoo mascarilla · reverso", "Cuidado personal", "hlWxpNDpheDinwEC.png", "Vista complementaria"],
-  ["IMG_8161", "Shampoo mascarilla · frente", "Cuidado personal", "UoVzqQLvAohzabTi.png", "Vista complementaria"],
-  ["IMG_8162", "Repelente de neem · vista", "Cuidado personal", "CmTOVoijXMjKgRRW.png", "Vista complementaria"],
-  ["IMG_8163", "Propóleo con eucalipto", "Mieles y elixires", "ECzpgLjrKCNVKmfR.png", "Producto nuevo"],
-  ["IMG_8167", "Cacao en polvo", "Mieles y elixires", "CgeGQYnmuiRTHmeR.png", "Producto identificado"],
-  ["IMG_8169", "Hidromiel de la Selva", "Mieles y elixires", "MCntVvPuNkpHMABQ.png", "Producto nuevo"],
-  ["abejajabon", "Jabón diseño abeja", "Jabones", "tdPQCvHhwktiTsvU.png", "Producto identificado"],
-  ["jabondemiel", "Jabón de neem y miel", "Jabones", "tHPfKyyWZZqrrwZs.png", "Producto identificado"],
-] as const;
-
 const galleryImageUrl = (file: string) =>
-  file.startsWith("/")
-    ? file
-    : `https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/${file}`;
-const GALLERY_FILTERS = ["Todas", "Jabones", "Cremas", "Cuidado personal", "Mieles y elixires", "Kits"] as const;
-type GalleryFilter = (typeof GALLERY_FILTERS)[number];
+  `https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/${file}`;
 
 const imagenProducto = (producto: Producto) => {
   if (PRODUCT_IMAGE_URLS[producto.id]) return PRODUCT_IMAGE_URLS[producto.id];
@@ -180,7 +151,6 @@ const imagenProducto = (producto: Producto) => {
 function Index() {
   const [idioma, setIdioma] = useState<Idioma>("es");
   const [filtro, setFiltro] = useState<Filtro>("Todo");
-  const [galleryFiltro, setGalleryFiltro] = useState<GalleryFilter>("Todas");
   const [detalle, setDetalle] = useState<Producto | null>(null);
   const [presentacionSeleccionada, setPresentacionSeleccionada] = useState<string | null>(null);
   const [galeria, setGaleria] = useState<{ titulo: string; fotos: { src: string; label: string }[] } | null>(null);
@@ -256,8 +226,8 @@ function Index() {
 
 
   const fotosVisibles = useMemo(
-    () => galleryFiltro === "Todas" ? GALLERY_PHOTOS : GALLERY_PHOTOS.filter((photo) => photo[2] === galleryFiltro),
-    [galleryFiltro],
+    () => filtro === "Todo" ? fotosCatalogo : fotosCatalogo.filter((foto) => foto.categoria === filtro),
+    [filtro],
   );
 
   const conteoXuumiel = productosActivos.filter((p) => CAT_XUUMIEL.includes(p.categoria)).length;
@@ -722,7 +692,7 @@ function Index() {
               </p>
             )}
             <p aria-live="polite" className="mt-4 text-sm text-muted-foreground">
-              {lista.length} {lista.length === 1 ? copy.pieceSingular : copy.piecePlural}
+              {lista.length + fotosVisibles.length} {lista.length + fotosVisibles.length === 1 ? copy.pieceSingular : copy.piecePlural}
             </p>
 
             <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -817,73 +787,25 @@ function Index() {
                    </div>
                 </li>
               ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* Galería completa de fotografías recibidas */}
-        <section id="fotos-productos" className="border-b border-border bg-secondary/40">
-          <div className="mx-auto max-w-6xl px-5 py-16">
-            <p className="text-xs uppercase tracking-[0.3em] text-terracotta">Galería de productos</p>
-            <h2 className="mt-4 font-display text-3xl sm:text-4xl">Todas las presentaciones.</h2>
-            <p className="mt-3 max-w-2xl text-muted-foreground">
-              Aquí están las fotografías nuevas de XUUMIEL y XUUJÁAB, organizadas por tipo de producto. Las imágenes pendientes de identificar permanecen visibles para no perder ninguna.
-            </p>
-
-            <div className="mt-8 flex gap-2 overflow-x-auto pb-2" role="group" aria-label="Filtrar fotografías por tipo">
-              {GALLERY_FILTERS.map((category) => (
-                <button
-                  key={category}
-                  type="button"
-                  onClick={() => setGalleryFiltro(category)}
-                  aria-pressed={galleryFiltro === category}
-                  className={`shrink-0 rounded-full border px-4 py-2 text-sm transition-colors ${
-                    galleryFiltro === category
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-card text-foreground hover:border-honey"
-                  }`}
-                >
-                  {category}
-                  <span className="ml-2 text-xs opacity-70">
-                    {category === "Todas" ? GALLERY_PHOTOS.length : GALLERY_PHOTOS.filter((photo) => photo[2] === category).length}
-                  </span>
-                </button>
-              ))}
-            </div>
-
-            <p aria-live="polite" className="mt-3 text-sm text-muted-foreground">
-              {fotosVisibles.length} imágenes visibles
-            </p>
-
-            <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {fotosVisibles.map((photo) => {
-                const soloLogo = photo[3] === "oQoFOOhWJEQeUlvP.png";
-                return (
-                <li key={photo[0]} className="overflow-hidden rounded-sm border border-border bg-card">
-                  <div className="flex aspect-square items-center justify-center bg-secondary/40 p-3">
-                    <img
-                      src={soloLogo ? logo : galleryImageUrl(photo[3])}
-                      alt={
-                        soloLogo
-                          ? idioma === "es"
-                            ? "Logotipo de XUUMIEL"
-                            : "XUUMIEL logo"
-                          : `${photo[1]} · ${photo[2]}`
-                      }
-                      width={800}
-                      height={800}
-                      loading="lazy"
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <p className="text-[0.64rem] uppercase tracking-[0.2em] text-terracotta">{photo[2]}</p>
-                    <h3 className="mt-2 font-display text-lg leading-snug">{photo[1]}</h3>
-                    <p className="mt-2 text-xs uppercase tracking-[0.12em] text-muted-foreground">{photo[4]}</p>
+              {fotosVisibles.map((foto) => (
+                <li key={foto.id} className="flex flex-col overflow-hidden rounded-sm border border-border bg-card">
+                  <img
+                    src={galleryImageUrl(foto.archivo)}
+                    alt={foto.nombre}
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    className="aspect-[4/3] w-full border-b border-border bg-card object-contain"
+                  />
+                  <div className="flex flex-1 flex-col p-6">
+                    <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
+                      {copy.category[foto.categoria]}
+                    </p>
+                    <h3 className="mt-3 font-display text-xl leading-snug">{foto.nombre}</h3>
+                    <p className="mt-2 text-xs uppercase tracking-[0.12em] text-muted-foreground">{foto.estado}</p>
                   </div>
                 </li>
-                );
-              })}
+              ))}
             </ul>
           </div>
         </section>
