@@ -2,8 +2,8 @@
 
 # Catálogo único
 
-- [ ] Integrar las fotos de productos no repetidos en Catálogo 2026 sin añadir precios ni descripciones.
-- [ ] Eliminar la sección Todas las presentaciones y comprobar filtros y fichas.
+- [x] Integrar las fotos de productos no repetidos en Catálogo 2026 sin añadir precios ni descripciones.
+- [x] Eliminar la sección Todas las presentaciones y comprobar filtros y fichas.
 
 - [x] Carrito: regresar al producto anterior o a la sección donde se abrió.
 - [x] Fichas, fotos y estadísticas: agregar una opción visible de regresar sin ir al inicio.
