@@ -26,6 +26,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Images, MessageCircle, Store } fr
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaBambu from "@/assets/crema-bambu.jpg.asset.json";
 import cremaMaderas from "@/assets/crema-maderas.jpg.asset.json";
+import elixirCacao from "@/assets/elixir-cacao-original.png.asset.json";
 import cremaRchAzul from "@/assets/crema-rch-etiqueta-azul.jpeg.asset.json";
 import jabonAvenaActual from "@/assets/jabon-avena-70g-actual.jpeg.asset.json";
 import jabonNeem from "@/assets/jabon-neem-melipona.jpeg.asset.json";
@@ -122,6 +123,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "crema-rf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/lVStLKQNIEkBTXKZ.png",
   "miel-abejas-meliponas": frascosXuumiel.url,
   "elixir-miel-melipona-cacao": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/eAfHqBTggGtYVuny.png",
+  "elixir-miel-meliponas-y-cacao": elixirCacao.url,
   "multivitaminico-polen-propoleo-miel": multivitaminicoFrasco,
   "propoleo-eucalipto": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/ECzpgLjrKCNVKmfR.png",
   "shampoo-mascarilla-miel-romero-canela": shampooMiel.url,
@@ -154,7 +156,6 @@ const GALLERY_PHOTOS = [
   ["IMG_8163", "Propóleo con eucalipto", "Mieles y elixires", "ECzpgLjrKCNVKmfR.png", "Producto nuevo"],
   ["IMG_8167", "Cacao en polvo", "Mieles y elixires", "CgeGQYnmuiRTHmeR.png", "Producto identificado"],
   ["IMG_8169", "Hidromiel de la Selva", "Mieles y elixires", "MCntVvPuNkpHMABQ.png", "Producto nuevo"],
-  ["IMG_8173", "Miel de abejas meliponas", "Mieles y elixires", "aKOGcxRygmNcGPRQ.png", "Producto identificado"],
   ["abejajabon", "Jabón diseño abeja", "Jabones", "tdPQCvHhwktiTsvU.png", "Producto identificado"],
   ["jabondemiel", "Jabón de neem y miel", "Jabones", "tHPfKyyWZZqrrwZs.png", "Producto identificado"],
 ] as const;
