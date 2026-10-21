@@ -21,5 +21,5 @@
 
 # Elixir con Cacao
 
-- [ ] Agregar la ficha con foto original, beneficios y presentaciones de 30 ml/$260 y 50 ml/$340; conservar el Elixir existente.
-- [ ] Quitar la foto correspondiente de la galería inferior y comprobar catálogo y carrito.
+- [x] Agregar la ficha con foto original, beneficios y presentaciones de 30 ml/$260 y 50 ml/$340; conservar el Elixir existente.
+- [x] Quitar la foto correspondiente de la galería inferior y comprobar catálogo y carrito.
