@@ -268,10 +268,7 @@ export const productos: Producto[] = [
     descripcion: "La gran cantidad de antioxidantes y polifenoles del cacao puro (100% desgrasado, sin azúcar) lo convierte en un superalimento rico en antioxidantes (flavonoides), minerales como magnesio, hierro y zinc, y compuestos estimulantes como la teobromina. Mejora la salud cardiovascular al aumentar la elasticidad vascular, reduce la inflamación, mejora el estado de ánimo y aporta energía sostenida.",
     ritual: "No especificado en la ficha del catálogo.",
     destaca: "",
-    variantes: [
-      { tamano: "30 ml", precio: 260 },
-      { tamano: "50 ml", precio: 340 },
-    ],
+    variantes: [{ tamano: "30 ml", precio: 180 }],
   },
   {
     id: "multivitaminico-polen-propoleo-miel",
