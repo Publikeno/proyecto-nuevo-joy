@@ -23,6 +23,26 @@ describe("presentaciones del Elixir confirmadas por la usuaria", () => {
   });
 });
 
+describe("Elixir con Cacao agregado por la usuaria", () => {
+  it.each([
+    { tamano: "30 ml", precio: 260 },
+    { tamano: "50 ml", precio: 340 },
+  ])("$tamano cuesta $precio MXN en ambos idiomas", (presentacion) => {
+    for (const catalogo of [productos, productosEn]) {
+      const elixir = catalogo.find((p) => p.id === "elixir-miel-meliponas-y-cacao");
+      expect(elixir?.variantes.find((v) => v.tamano === presentacion.tamano)?.precio).toBe(presentacion.precio);
+    }
+  });
+
+  it("tiene solo las dos presentaciones solicitadas y conserva el Elixir original aparte", () => {
+    expect(productos.find((p) => p.id === "elixir-miel-meliponas-y-cacao")?.variantes).toEqual([
+      { tamano: "30 ml", precio: 260 },
+      { tamano: "50 ml", precio: 340 },
+    ]);
+    expect(productos.find((p) => p.id === "elixir-miel-melipona-cacao")?.variantes).toHaveLength(5);
+  });
+});
+
 describe("Cremas HRCM agregadas por la usuaria", () => {
   it.each([
     ["crema-bambu", "Crema HRCM Bambú"],

@@ -163,6 +163,12 @@ const traducciones: Record<string, TraduccionProducto> = {
     destaca:
       "" ,
   },
+  "elixir-miel-meliponas-y-cacao": {
+    nombre: "Melipona bee honey and cacao elixir",
+    ingrediente: "Melipona bee honey and cacao",
+    ingredientes: ["Melipona bee honey", "100% defatted, sugar-free pure cacao"],
+    descripcion: "The high amount of antioxidants and polyphenols in pure cacao (100% defatted, sugar-free) makes it a superfood rich in antioxidants (flavonoids), minerals such as magnesium, iron and zinc, and stimulating compounds such as theobromine. It improves cardiovascular health by increasing vascular elasticity, reduces inflammation, improves mood and provides sustained energy.",
+  },
   "multivitaminico-polen-propoleo-miel": {
     nombre: "Pollen, propolis and apidea bee honey multivitamin",
     ingrediente: "Pollen, propolis and apidea bee honey",
