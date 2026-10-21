@@ -38,7 +38,6 @@ import gotero50ml from "@/assets/gotero-50ml-original.png";
 import jabonAzul from "@/assets/jabon-azul-sin-fondo.png.asset.json";
 import kitCarteraYute from "@/assets/kit-cartera-yute.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
-import frascosXuumiel from "@/assets/frascos-xuumiel.jpg.asset.json";
 import multivitaminicoFrasco from "@/assets/multivitaminico-frasco-recortado.png";
 import jabonCurcumaFoto from "@/assets/jabon-curcuma-sin-fondo.png.asset.json";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
