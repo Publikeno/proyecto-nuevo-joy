@@ -38,7 +38,6 @@ import gotero50ml from "@/assets/gotero-50ml-original.png";
 import jabonAzul from "@/assets/jabon-azul-sin-fondo.png.asset.json";
 import kitCarteraYute from "@/assets/kit-cartera-yute.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
-import frascosXuumiel from "@/assets/frascos-xuumiel.jpg.asset.json";
 import multivitaminicoFrasco from "@/assets/multivitaminico-frasco-recortado.png";
 import jabonCurcumaFoto from "@/assets/jabon-curcuma-sin-fondo.png.asset.json";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
@@ -121,7 +120,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "crema-bambu": cremaBambu.url,
   "crema-maderas": cremaMaderas.url,
   "crema-rf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/lVStLKQNIEkBTXKZ.png",
-  "miel-abejas-meliponas": frascosXuumiel.url,
+  "miel-abejas-meliponas": elixirCacao.url,
   "elixir-miel-melipona-cacao": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/eAfHqBTggGtYVuny.png",
   "elixir-miel-meliponas-y-cacao": elixirCacao.url,
   "multivitaminico-polen-propoleo-miel": multivitaminicoFrasco,
