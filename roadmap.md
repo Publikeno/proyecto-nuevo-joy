@@ -18,3 +18,8 @@
 - [x] La foto «Mezcla apícola» ahora dice «Cacao en polvo».
 - [x] Contacto: el nombre se escribe Kary, no Katy.
 - [x] Publicar los cambios.
+
+# Elixir con Cacao
+
+- [ ] Agregar la ficha con foto original, beneficios y presentaciones de 30 ml/$260 y 50 ml/$340; conservar el Elixir existente.
+- [ ] Quitar la foto correspondiente de la galería inferior y comprobar catálogo y carrito.
