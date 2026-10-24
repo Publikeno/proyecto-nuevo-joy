@@ -62,7 +62,7 @@ import productosColmena from "@/assets/xuumiel-productos-colmena.jpg.asset.json"
 import elixirSeccion from "@/assets/xuumiel-elixir-seccion.jpg.asset.json";
 import xuujaab1 from "@/assets/ruta/xuujaab-1.jpg";
 import xuujaab1Nueva from "@/assets/xuujaab-jabones-nueva.jpg.asset.json";
-import xuujaab2 from "@/assets/ruta/xuujaab-2.jpg";
+import xuujaab2Nueva from "@/assets/xuujaab-tray-nueva.jpg.asset.json";
 import xuujaab3 from "@/assets/ruta/xuujaab-3.jpg";
 
 export const Route = createFileRoute("/")({
