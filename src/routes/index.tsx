@@ -37,7 +37,7 @@ import jabonTepezcohuiteActual from "@/assets/jabon-tepezcohuite-100g-actual.jpe
 import shampooMiel from "@/assets/shampoo-miel-romero-canela-actual.jpeg.asset.json";
 import shampooPreventivo from "@/assets/shampoo-preventivo-miel-romero-neem-sin-fondo.png.asset.json";
 import gotero50ml from "@/assets/gotero-50ml-original.png";
-import jabonAzul from "@/assets/jabon-azul-sin-fondo.png.asset.json";
+import jabonAzul from "@/assets/jabon-melipona-madera-nueva.jpg.asset.json";
 import kitCarteraYute from "@/assets/kit-cartera-yute.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import multivitaminicoFrasco from "@/assets/multivitaminico-frasco-recortado.png";
