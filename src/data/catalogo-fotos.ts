@@ -1,4 +1,5 @@
 import type { Categoria } from "./catalogo";
+import elixirCacaoNueva from "@/assets/elixir-cacao-nueva.jpg.asset.json";
 
 // Photo-only entries are intentionally separate from purchasable products.
 export type FotoCatalogo = {
@@ -21,7 +22,7 @@ export const fotosCatalogo: FotoCatalogo[] = [
     categoria: "Mieles y elixires",
     archivo: "CgeGQYnmuiRTHmeR.png",
     estado: "Producto identificado",
-    url: "/__l5e/assets-v1/5fae8a53-7c0e-4812-8eb2-09ecb4e202c9/elixir-cacao-nueva.jpg",
+    url: elixirCacaoNueva.url,
   },
   { id: "IMG_8169", nombre: "Hidromiel de la Selva", categoria: "Mieles y elixires", archivo: "MCntVvPuNkpHMABQ.png", estado: "Producto nuevo" },
   { id: "abejajabon", nombre: "Jabón diseño abeja", categoria: "Jabones", archivo: "tdPQCvHhwktiTsvU.png", estado: "Producto identificado" },
