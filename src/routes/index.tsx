@@ -28,6 +28,7 @@ import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaBambu from "@/assets/crema-bambu.jpg.asset.json";
 import cremaMaderas from "@/assets/crema-maderas.jpg.asset.json";
 import elixirCacaoNueva from "@/assets/elixir-cacao-nueva.jpg.asset.json";
+import elixirOriginalNueva from "@/assets/elixir-original-nueva.jpg.asset.json";
 import propoleoEucalipto from "@/assets/propoleo-eucalipto-cuadro.jpg";
 import cremaRchAzul from "@/assets/crema-rch-etiqueta-azul.jpeg.asset.json";
 import jabonAvenaActual from "@/assets/jabon-avena-70g-actual.jpeg.asset.json";
@@ -124,7 +125,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "crema-bambu": cremaBambu.url,
   "crema-maderas": cremaMaderas.url,
   "crema-rf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/lVStLKQNIEkBTXKZ.png",
-  "elixir-miel-melipona-cacao": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/eAfHqBTggGtYVuny.png",
+  "elixir-miel-melipona-cacao": elixirOriginalNueva.url,
   "elixir-miel-meliponas-y-cacao": elixirCacaoNueva.url,
   "multivitaminico-polen-propoleo-miel": multivitaminicoFrasco,
   "propoleo-eucalipto": propoleoEucalipto,
