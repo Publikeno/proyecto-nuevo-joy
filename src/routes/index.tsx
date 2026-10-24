@@ -557,7 +557,7 @@ function Index() {
                 <div className="mt-5 grid grid-cols-3 gap-3">
                   {[
                     { src: xuujaab1Nueva.url, alt: copy.alt.soaps },
-                    { src: xuujaab2, alt: copy.alt.cream },
+                    { src: xuujaab2Nueva.url, alt: copy.alt.cream },
                     { src: xuujaab3, alt: copy.alt.kit },
                   ].map((i) => (
                     <img
