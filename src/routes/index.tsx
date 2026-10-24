@@ -58,6 +58,7 @@ import meliponarioImg from "@/assets/ruta/meliponario.jpg";
 import xuumiel1 from "@/assets/ruta/xuumiel-1.jpg";
 import xuumiel2 from "@/assets/ruta/xuumiel-2.jpg";
 import productosColmena from "@/assets/xuumiel-productos-colmena.jpg.asset.json";
+import elixirSeccion from "@/assets/xuumiel-elixir-seccion.jpg.asset.json";
 import xuujaab1 from "@/assets/ruta/xuujaab-1.jpg";
 import xuujaab2 from "@/assets/ruta/xuujaab-2.jpg";
 import xuujaab3 from "@/assets/ruta/xuujaab-3.jpg";
@@ -509,7 +510,7 @@ function Index() {
                 />
                 <div className="mt-5 grid grid-cols-2 gap-3">
                   {[
-                    { src: xuumiel1, alt: copy.alt.honeyJars },
+                    { src: elixirSeccion.url, alt: copy.alt.honeyJars },
                     { src: xuumiel2, alt: copy.alt.elixir },
                   ].map((i) => (
                     <img
