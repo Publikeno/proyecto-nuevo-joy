@@ -37,7 +37,7 @@ import jabonTepezcohuiteActual from "@/assets/jabon-tepezcohuite-100g-actual.jpe
 import shampooMiel from "@/assets/shampoo-miel-romero-canela-actual.jpeg.asset.json";
 import shampooPreventivo from "@/assets/shampoo-preventivo-miel-romero-neem-sin-fondo.png.asset.json";
 import gotero50ml from "@/assets/gotero-50ml-original.png";
-import jabonAzul from "@/assets/jabon-melipona-madera-nueva.jpg.asset.json";
+import jabonAzul from "@/assets/jabon-melipona-madera-cuadro.jpg";
 import kitCarteraYute from "@/assets/kit-cartera-yute.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import multivitaminicoFrasco from "@/assets/multivitaminico-frasco-recortado.png";
@@ -111,7 +111,7 @@ const CAT_XUUMIEL: Categoria[] = ["Mieles y elixires"];
 const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "jabon-avena": jabonAvenaActual.url,
   "jabon-tepezcohuite-melipona": jabonTepezcohuiteActual.url,
-  "jabon-miel-melipona-madera": jabonAzul.url,
+  "jabon-miel-melipona-madera": jabonAzul,
   "jabon-neem-coco": jabonNeem.url,
   "jabon-curcuma-coco-melipona": jabonCurcumaFoto.url,
   "jabon-fresa-champagne": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/IbraseDUEzHLDVvZ.png",
@@ -708,7 +708,7 @@ function Index() {
                      width={800}
                      height={600}
                      loading="lazy"
-                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona", "crema-bambu", "crema-maderas"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
+                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona", "crema-bambu", "crema-maderas"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
                    />
                   {GALERIA_PRODUCTOS[p.id] && (
                     <button
@@ -1111,7 +1111,7 @@ function Index() {
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona", "crema-bambu", "crema-maderas"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona", "crema-bambu", "crema-maderas"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
                />
               {GALERIA_PRODUCTOS[detalle.id] && (
                 <button
