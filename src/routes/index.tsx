@@ -62,9 +62,8 @@ import xuumiel2 from "@/assets/ruta/xuumiel-2.jpg";
 import productosColmena from "@/assets/xuumiel-productos-colmena.jpg.asset.json";
 import elixirSeccion from "@/assets/xuumiel-elixir-seccion.jpg.asset.json";
 import xuujaab1 from "@/assets/ruta/xuujaab-1.jpg";
-import xuujaab1Nueva from "@/assets/xuujaab-jabones-nueva.jpg.asset.json";
+import xuujaabComposicionNueva from "@/assets/xuujaab-composicion-nueva.jpg.asset.json";
 import xuujaab2 from "@/assets/ruta/xuujaab-2.jpg";
-import xuujaab2Nueva from "@/assets/xuujaab-tray-nueva.jpg.asset.json";
 import xuujaab3 from "@/assets/ruta/xuujaab-3.jpg";
 
 export const Route = createFileRoute("/")({
@@ -556,23 +555,14 @@ function Index() {
                   <h3 className="font-display text-2xl tracking-[0.12em]">XUUJÁAB</h3>
                 </div>
                 <p className="mt-2 text-muted-foreground">{copy.xuujaabDescription}</p>
-                <div className="mt-5 grid grid-cols-3 gap-3">
-                  {[
-                    { src: xuujaab1Nueva.url, alt: copy.alt.soaps },
-                    { src: xuujaab2Nueva.url, alt: copy.alt.cream },
-                    { src: xuujaab3, alt: copy.alt.kit },
-                  ].map((i) => (
-                    <img
-                      key={i.alt}
-                      src={i.src}
-                      alt={i.alt}
-                      width={800}
-                      height={800}
-                      loading="lazy"
-                      className="aspect-square w-full rounded-sm border border-border object-cover"
-                    />
-                  ))}
-                </div>
+                <img
+                  src={xuujaabComposicionNueva.url}
+                  alt={`${copy.alt.soaps}, ${copy.alt.cream}, ${copy.alt.kit}`}
+                  width={1376}
+                  height={768}
+                  loading="lazy"
+                  className="mt-5 h-auto w-full rounded-sm border border-border"
+                />
                 <p className="mt-5 text-sm text-muted-foreground">
                   {conteoXuujaab} {copy.catalogCountPlural}
                 </p>
