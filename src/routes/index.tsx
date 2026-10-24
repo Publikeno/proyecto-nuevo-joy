@@ -31,7 +31,7 @@ import elixirCacao from "@/assets/elixir-cacao-original.png.asset.json";
 import propoleoEucalipto from "@/assets/propoleo-eucalipto-cuadro.jpg";
 import cremaRchAzul from "@/assets/crema-rch-etiqueta-azul.jpeg.asset.json";
 import jabonAvenaActual from "@/assets/jabon-avena-70g-actual.jpeg.asset.json";
-import jabonNeem from "@/assets/jabon-neem-melipona.jpeg.asset.json";
+import jabonNeem from "@/assets/jabon-neem-cuadro.jpg.asset.json";
 import jabonSabilaMentaActual from "@/assets/jabon-sabila-menta-80g-actual.jpeg.asset.json";
 import jabonTepezcohuiteActual from "@/assets/jabon-tepezcohuite-100g-actual.jpeg.asset.json";
 import shampooMiel from "@/assets/shampoo-miel-romero-canela-actual.jpeg.asset.json";
@@ -708,7 +708,7 @@ function Index() {
                      width={800}
                      height={600}
                      loading="lazy"
-                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona", "crema-bambu", "crema-maderas"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
+                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona", "crema-bambu", "crema-maderas"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
                    />
                   {GALERIA_PRODUCTOS[p.id] && (
                     <button
@@ -1111,7 +1111,7 @@ function Index() {
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona", "crema-bambu", "crema-maderas"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona", "crema-bambu", "crema-maderas"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
                />
               {GALERIA_PRODUCTOS[detalle.id] && (
                 <button
