@@ -28,6 +28,7 @@ import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaBambu from "@/assets/crema-bambu.jpg.asset.json";
 import cremaMaderas from "@/assets/crema-maderas.jpg.asset.json";
 import elixirCacaoNueva from "@/assets/elixir-cacao-nueva.jpg.asset.json";
+import elixirOriginalNueva from "@/assets/elixir-original-nueva.jpg.asset.json";
 import propoleoEucalipto from "@/assets/propoleo-eucalipto-cuadro.jpg";
 import cremaRchAzul from "@/assets/crema-rch-etiqueta-azul.jpeg.asset.json";
 import jabonAvenaActual from "@/assets/jabon-avena-70g-actual.jpeg.asset.json";
