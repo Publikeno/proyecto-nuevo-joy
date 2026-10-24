@@ -27,7 +27,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Images, MessageCircle, Store } fr
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaBambu from "@/assets/crema-bambu.jpg.asset.json";
 import cremaMaderas from "@/assets/crema-maderas.jpg.asset.json";
-import elixirCacao from "@/assets/elixir-cacao-original.png.asset.json";
+import elixirCacaoNueva from "@/assets/elixir-cacao-nueva.jpg.asset.json";
 import propoleoEucalipto from "@/assets/propoleo-eucalipto-cuadro.jpg";
 import cremaRchAzul from "@/assets/crema-rch-etiqueta-azul.jpeg.asset.json";
 import jabonAvenaActual from "@/assets/jabon-avena-70g-actual.jpeg.asset.json";
@@ -125,7 +125,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "crema-maderas": cremaMaderas.url,
   "crema-rf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/lVStLKQNIEkBTXKZ.png",
   "elixir-miel-melipona-cacao": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/eAfHqBTggGtYVuny.png",
-  "elixir-miel-meliponas-y-cacao": elixirCacao.url,
+  "elixir-miel-meliponas-y-cacao": elixirCacaoNueva.url,
   "multivitaminico-polen-propoleo-miel": multivitaminicoFrasco,
   "propoleo-eucalipto": propoleoEucalipto,
   "shampoo-mascarilla-miel-romero-canela": shampooMiel.url,
@@ -800,12 +800,12 @@ function Index() {
               {fotosVisibles.map((foto) => (
                 <li key={foto.id} className="flex flex-col overflow-hidden rounded-sm border border-border bg-card">
                   <img
-                    src={galleryImageUrl(foto.archivo)}
+                    src={foto.url ?? galleryImageUrl(foto.archivo)}
                     alt={foto.nombre}
                     width={800}
                     height={600}
                     loading="lazy"
-                    className="aspect-[4/3] w-full border-b border-border bg-card object-contain"
+                    className={`aspect-[4/3] w-full border-b border-border ${foto.url ? "object-cover" : "bg-card object-contain"}`}
                   />
                   <div className="flex flex-1 flex-col p-6">
                     <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
