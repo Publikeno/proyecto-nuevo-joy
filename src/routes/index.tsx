@@ -28,7 +28,7 @@ import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaBambu from "@/assets/crema-bambu.jpg.asset.json";
 import cremaMaderas from "@/assets/crema-maderas.jpg.asset.json";
 import elixirCacao from "@/assets/elixir-cacao-original.png.asset.json";
-import propoleoEucalipto from "@/assets/propoleo-eucalipto.png.asset.json";
+import propoleoEucalipto from "@/assets/propoleo-eucalipto-cuadro.jpg";
 import cremaRchAzul from "@/assets/crema-rch-etiqueta-azul.jpeg.asset.json";
 import jabonAvenaActual from "@/assets/jabon-avena-70g-actual.jpeg.asset.json";
 import jabonNeem from "@/assets/jabon-neem-melipona.jpeg.asset.json";
@@ -125,7 +125,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "elixir-miel-melipona-cacao": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/eAfHqBTggGtYVuny.png",
   "elixir-miel-meliponas-y-cacao": elixirCacao.url,
   "multivitaminico-polen-propoleo-miel": multivitaminicoFrasco,
-  "propoleo-eucalipto": propoleoEucalipto.url,
+  "propoleo-eucalipto": propoleoEucalipto,
   "shampoo-mascarilla-miel-romero-canela": shampooMiel.url,
   "shampoo-preventivo-miel-romero-neem": shampooPreventivo.url,
   "repelente-crema": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FCcSMVSoBoukJMSV.png",
@@ -603,7 +603,7 @@ function Index() {
                          width={800}
                          height={600}
                          loading="lazy"
-                         className={`aspect-[4/3] w-full border-b border-border ${p.id === "propoleo-eucalipto" ? "bg-card object-contain" : "object-cover"}`}
+                         className={`aspect-[4/3] w-full border-b border-border object-cover`}
                        />
                        <div className="flex flex-1 flex-col p-5">
                          <h4 className="font-display text-lg leading-snug">{p.nombre}</h4>
@@ -708,7 +708,7 @@ function Index() {
                      width={800}
                      height={600}
                      loading="lazy"
-                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona", "crema-bambu", "crema-maderas", "propoleo-eucalipto"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
+                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona", "crema-bambu", "crema-maderas"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
                    />
                   {GALERIA_PRODUCTOS[p.id] && (
                     <button
@@ -1111,7 +1111,7 @@ function Index() {
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona", "crema-bambu", "crema-maderas", "propoleo-eucalipto"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "jabon-neem-coco", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "jabon-miel-melipona-madera", "multivitaminico-polen-propoleo-miel", "jabon-curcuma-coco-melipona", "crema-bambu", "crema-maderas"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
                />
               {GALERIA_PRODUCTOS[detalle.id] && (
                 <button
