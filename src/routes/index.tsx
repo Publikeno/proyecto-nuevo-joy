@@ -63,6 +63,7 @@ import elixirSeccion from "@/assets/xuumiel-elixir-seccion.jpg.asset.json";
 import xuujaab1 from "@/assets/ruta/xuujaab-1.jpg";
 import xuujaab1Nueva from "@/assets/xuujaab-jabones-nueva.jpg.asset.json";
 import xuujaab2 from "@/assets/ruta/xuujaab-2.jpg";
+import xuujaab2Nueva from "@/assets/xuujaab-tray-nueva.jpg.asset.json";
 import xuujaab3 from "@/assets/ruta/xuujaab-3.jpg";
 
 export const Route = createFileRoute("/")({
@@ -557,7 +558,7 @@ function Index() {
                 <div className="mt-5 grid grid-cols-3 gap-3">
                   {[
                     { src: xuujaab1Nueva.url, alt: copy.alt.soaps },
-                    { src: xuujaab2, alt: copy.alt.cream },
+                    { src: xuujaab2Nueva.url, alt: copy.alt.cream },
                     { src: xuujaab3, alt: copy.alt.kit },
                   ].map((i) => (
                     <img
