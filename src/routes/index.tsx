@@ -125,7 +125,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "crema-bambu": cremaBambu.url,
   "crema-maderas": cremaMaderas.url,
   "crema-rf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/lVStLKQNIEkBTXKZ.png",
-  "elixir-miel-melipona-cacao": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/eAfHqBTggGtYVuny.png",
+  "elixir-miel-melipona-cacao": elixirOriginalNueva.url,
   "elixir-miel-meliponas-y-cacao": elixirCacaoNueva.url,
   "multivitaminico-polen-propoleo-miel": multivitaminicoFrasco,
   "propoleo-eucalipto": propoleoEucalipto,
