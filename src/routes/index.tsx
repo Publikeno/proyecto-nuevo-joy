@@ -61,6 +61,7 @@ import xuumiel2 from "@/assets/ruta/xuumiel-2.jpg";
 import productosColmena from "@/assets/xuumiel-productos-colmena.jpg.asset.json";
 import elixirSeccion from "@/assets/xuumiel-elixir-seccion.jpg.asset.json";
 import xuujaab1 from "@/assets/ruta/xuujaab-1.jpg";
+import xuujaab1Nueva from "@/assets/xuujaab-jabones-nueva.jpg.asset.json";
 import xuujaab2 from "@/assets/ruta/xuujaab-2.jpg";
 import xuujaab3 from "@/assets/ruta/xuujaab-3.jpg";
 
@@ -555,7 +556,7 @@ function Index() {
                 <p className="mt-2 text-muted-foreground">{copy.xuujaabDescription}</p>
                 <div className="mt-5 grid grid-cols-3 gap-3">
                   {[
-                    { src: xuujaab1, alt: copy.alt.soaps },
+                    { src: xuujaab1Nueva.url, alt: copy.alt.soaps },
                     { src: xuujaab2, alt: copy.alt.cream },
                     { src: xuujaab3, alt: copy.alt.kit },
                   ].map((i) => (

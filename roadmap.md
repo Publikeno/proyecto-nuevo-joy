@@ -28,3 +28,4 @@
 
 - [x] Agregar la ficha con foto original, beneficios y presentaciones de 30 ml/$260 y 50 ml/$340; conservar el Elixir existente.
 - [x] Quitar la foto correspondiente de la galería inferior y comprobar catálogo y carrito.
+- [x] 2026-10-24: Cambiar solo la primera foto de la sección XUUJÁAB (jabones verdes) por la versión más acercada que adjuntó la usuaria; las otras dos intactas. Hecho con src/assets/xuujaab-jabones-nueva.jpg.asset.json.
