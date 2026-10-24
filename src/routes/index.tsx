@@ -800,12 +800,12 @@ function Index() {
               {fotosVisibles.map((foto) => (
                 <li key={foto.id} className="flex flex-col overflow-hidden rounded-sm border border-border bg-card">
                   <img
-                    src={galleryImageUrl(foto.archivo)}
+                    src={foto.url ?? galleryImageUrl(foto.archivo)}
                     alt={foto.nombre}
                     width={800}
                     height={600}
                     loading="lazy"
-                    className="aspect-[4/3] w-full border-b border-border bg-card object-contain"
+                    className={`aspect-[4/3] w-full border-b border-border ${foto.url ? "object-cover" : "bg-card object-contain"}`}
                   />
                   <div className="flex flex-1 flex-col p-6">
                     <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
