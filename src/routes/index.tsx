@@ -37,7 +37,7 @@ import jabonTepezcohuiteActual from "@/assets/jabon-tepezcohuite-100g-actual.jpe
 import shampooMiel from "@/assets/shampoo-miel-romero-canela-actual.jpeg.asset.json";
 import shampooPreventivo from "@/assets/shampoo-preventivo-miel-romero-neem-sin-fondo.png.asset.json";
 import gotero50ml from "@/assets/gotero-50ml-original.png";
-import jabonAzul from "@/assets/jabon-melipona-madera-nueva.jpg.asset.json";
+import jabonAzul from "@/assets/jabon-melipona-madera-cuadro.jpg";
 import kitCarteraYute from "@/assets/kit-cartera-yute.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import multivitaminicoFrasco from "@/assets/multivitaminico-frasco-recortado.png";
@@ -111,7 +111,7 @@ const CAT_XUUMIEL: Categoria[] = ["Mieles y elixires"];
 const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "jabon-avena": jabonAvenaActual.url,
   "jabon-tepezcohuite-melipona": jabonTepezcohuiteActual.url,
-  "jabon-miel-melipona-madera": jabonAzul.url,
+  "jabon-miel-melipona-madera": jabonAzul,
   "jabon-neem-coco": jabonNeem.url,
   "jabon-curcuma-coco-melipona": jabonCurcumaFoto.url,
   "jabon-fresa-champagne": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/IbraseDUEzHLDVvZ.png",
