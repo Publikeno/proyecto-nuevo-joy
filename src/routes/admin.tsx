@@ -185,7 +185,7 @@ function Panel({ userId }: { userId: string }) {
   );
 }
 
-function Editor({ producto, ajuste, onListo }: { producto: Producto; ajuste?: AjusteProducto; onListo: () => void }) {
+function Editor({ producto, ajuste, onListo }: { producto: Producto; ajuste?: AjusteProducto | undefined; onListo: () => void }) {
   const qc = useQueryClient();
   const [nombre, setNombre] = useState(ajuste?.nombre ?? producto.nombre);
   const [descripcion, setDescripcion] = useState(ajuste?.descripcion ?? producto.descripcion);
@@ -198,14 +198,14 @@ function Editor({ producto, ajuste, onListo }: { producto: Producto; ajuste?: Aj
     const ext = (file.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "");
     const path = `${producto.id}/${Date.now()}.${ext}`;
     const { error } = await supabase.storage.from("product-images").upload(path, file, { contentType: file.type });
-    if (error) return toast.error("No se pudo subir la foto");
+    if (error) { toast.error("No se pudo subir la foto"); return; }
     setImagenPath(path);
     toast.success("Foto lista. Da clic en Guardar.");
   };
 
   const guardar = async () => {
     if (variantes.some((v) => !v.tamano.trim() || !(v.precio > 0))) {
-      return toast.error("Cada presentación necesita tamaño y un precio mayor a 0.");
+      { toast.error("Cada presentación necesita tamaño y un precio mayor a 0."); return; }
     }
     setGuardando(true);
     const { error } = await supabase.from("product_overrides").upsert({
@@ -218,7 +218,7 @@ function Editor({ producto, ajuste, onListo }: { producto: Producto; ajuste?: Aj
       updated_at: new Date().toISOString(),
     });
     setGuardando(false);
-    if (error) return toast.error("No se pudo guardar");
+    if (error) { toast.error("No se pudo guardar"); return; }
     await qc.invalidateQueries({ queryKey: ["product-overrides"] });
     toast.success("Guardado");
     onListo();
@@ -228,7 +228,7 @@ function Editor({ producto, ajuste, onListo }: { producto: Producto; ajuste?: Aj
     if (!ajuste) return onListo();
     if (!confirm("¿Regresar este producto a como estaba originalmente?")) return;
     const { error } = await supabase.from("product_overrides").delete().eq("id", producto.id);
-    if (error) return toast.error("No se pudo restaurar");
+    if (error) { toast.error("No se pudo restaurar"); return; }
     await qc.invalidateQueries({ queryKey: ["product-overrides"] });
     toast.success("Producto restaurado");
     onListo();

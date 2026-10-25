@@ -29,7 +29,7 @@ function ResetPassword() {
   const enviar = async (e: React.FormEvent) => {
     e.preventDefault();
     const { error } = await supabase.auth.updateUser({ password });
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     toast.success("Contraseña cambiada");
     navigate({ to: "/admin", replace: true });
   };
