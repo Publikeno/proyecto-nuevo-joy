@@ -1,26 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { createClient } from "@supabase/supabase-js";
 
 // Sirve las fotos subidas desde el panel (el almacenamiento es privado). Solo lectura.
+// Usa el cliente privilegiado del servidor: no hay política pública de lectura en el bucket.
 export const Route = createFileRoute("/api/public/foto/$")({
   server: {
     handlers: {
       GET: async ({ params }) => {
         const path = params._splat ?? "";
         if (!/^[\w-]+\/[\w.-]+$/.test(path)) return new Response("Not found", { status: 404 });
-        const key = process.env["SUPABASE_PUBLISHABLE_KEY"]!;
-        const sb = createClient(process.env["SUPABASE_URL"]!, key, {
-          auth: { persistSession: false, autoRefreshToken: false },
-          global: {
-            fetch: (input, init) => {
-              const h = new Headers(init?.headers);
-              if (key.startsWith("sb_") && h.get("Authorization") === `Bearer ${key}`) h.delete("Authorization");
-              h.set("apikey", key);
-              return fetch(input, { ...init, headers: h });
-            },
-          },
-        });
-        const { data, error } = await sb.storage.from("product-images").download(path);
+        const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+        const { data, error } = await supabaseAdmin.storage.from("product-images").download(path);
         if (error || !data) return new Response("Not found", { status: 404 });
         return new Response(data, {
           headers: {
