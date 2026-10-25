@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as PagoCompletadoRouteImport } from './routes/pago-completado'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ApiPublicFotoSplatRouteImport } from './routes/api/public/foto.$'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 
@@ -19,9 +21,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PagoCompletadoRoute = PagoCompletadoRouteImport.update({
   id: '/pago-completado',
   path: '/pago-completado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicFotoSplatRoute = ApiPublicFotoSplatRouteImport.update({
@@ -38,20 +50,26 @@ const LovableEmailTransactionalPreviewRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/pago-completado': typeof PagoCompletadoRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/api/public/foto/$': typeof ApiPublicFotoSplatRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/pago-completado': typeof PagoCompletadoRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/api/public/foto/$': typeof ApiPublicFotoSplatRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/pago-completado': typeof PagoCompletadoRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/api/public/foto/$': typeof ApiPublicFotoSplatRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
@@ -59,26 +77,34 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/pago-completado'
+    | '/reset-password'
     | '/api/public/foto/$'
     | '/lovable/email/transactional/preview'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
     | '/pago-completado'
+    | '/reset-password'
     | '/api/public/foto/$'
     | '/lovable/email/transactional/preview'
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/pago-completado'
+    | '/reset-password'
     | '/api/public/foto/$'
     | '/lovable/email/transactional/preview'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
   PagoCompletadoRoute: typeof PagoCompletadoRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   ApiPublicFotoSplatRoute: typeof ApiPublicFotoSplatRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
 }
@@ -92,11 +118,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pago-completado': {
       id: '/pago-completado'
       path: '/pago-completado'
       fullPath: '/pago-completado'
       preLoaderRoute: typeof PagoCompletadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/foto/$': {
@@ -118,7 +158,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
   PagoCompletadoRoute: PagoCompletadoRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   ApiPublicFotoSplatRoute: ApiPublicFotoSplatRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
 }
