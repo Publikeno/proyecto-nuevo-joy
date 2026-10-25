@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
-import { productos } from "@/data/catalogo";
+import { productos, type Producto } from "@/data/catalogo";
+import { aplicarAjustes, type AjusteProducto } from "@/lib/ajustes";
 import { productosEn } from "@/data/catalogo-en";
 import { ENVIO_NACIONAL_MXN, calcularTotales } from "@/lib/pedido";
 
@@ -51,8 +52,10 @@ export const crearPagoCarrito = createServerFn({ method: "POST" })
   .handler(async ({ data }): Promise<Resultado> => {
     const { createStripeClient, getStripeErrorMessage } = await import("@/lib/stripe.server");
     try {
+      const ajustes = await leerAjustes();
+      const listas = [aplicarAjustes(productos, ajustes, "es"), aplicarAjustes(productosEn, ajustes, "en")];
       const items = data.lineas.map((l) => {
-        const info = precioCatalogo(l.id, l.tamano);
+        const info = precioCatalogo(l.id, l.tamano, listas);
         if (!info) throw new Error(`Producto no encontrado: ${l.id} ${l.tamano}`);
         return { ...info, tamano: l.tamano, cantidad: l.cantidad };
       });
