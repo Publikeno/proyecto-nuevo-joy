@@ -1,19 +1,39 @@
 import { createServerFn } from "@tanstack/react-start";
-import { productos } from "@/data/catalogo";
+import { productos, type Producto } from "@/data/catalogo";
+import { aplicarAjustes, type AjusteProducto } from "@/lib/ajustes";
 import { productosEn } from "@/data/catalogo-en";
 import { ENVIO_NACIONAL_MXN, calcularTotales } from "@/lib/pedido";
 
 type Linea = { id: string; tamano: string; cantidad: number };
 type Resultado = { clientSecret: string } | { error: string };
 
-// Busca el precio real en el catálogo (nunca confía en el precio que manda el navegador).
-function precioCatalogo(id: string, tamano: string) {
-  for (const lista of [productos, productosEn]) {
+// Busca el precio real en el catálogo + ajustes del panel (nunca confía en el precio del navegador).
+function precioCatalogo(id: string, tamano: string, listas: Producto[][]) {
+  for (const lista of listas) {
     const p = lista.find((x) => x.id === id);
     const v = p?.variantes.find((x) => x.tamano === tamano);
-    if (p && v) return { nombre: productos.find((x) => x.id === id)?.nombre ?? p.nombre, precio: v.precio };
+    if (p && v) return { nombre: listas[0]!.find((x) => x.id === id)?.nombre ?? p.nombre, precio: v.precio };
   }
   return null;
+}
+
+async function leerAjustes(): Promise<AjusteProducto[]> {
+  const { createClient } = await import("@supabase/supabase-js");
+  const key = process.env["SUPABASE_PUBLISHABLE_KEY"]!;
+  const sb = createClient(process.env["SUPABASE_URL"]!, key, {
+    auth: { persistSession: false, autoRefreshToken: false },
+    global: {
+      fetch: (input, init) => {
+        const h = new Headers(init?.headers);
+        if (key.startsWith("sb_") && h.get("Authorization") === `Bearer ${key}`) h.delete("Authorization");
+        h.set("apikey", key);
+        return fetch(input, { ...init, headers: h });
+      },
+    },
+  });
+  const { data, error } = await sb.from("product_overrides").select("*");
+  if (error) throw new Error("No se pudieron leer los precios");
+  return (data ?? []) as unknown as AjusteProducto[];
 }
 
 export const crearPagoCarrito = createServerFn({ method: "POST" })
@@ -32,8 +52,10 @@ export const crearPagoCarrito = createServerFn({ method: "POST" })
   .handler(async ({ data }): Promise<Resultado> => {
     const { createStripeClient, getStripeErrorMessage } = await import("@/lib/stripe.server");
     try {
+      const ajustes = await leerAjustes();
+      const listas = [aplicarAjustes(productos, ajustes, "es"), aplicarAjustes(productosEn, ajustes, "en")];
       const items = data.lineas.map((l) => {
-        const info = precioCatalogo(l.id, l.tamano);
+        const info = precioCatalogo(l.id, l.tamano, listas);
         if (!info) throw new Error(`Producto no encontrado: ${l.id} ${l.tamano}`);
         return { ...info, tamano: l.tamano, cantidad: l.cantidad };
       });

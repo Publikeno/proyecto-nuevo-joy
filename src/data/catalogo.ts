@@ -17,6 +17,8 @@ export type Producto = {
   destaca: string;
   componentes?: string[];
   variantes: Variante[];
+  /** Foto subida desde el panel de administración (reemplaza la foto por defecto). */
+  imagen?: string | undefined;
 };
 
 export const categorias: Categoria[] = [

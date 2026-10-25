@@ -16,6 +16,9 @@ import {
 } from "@/data/catalogo";
 import { productosEn } from "@/data/catalogo-en";
 import { fotosCatalogo } from "@/data/catalogo-fotos";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+import { aplicarAjustes, type AjusteProducto } from "@/lib/ajustes";
 import { textos, type Idioma } from "@/data/ui-copy";
 import { HeroRuta } from "@/components/HeroRuta";
 import { FranjaGeo } from "@/components/FranjaGeo";
@@ -143,6 +146,7 @@ const galleryImageUrl = (file: string) =>
   `https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/${file}`;
 
 const imagenProducto = (producto: Producto) => {
+  if (producto.imagen) return producto.imagen;
   if (PRODUCT_IMAGE_URLS[producto.id]) return PRODUCT_IMAGE_URLS[producto.id];
   if (producto.id === "miel-abejas-meliponas") return xuumiel2;
   if (producto.marca === "XUUMIEL") return xuumiel1;
@@ -164,7 +168,19 @@ function Index() {
   const [carritoAbierto, setCarritoAbierto] = useState(false);
   const copy = textos[idioma];
   const NAV = NAV_KEYS.map((n) => ({ ...n, label: copy.nav[n.key] }));
-  const productosActivos = idioma === "en" ? productosEn : productos;
+  const { data: ajustes } = useQuery({
+    queryKey: ["product-overrides"],
+    queryFn: async () => {
+      const { data, error } = await supabase.from("product_overrides").select("*");
+      if (error) throw error;
+      return data as unknown as AjusteProducto[];
+    },
+    staleTime: 60_000,
+  });
+  const productosActivos = useMemo(
+    () => aplicarAjustes(idioma === "en" ? productosEn : productos, ajustes, idioma),
+    [idioma, ajustes],
+  );
 
   const abrirDetalle = (producto: Producto) => {
     setPresentacionSeleccionada(null);
