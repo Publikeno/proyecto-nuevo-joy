@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PagoCompletadoRouteImport } from './routes/pago-completado'
+import { Route as ApiPublicFotoSplatRouteImport } from './routes/api/public/foto.$'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const PagoCompletadoRoute = PagoCompletadoRouteImport.update({
   path: '/pago-completado',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicFotoSplatRoute = ApiPublicFotoSplatRouteImport.update({
+  id: '/api/public/foto/$',
+  path: '/api/public/foto/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LovableEmailTransactionalPreviewRoute =
   LovableEmailTransactionalPreviewRouteImport.update({
     id: '/lovable/email/transactional/preview',
@@ -33,34 +39,47 @@ const LovableEmailTransactionalPreviewRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/pago-completado': typeof PagoCompletadoRoute
+  '/api/public/foto/$': typeof ApiPublicFotoSplatRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/pago-completado': typeof PagoCompletadoRoute
+  '/api/public/foto/$': typeof ApiPublicFotoSplatRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/pago-completado': typeof PagoCompletadoRoute
+  '/api/public/foto/$': typeof ApiPublicFotoSplatRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/pago-completado' | '/lovable/email/transactional/preview'
+  fullPaths:
+    | '/'
+    | '/pago-completado'
+    | '/api/public/foto/$'
+    | '/lovable/email/transactional/preview'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/pago-completado' | '/lovable/email/transactional/preview'
+  to:
+    | '/'
+    | '/pago-completado'
+    | '/api/public/foto/$'
+    | '/lovable/email/transactional/preview'
   id:
     | '__root__'
     | '/'
     | '/pago-completado'
+    | '/api/public/foto/$'
     | '/lovable/email/transactional/preview'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PagoCompletadoRoute: typeof PagoCompletadoRoute
+  ApiPublicFotoSplatRoute: typeof ApiPublicFotoSplatRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
 }
 
@@ -80,6 +99,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PagoCompletadoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/foto/$': {
+      id: '/api/public/foto/$'
+      path: '/api/public/foto/$'
+      fullPath: '/api/public/foto/$'
+      preLoaderRoute: typeof ApiPublicFotoSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lovable/email/transactional/preview': {
       id: '/lovable/email/transactional/preview'
       path: '/lovable/email/transactional/preview'
@@ -93,6 +119,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PagoCompletadoRoute: PagoCompletadoRoute,
+  ApiPublicFotoSplatRoute: ApiPublicFotoSplatRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
 }
 export const routeTree = rootRouteImport
