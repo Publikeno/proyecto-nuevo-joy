@@ -47,6 +47,7 @@ import jabonAzul from "@/assets/jabon-melipona-madera-cuadro.jpg";
 import kitCartera from "@/assets/kit-cartera-yute.png.asset.json";
 import kitFlorNueva from "@/assets/kit-cartera-nueva.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
+import repelenteCremaNueva from "@/assets/repelente-crema-nueva.png.asset.json";
 import multivitaminicoFrasco from "@/assets/multivitaminico-nueva.jpg.asset.json";
 import jabonCurcumaFoto from "@/assets/jabon-curcuma-coco-melipona-nueva.jpg.asset.json";
 import jabonFresaChampagneNueva from "@/assets/jabon-fresa-champagne-nueva.jpg.asset.json";
@@ -139,7 +140,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "propoleo-eucalipto": propoleoEucalipto,
   "shampoo-mascarilla-miel-romero-canela": shampooMiel.url,
   "shampoo-preventivo-miel-romero-neem": shampooPreventivo.url,
-  "repelente-crema": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/FCcSMVSoBoukJMSV.png",
+  "repelente-crema": repelenteCremaNueva.url,
   "repelente-liquido-hidroalcoholico": repelenteLiquido,
 };
 
