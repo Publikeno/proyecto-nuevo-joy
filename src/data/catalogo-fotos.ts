@@ -1,5 +1,4 @@
 import type { Categoria } from "./catalogo";
-import elixirCacaoNueva from "@/assets/elixir-cacao-nueva.jpg.asset.json";
 import jabonPanalNueva from "@/assets/jabon-panal-abeja-nueva.png.asset.json";
 import jabonRosaNueva from "@/assets/jabon-rosa-nueva.png.asset.json";
 import jabonLavandaNueva from "@/assets/jabon-lavanda-nueva.png.asset.json";
