@@ -34,6 +34,7 @@ import elixirCacaoNueva from "@/assets/elixir-cacao-nueva.jpg.asset.json";
 import elixirOriginalNueva from "@/assets/elixir-original-nueva.jpg.asset.json";
 import propoleoEucalipto from "@/assets/propoleo-eucalipto-cuadro.jpg";
 import cremaRchAzul from "@/assets/crema-rch-dispensador-nueva.png.asset.json";
+import cremaRchNueva from "@/assets/crema-rch-nueva.png.asset.json";
 import jabonAvenaActual from "@/assets/jabon-avena-70g-actual.jpeg.asset.json";
 import jabonNeem from "@/assets/jabon-neem-cuadro.jpg.asset.json";
 import jabonSabilaMentaActual from "@/assets/jabon-sabila-menta-80g-actual.jpeg.asset.json";
@@ -127,7 +128,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "jabon-sabila-menta": jabonSabilaMentaActual.url,
   "kit-cartera": kitCartera.url,
   "kit-flor": kitFlorNueva.url,
-  "crema-rch": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/XgBmlNTBkuUxDfPC.png",
+  "crema-rch": cremaRchNueva.url,
   "crema-bambu": cremaBambu.url,
   "crema-maderas": cremaMaderas.url,
   "crema-rf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/lVStLKQNIEkBTXKZ.png",
