@@ -40,7 +40,7 @@ import jabonAvenaActual from "@/assets/jabon-avena-70g-actual.jpeg.asset.json";
 import jabonNeem from "@/assets/jabon-neem-cuadro.jpg.asset.json";
 import jabonSabilaMentaActual from "@/assets/jabon-sabila-menta-80g-actual.jpeg.asset.json";
 import jabonTepezcohuiteActual from "@/assets/jabon-tepezcohuite-100g-actual.jpeg.asset.json";
-import shampooMiel from "@/assets/shampoo-miel-romero-canela-actual.jpeg.asset.json";
+import shampooMiel from "@/assets/shampoo-miel-horizontal.png.asset.json";
 import shampooPreventivo from "@/assets/shampoo-preventivo-nueva.png.asset.json";
 import gotero50ml from "@/assets/gotero-50ml-original.png";
 import jabonAzul from "@/assets/jabon-melipona-madera-cuadro.jpg";
