@@ -3,6 +3,7 @@ import elixirCacaoNueva from "@/assets/elixir-cacao-nueva.jpg.asset.json";
 import jabonPanalNueva from "@/assets/jabon-panal-abeja-nueva.png.asset.json";
 import jabonRosaNueva from "@/assets/jabon-rosa-nueva.png.asset.json";
 import jabonLavandaNueva from "@/assets/jabon-lavanda-nueva.png.asset.json";
+import jabonNeemNueva from "@/assets/jabon-neem-nueva.png.asset.json";
 
 // Photo-only entries are intentionally separate from purchasable products.
 export type FotoCatalogo = {
@@ -29,5 +30,5 @@ export const fotosCatalogo: FotoCatalogo[] = [
   },
   { id: "IMG_8169", nombre: "Hidromiel de la Selva", categoria: "Mieles y elixires", archivo: "MCntVvPuNkpHMABQ.png", estado: "Producto nuevo" },
   { id: "abejajabon", nombre: "Jabón diseño abeja", categoria: "Jabones", archivo: "tdPQCvHhwktiTsvU.png", estado: "Producto identificado" },
-  { id: "jabondemiel", nombre: "Jabón de neem y miel", categoria: "Jabones", archivo: "tHPfKyyWZZqrrwZs.png", estado: "Producto identificado" },
+  { id: "jabondemiel", nombre: "Jabón de neem y miel", categoria: "Jabones", archivo: "tHPfKyyWZZqrrwZs.png", estado: "Producto identificado", url: jabonNeemNueva.url },
 ];
