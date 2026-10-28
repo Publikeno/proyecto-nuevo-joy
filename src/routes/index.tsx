@@ -42,7 +42,7 @@ import shampooMiel from "@/assets/shampoo-miel-romero-canela-actual.jpeg.asset.j
 import shampooPreventivo from "@/assets/shampoo-preventivo-miel-romero-neem-sin-fondo.png.asset.json";
 import gotero50ml from "@/assets/gotero-50ml-original.png";
 import jabonAzul from "@/assets/jabon-melipona-madera-cuadro.jpg";
-import kitCarteraYute from "@/assets/kit-cartera-yute.png.asset.json";
+import kitCarteraNueva from "@/assets/kit-cartera-nueva.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import multivitaminicoFrasco from "@/assets/multivitaminico-nueva.jpg.asset.json";
 import jabonCurcumaFoto from "@/assets/jabon-curcuma-coco-melipona-nueva.jpg.asset.json";
@@ -124,7 +124,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "jabon-curcuma-coco-melipona": jabonCurcumaFoto.url,
   "jabon-fresa-champagne": jabonFresaChampagneNueva.url,
   "jabon-sabila-menta": jabonSabilaMentaActual.url,
-  "kit-cartera": kitCarteraYute.url,
+  "kit-cartera": kitCarteraNueva.url,
   "kit-flor": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/unzopUKhjvxvgdNU.png",
   "crema-rch": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663032049309/XgBmlNTBkuUxDfPC.png",
   "crema-bambu": cremaBambu.url,
