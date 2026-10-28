@@ -130,7 +130,7 @@ export const textos = {
     alliesLabel: "Aliados",
     alliesTitle: "Dónde encontrarnos y con quién trabajamos",
     allyDescription: "Agencia aliada de la ruta. Llámanos o escríbenos por WhatsApp al +52 998 503 9554 o visita www.caribbeanlikes.com.mx.",
-    caribbeanWhatsApp: "Llamadas y WhatsApp: +52 998 503 9554",
+    caribbeanWhatsApp: "WhatsApp: +52 998 503 9554",
     caribbeanWeb: "www.caribbeanlikes.com.mx",
     stationTitle: "Tienda Estación Tren Maya",
     stationDescription:
@@ -143,12 +143,12 @@ export const textos = {
     contactPhones: [
       {
         name: "Kary",
-        display: "Llamadas y WhatsApp: +52 998 419 0382",
+        display: "WhatsApp: +52 998 419 0382",
         wa: "529984190382",
       },
       {
         name: "Yair",
-        display: "Llamadas y WhatsApp: +52 998 476 7605",
+        display: "WhatsApp: +52 998 476 7605",
         wa: "529984767605",
       },
     ],
@@ -304,7 +304,7 @@ export const textos = {
     alliesLabel: "Partners",
     alliesTitle: "Where to find us and who we work with",
     allyDescription: "Partner agency of the route. Call or WhatsApp us at +52 998 503 9554 or visit www.caribbeanlikes.com.mx.",
-    caribbeanWhatsApp: "Calls and WhatsApp: +52 998 503 9554",
+    caribbeanWhatsApp: "WhatsApp: +52 998 503 9554",
     caribbeanWeb: "www.caribbeanlikes.com.mx",
     stationTitle: "Tren Maya Station Store",
     stationDescription:
@@ -317,12 +317,12 @@ export const textos = {
     contactPhones: [
       {
         name: "Kary",
-        display: "Calls and WhatsApp: +52 998 419 0382",
+        display: "WhatsApp: +52 998 419 0382",
         wa: "529984190382",
       },
       {
         name: "Yair",
-        display: "Calls and WhatsApp: +52 998 476 7605",
+        display: "WhatsApp: +52 998 476 7605",
         wa: "529984767605",
       },
     ],
