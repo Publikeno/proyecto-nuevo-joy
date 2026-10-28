@@ -34,7 +34,7 @@ import elixirCacaoNueva from "@/assets/elixir-cacao-nueva.jpg.asset.json";
 import elixirOriginalNueva from "@/assets/elixir-original-nueva.jpg.asset.json";
 import propoleoEucalipto from "@/assets/propoleo-eucalipto-cuadro.jpg";
 import cremaRchAzul from "@/assets/crema-rch-dispensador-nueva.png.asset.json";
-import cremaRchNueva from "@/assets/crema-rch-nueva.png.asset.json";
+import cremaRchNueva from "@/assets/crema-rch-horizontal.png.asset.json";
 import cremaRfNueva from "@/assets/crema-rf-nueva.png.asset.json";
 import jabonAvenaActual from "@/assets/jabon-avena-70g-actual.jpeg.asset.json";
 import jabonNeem from "@/assets/jabon-neem-cuadro.jpg.asset.json";
