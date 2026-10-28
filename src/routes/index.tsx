@@ -28,7 +28,7 @@ import { Button } from "@/components/ui/button";
 
 import { ArrowLeft, ChevronLeft, ChevronRight, Images, MessageCircle, Store } from "lucide-react";
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
-import cremaBambu from "@/assets/crema-bambu.jpg.asset.json";
+import cremaBambu from "@/assets/crema-bambu-nueva.png.asset.json";
 import cremaMaderas from "@/assets/crema-maderas.jpg.asset.json";
 import elixirCacaoNueva from "@/assets/elixir-cacao-nueva.jpg.asset.json";
 import elixirOriginalNueva from "@/assets/elixir-original-nueva.jpg.asset.json";
@@ -728,7 +728,7 @@ function Index() {
                      width={800}
                      height={600}
                      loading="lazy"
-                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "crema-bambu", "crema-maderas"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
+                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "crema-maderas"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
                    />
                   {GALERIA_PRODUCTOS[p.id] && (
                     <button
@@ -1131,7 +1131,7 @@ function Index() {
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "crema-bambu", "crema-maderas"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "crema-maderas"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") ? "bg-card object-contain" : "object-cover"}`}
                />
               {GALERIA_PRODUCTOS[detalle.id] && (
                 <button
