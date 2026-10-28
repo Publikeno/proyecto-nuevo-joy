@@ -6,6 +6,7 @@ import jabonLavandaNueva from "@/assets/jabon-lavanda-nueva.png.asset.json";
 import jabonNeemNueva from "@/assets/jabon-neem-nueva.png.asset.json";
 import jabonDisenoAbejaNueva from "@/assets/jabon-diseno-abeja-nueva.png.asset.json";
 import hidromielNueva from "@/assets/hidromiel-nueva.png.asset.json";
+import cacaoPolvoNueva from "@/assets/cacao-polvo-nueva.jpg.asset.json";
 
 // Photo-only entries are intentionally separate from purchasable products.
 export type FotoCatalogo = {
@@ -27,8 +28,8 @@ export const fotosCatalogo: FotoCatalogo[] = [
     nombre: "Cacao en polvo",
     categoria: "Mieles y elixires",
     archivo: "CgeGQYnmuiRTHmeR.png",
-    estado: "Producto identificado",
-    url: elixirCacaoNueva.url,
+    estado: "Desde 200 g · $70",
+    url: cacaoPolvoNueva.url,
   },
   { id: "IMG_8169", nombre: "Hidromiel de la Selva", categoria: "Mieles y elixires", archivo: "MCntVvPuNkpHMABQ.png", estado: "Producto nuevo", url: hidromielNueva.url },
   { id: "abejajabon", nombre: "Jabón diseño abeja", categoria: "Jabones", archivo: "tdPQCvHhwktiTsvU.png", estado: "Producto identificado", url: jabonDisenoAbejaNueva.url },
