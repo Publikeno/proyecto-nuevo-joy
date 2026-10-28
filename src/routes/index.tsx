@@ -46,7 +46,7 @@ import gotero50ml from "@/assets/gotero-50ml-original.png";
 import jabonAzul from "@/assets/jabon-melipona-madera-cuadro.jpg";
 import kitCartera from "@/assets/kit-cartera-yute.png.asset.json";
 import kitFlorNueva from "@/assets/kit-cartera-nueva.png.asset.json";
-import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
+import repelenteLiquido from "@/assets/repelente-liquido-nueva.png.asset.json";
 import repelenteCremaNueva from "@/assets/repelente-crema-nueva.png.asset.json";
 import multivitaminicoFrasco from "@/assets/multivitaminico-nueva.jpg.asset.json";
 import jabonCurcumaFoto from "@/assets/jabon-curcuma-coco-melipona-nueva.jpg.asset.json";
@@ -141,7 +141,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "shampoo-mascarilla-miel-romero-canela": shampooMiel.url,
   "shampoo-preventivo-miel-romero-neem": shampooPreventivo.url,
   "repelente-crema": repelenteCremaNueva.url,
-  "repelente-liquido-hidroalcoholico": repelenteLiquido,
+  "repelente-liquido-hidroalcoholico": repelenteLiquido.url,
 };
 
 const GALERIA_PRODUCTOS: Record<string, { src: string; label: string }[]> = {};
@@ -732,7 +732,7 @@ function Index() {
                      width={800}
                      height={600}
                      loading="lazy"
-                     className={`aspect-[4/3] w-full border-b border-border ${["repelente-liquido-hidroalcoholico", "shampoo-mascarilla-miel-romero-canela"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
+                     className={`aspect-[4/3] w-full border-b border-border ${["shampoo-mascarilla-miel-romero-canela"].includes(p.id) ? "bg-card object-contain" : "object-cover"}`}
                    />
                   {GALERIA_PRODUCTOS[p.id] && (
                     <button
@@ -1135,7 +1135,7 @@ function Index() {
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "shampoo-mascarilla-miel-romero-canela"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["shampoo-mascarilla-miel-romero-canela"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") ? "bg-card object-contain" : "object-cover"}`}
                />
               {GALERIA_PRODUCTOS[detalle.id] && (
                 <button
