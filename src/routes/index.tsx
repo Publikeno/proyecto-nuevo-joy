@@ -33,7 +33,7 @@ import cremaMaderas from "@/assets/crema-maderas.jpg.asset.json";
 import elixirCacaoNueva from "@/assets/elixir-cacao-nueva.jpg.asset.json";
 import elixirOriginalNueva from "@/assets/elixir-original-nueva.jpg.asset.json";
 import propoleoEucalipto from "@/assets/propoleo-eucalipto-cuadro.jpg";
-import cremaRchAzul from "@/assets/crema-rch-etiqueta-azul.jpeg.asset.json";
+import cremaRchAzul from "@/assets/crema-rch-dispensador-nueva.png.asset.json";
 import jabonAvenaActual from "@/assets/jabon-avena-70g-actual.jpeg.asset.json";
 import jabonNeem from "@/assets/jabon-neem-cuadro.jpg.asset.json";
 import jabonSabilaMentaActual from "@/assets/jabon-sabila-menta-80g-actual.jpeg.asset.json";
@@ -1131,7 +1131,7 @@ function Index() {
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "crema-bambu", "crema-maderas"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") || (detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador") ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["repelente-liquido-hidroalcoholico", "shampoo-mascarilla-miel-romero-canela", "shampoo-preventivo-miel-romero-neem", "crema-bambu", "crema-maderas"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") ? "bg-card object-contain" : "object-cover"}`}
                />
               {GALERIA_PRODUCTOS[detalle.id] && (
                 <button
@@ -1210,7 +1210,7 @@ function Index() {
                               className="inline-flex items-center gap-2 text-left underline-offset-4 hover:underline aria-pressed:underline"
                             >
                                {detalle.id === "miel-abejas-meliponas" && v.tamano === "50 ml" && <img src={gotero50ml} alt="" width={36} height={36} className="h-9 w-9 shrink-0 object-contain" />}
-                               {detalle.id === "crema-rch" && <img src={cremaRchAzul.url} alt="" width={36} height={36} className="h-9 w-9 shrink-0 object-contain" />}
+                               {detalle.id === "crema-rch" && <img src={cremaRchAzul.url} alt="" width={36} height={36} className="h-9 w-9 shrink-0 rounded-sm object-cover" />}
                               {v.tamano}
                             </button>
                           ) : v.tamano}
