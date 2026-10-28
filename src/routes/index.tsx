@@ -43,6 +43,7 @@ import shampooPreventivo from "@/assets/shampoo-preventivo-miel-romero-neem-sin-
 import gotero50ml from "@/assets/gotero-50ml-original.png";
 import jabonAzul from "@/assets/jabon-melipona-madera-cuadro.jpg";
 import kitCarteraYute from "@/assets/kit-cartera-yute.png.asset.json";
+import kitCarteraNueva from "@/assets/kit-cartera-nueva.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-sin-fondo.png";
 import multivitaminicoFrasco from "@/assets/multivitaminico-nueva.jpg.asset.json";
 import jabonCurcumaFoto from "@/assets/jabon-curcuma-coco-melipona-nueva.jpg.asset.json";
