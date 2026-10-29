@@ -112,6 +112,42 @@ export function PanelCarrito({
           <div className="mt-2 flex-1 overflow-y-auto">
             <p className="mb-3 text-sm">{en ? "Total to pay" : "Total a pagar"}: <strong>{fmt(total, en)}</strong></p>
             {error && <p className="mb-3 text-sm text-terracotta">{error}</p>}
+            <div className="mb-4 space-y-2 rounded-sm border border-border bg-secondary/40 p-3 text-xs leading-relaxed">
+              <p className="font-display text-sm">
+                {en
+                  ? "While we activate online card payments, you can also pay like this:"
+                  : "Mientras activamos el pago con tarjeta en línea, también puedes pagar así:"}
+              </p>
+              <p className="font-semibold uppercase tracking-wide">{en ? "Deposits and payment methods" : "Depósitos y formas de pago"}</p>
+              <p>
+                <strong>Banco Azteca</strong> — Andrea Dinorah Ruiz Nuricumbo
+                <br />
+                {en ? "Card" : "Tarjeta"}: 5263 5401 4420 8408
+              </p>
+              <p>
+                <strong>{en ? "Debit and credit cards (4%)" : "Con tarjetas de débito y crédito (4%)"}</strong> — Mercado Pago / {en ? "mobile terminal and link" : "terminal móvil y link"}
+                <br />
+                CLABE: 7229 6902 8581 561731
+              </p>
+              <p>
+                <strong>{en ? "Invoiced" : "Facturado"} — Inbursa</strong> — Andrea Dinorah Ruiz Nuricumbo
+                <br />
+                {en ? "Acct" : "Cta"} 5007 7734 271 · CLABE 0366 9150 0777 3427 12
+              </p>
+              <p className="rounded-sm bg-card p-2">
+                <strong>{en ? "Note:" : "Nota:"}</strong>{" "}
+                {en
+                  ? "Send your payment receipt by WhatsApp. If you need an invoice (over $100), deposit to the Inbursa account."
+                  : "Envía tu comprobante de pago por WhatsApp; en caso de requerir facturación (mayor a $100), deposita a la cuenta Inbursa."}
+              </p>
+              <p>
+                WhatsApp: 998 407 0222 (Andrea D.) · 998 419 0382 (Karely)
+                <br />
+                Facebook: Mieles de Quintana Roo
+                <br />
+                {en ? "Email" : "Correo"}: mielesq.roomexico@gmail.com
+              </p>
+            </div>
             <EmbeddedCheckoutProvider stripe={getStripe()} options={{ fetchClientSecret }}>
               <EmbeddedCheckout />
             </EmbeddedCheckoutProvider>
