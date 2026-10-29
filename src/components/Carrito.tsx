@@ -226,6 +226,11 @@ export function PanelCarrito({
             >
               {en ? `Pay ${fmt(total, en)} with card` : `Pagar ${fmt(total, en)} con tarjeta`}
             </button>
+            <p className="text-center text-xs text-muted-foreground">
+              {en
+                ? "We also accept bank deposit and Mercado Pago — you'll see the details in the next step."
+                : "También aceptamos depósito bancario y Mercado Pago — verás los datos en el siguiente paso."}
+            </p>
           </div>
         )}
       </SheetContent>
