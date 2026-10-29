@@ -30,7 +30,6 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Images, MessageCircle, Store } fr
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaBambu from "@/assets/crema-bambu-nueva.png.asset.json";
 import cremaMaderas from "@/assets/crema-maderas-nueva.png.asset.json";
-import elixirOriginalNueva from "@/assets/elixir-original-nueva.jpg.asset.json";
 import propoleoEucalipto from "@/assets/propoleo-eucalipto-cuadro.jpg";
 import cremaRchAzul from "@/assets/crema-rch-dispensador-nueva.png.asset.json";
 import cremaRchNueva from "@/assets/crema-rch-horizontal.png.asset.json";
@@ -41,7 +40,6 @@ import jabonSabilaMentaActual from "@/assets/jabon-sabila-menta-80g-actual.jpeg.
 import jabonTepezcohuiteActual from "@/assets/jabon-tepezcohuite-100g-actual.jpeg.asset.json";
 import shampooMiel from "@/assets/shampoo-miel-horizontal.png.asset.json";
 import shampooPreventivo from "@/assets/shampoo-preventivo-nueva.png.asset.json";
-import gotero50ml from "@/assets/gotero-50ml-original.png";
 import jabonAzul from "@/assets/jabon-melipona-madera-cuadro.jpg";
 import kitCartera from "@/assets/kit-cartera-yute.png.asset.json";
 import kitFlorNueva from "@/assets/kit-cartera-nueva.png.asset.json";
@@ -65,7 +63,6 @@ import educacionImg from "@/assets/ruta/educacion.jpg";
 import meliponarioImg from "@/assets/ruta/meliponario.jpg";
 import xuumiel1 from "@/assets/ruta/xuumiel-1.jpg";
 import xuumiel2 from "@/assets/ruta/xuumiel-2.jpg";
-import frascosXuumielNueva from "@/assets/frascos-xuumiel-horizontal.png.asset.json";
 import productosColmena from "@/assets/xuumiel-productos-colmena.jpg.asset.json";
 import elixirSeccion from "@/assets/xuumiel-elixir-seccion.jpg.asset.json";
 import xuujaab1 from "@/assets/ruta/xuujaab-1.jpg";
@@ -134,7 +131,6 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "crema-bambu": cremaBambu.url,
   "crema-maderas": cremaMaderas.url,
   "crema-rf": cremaRfNueva.url,
-  "elixir-miel-melipona-cacao": elixirOriginalNueva.url,
   "multivitaminico-polen-propoleo-miel": multivitaminicoFrasco.url,
   "propoleo-eucalipto": propoleoEucalipto,
   "shampoo-mascarilla-miel-romero-canela": shampooMiel.url,
@@ -151,7 +147,6 @@ const galleryImageUrl = (file: string) =>
 const imagenProducto = (producto: Producto) => {
   if (producto.imagen) return producto.imagen;
   if (PRODUCT_IMAGE_URLS[producto.id]) return PRODUCT_IMAGE_URLS[producto.id];
-  if (producto.id === "miel-abejas-meliponas") return frascosXuumielNueva.url;
   if (producto.marca === "XUUMIEL") return xuumiel1;
   if (producto.categoria === "Cremas" || producto.categoria === "Cuidado personal") {
     return xuujaab3;
@@ -1130,11 +1125,11 @@ function Index() {
             <>
               <div className="relative">
                <img
-                 src={detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml" ? gotero50ml : detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador" ? cremaRchAzul.url : imagenProducto(detalle)}
+                 src={detalle.id === "crema-rch" && presentacionSeleccionada === "50 g · con dispensador" ? cremaRchAzul.url : imagenProducto(detalle)}
                  alt={detalle.nombre}
                  width={900}
                  height={540}
-                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["shampoo-mascarilla-miel-romero-canela"].includes(detalle.id) || (detalle.id === "miel-abejas-meliponas" && presentacionSeleccionada === "50 ml") ? "bg-card object-contain" : "object-cover"}`}
+                 className={`aspect-[5/3] w-full rounded-sm border border-border ${["shampoo-mascarilla-miel-romero-canela"].includes(detalle.id) ? "bg-card object-contain" : "object-cover"}`}
                />
               {GALERIA_PRODUCTOS[detalle.id] && (
                 <button
@@ -1205,14 +1200,13 @@ function Index() {
                     {detalle.variantes.map((v) => (
                       <tr key={v.tamano} className="border-t border-border/60">
                         <td className="py-2 font-display text-lg">
-                           {detalle.id === "miel-abejas-meliponas" || (detalle.id === "crema-rch" && v.tamano === "50 g · con dispensador") ? (
+                           {detalle.id === "crema-rch" && v.tamano === "50 g · con dispensador" ? (
                             <button
                               type="button"
                               onClick={() => setPresentacionSeleccionada(v.tamano)}
                               aria-pressed={presentacionSeleccionada === v.tamano}
                               className="inline-flex items-center gap-2 text-left underline-offset-4 hover:underline aria-pressed:underline"
                             >
-                               {detalle.id === "miel-abejas-meliponas" && v.tamano === "50 ml" && <img src={gotero50ml} alt="" width={36} height={36} className="h-9 w-9 shrink-0 object-contain" />}
                                {detalle.id === "crema-rch" && <img src={cremaRchAzul.url} alt="" width={36} height={36} className="h-9 w-9 shrink-0 rounded-sm object-cover" />}
                               {v.tamano}
                             </button>
