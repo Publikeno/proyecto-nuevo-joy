@@ -65,6 +65,7 @@ import educacionImg from "@/assets/ruta/educacion.jpg";
 import meliponarioImg from "@/assets/ruta/meliponario.jpg";
 import xuumiel1 from "@/assets/ruta/xuumiel-1.jpg";
 import xuumiel2 from "@/assets/ruta/xuumiel-2.jpg";
+import frascosXuumielNueva from "@/assets/frascos-xuumiel-horizontal.png.asset.json";
 import productosColmena from "@/assets/xuumiel-productos-colmena.jpg.asset.json";
 import elixirSeccion from "@/assets/xuumiel-elixir-seccion.jpg.asset.json";
 import xuujaab1 from "@/assets/ruta/xuujaab-1.jpg";
@@ -150,7 +151,7 @@ const galleryImageUrl = (file: string) =>
 const imagenProducto = (producto: Producto) => {
   if (producto.imagen) return producto.imagen;
   if (PRODUCT_IMAGE_URLS[producto.id]) return PRODUCT_IMAGE_URLS[producto.id];
-  if (producto.id === "miel-abejas-meliponas") return xuumiel2;
+  if (producto.id === "miel-abejas-meliponas") return frascosXuumielNueva.url;
   if (producto.marca === "XUUMIEL") return xuumiel1;
   if (producto.categoria === "Cremas" || producto.categoria === "Cuidado personal") {
     return xuujaab3;
