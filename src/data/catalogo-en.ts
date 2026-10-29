@@ -146,23 +146,6 @@ const traducciones: Record<string, TraduccionProducto> = {
     destaca:
       "" ,
   },
-  "miel-abejas-meliponas": {
-    nombre: "Beecheii melipona bee honey",
-    ingrediente: "Melipona beecheii honey",
-    ingredientes: ["Melipona beecheii honey"],
-    descripcion:
-      "" ,
-    destaca:
-      "" ,
-  },
-  "elixir-miel-melipona-cacao": {
-    nombre: "Melipona bee honey elixir",
-    ingrediente: "Melipona bee honey",
-    ingredientes: ["Melipona bee honey", "100% defatted, sugar-free pure cacao"],
-    descripcion: "" ,
-    destaca:
-      "" ,
-  },
   "multivitaminico-polen-propoleo-miel": {
     nombre: "Pollen, propolis and apidea bee honey multivitamin",
     ingrediente: "Pollen, propolis and apidea bee honey",

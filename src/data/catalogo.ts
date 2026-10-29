@@ -221,46 +221,6 @@ export const productos: Producto[] = [
     variantes: [{ tamano: "60 g", precio: 290 }],
   },
   {
-    id: "miel-abejas-meliponas",
-    nombre: "Miel de abejas meliponas Beecheii",
-    categoria: "Mieles y elixires",
-    marca: "XUUMIEL",
-    ingrediente: "Miel de Melipona beecheii",
-    ingredientes: ["Miel de Melipona beecheii"],
-    descripcion:
-      "Salud Ocular: Utilizada tradicionalmente en gotas para tratar \nvista cansada, conjuntivitis, carnosidades (pterigión) y cataratas.\nAfecciones Respiratorias: Ayuda a aliviar la garganta irritada, tos y asma.\nProblemas Digestivos: Auxiliar en el tratamiento de úlceras gástricas y gastritis.\nCicatrización y Piel: Útil para tratar heridas, quemaduras, manchas en la piel y picaduras, actuando como cicatrizante y regenerador celular.\nFortalecimiento Inmune: Su consumo regular fortalece las defensas debido a su alta actividad biológica.",
-    ritual:
-      "La ficha la presenta como alimento natural; el catálogo no especifica una dosis de uso.",
-    destaca:
-      "" ,
-    variantes: [
-      { tamano: "10 ml", precio: 130 },
-      { tamano: "15 ml", precio: 180 },
-      { tamano: "20 ml", precio: 230 },
-      { tamano: "30 ml", precio: 320 },
-      { tamano: "50 ml", precio: 440 },
-    ],
-  },
-  {
-    id: "elixir-miel-melipona-cacao",
-    nombre: "Elixir de miel de abejas meliponas",
-    categoria: "Mieles y elixires",
-    marca: "XUUMIEL",
-    ingrediente: "Miel de abejas meliponas",
-    ingredientes: ["Miel de abejas meliponas", "Cacao puro 100% desgrasado y sin azúcar"],
-    descripcion: "La gran cantidad de antioxidantes y polifenoles, sumadoEl cacao puro (100% desgrasado, sin azúcar) es un superalimento rico en antioxidantes (flavonoides), minerales como magnesio, hierro y zinc, y compuestos estimulantes como la teobromina. Mejora la salud cardiovascular al aumentar la elasticidad vascular, reduce la inflamación, mejora el estado de ánimo y aporta energía sostenida",
-    ritual: "No especificado en la ficha del catálogo.",
-    destaca:
-      "" ,
-    variantes: [
-      { tamano: "10 ml", precio: 130 },
-      { tamano: "20 ml", precio: 230 },
-      { tamano: "30 ml", precio: 320 },
-      { tamano: "50 ml", precio: 440 },
-      { tamano: "50 ml · con estuche de madera", precio: 590 },
-    ],
-  },
-  {
     id: "multivitaminico-polen-propoleo-miel",
     nombre: "Multivitamínico de polen, propóleo y miel de abejas apidea",
     categoria: "Mieles y elixires",
