@@ -23,20 +23,10 @@ describe("presentaciones del Elixir confirmadas por la usuaria", () => {
   });
 });
 
-describe("Elixir con Cacao agregado por la usuaria", () => {
-  it.each([
-    { tamano: "30 ml", precio: 180 },
-  ])("$tamano cuesta $precio MXN en ambos idiomas", (presentacion) => {
-    for (const catalogo of [productos, productosEn]) {
-      const elixir = catalogo.find((p) => p.id === "elixir-miel-meliponas-y-cacao");
-      expect(elixir?.variantes.find((v) => v.tamano === presentacion.tamano)?.precio).toBe(presentacion.precio);
-    }
-  });
-
-  it("tiene únicamente la presentación solicitada y conserva el Elixir original aparte", () => {
-    expect(productos.find((p) => p.id === "elixir-miel-meliponas-y-cacao")?.variantes).toEqual([
-      { tamano: "30 ml", precio: 180 },
-    ]);
+describe("Elixir con Cacao eliminado por la usuaria", () => {
+  it("ya no existe en ningún idioma y el Elixir original se conserva aparte", () => {
+    expect(productos.find((p) => p.id === "elixir-miel-meliponas-y-cacao")).toBeUndefined();
+    expect(productosEn.find((p) => p.id === "elixir-miel-meliponas-y-cacao")).toBeUndefined();
     expect(productos.find((p) => p.id === "elixir-miel-melipona-cacao")?.variantes).toHaveLength(5);
   });
 });

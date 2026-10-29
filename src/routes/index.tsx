@@ -30,7 +30,6 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Images, MessageCircle, Store } fr
 import caribbeanLikes from "@/assets/caribbean-likes.jpeg.asset.json";
 import cremaBambu from "@/assets/crema-bambu-nueva.png.asset.json";
 import cremaMaderas from "@/assets/crema-maderas-nueva.png.asset.json";
-import elixirCacaoNueva from "@/assets/elixir-cacao-nueva.jpg.asset.json";
 import elixirOriginalNueva from "@/assets/elixir-original-nueva.jpg.asset.json";
 import propoleoEucalipto from "@/assets/propoleo-eucalipto-cuadro.jpg";
 import cremaRchAzul from "@/assets/crema-rch-dispensador-nueva.png.asset.json";
@@ -135,7 +134,6 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "crema-maderas": cremaMaderas.url,
   "crema-rf": cremaRfNueva.url,
   "elixir-miel-melipona-cacao": elixirOriginalNueva.url,
-  "elixir-miel-meliponas-y-cacao": elixirCacaoNueva.url,
   "multivitaminico-polen-propoleo-miel": multivitaminicoFrasco.url,
   "propoleo-eucalipto": propoleoEucalipto,
   "shampoo-mascarilla-miel-romero-canela": shampooMiel.url,
