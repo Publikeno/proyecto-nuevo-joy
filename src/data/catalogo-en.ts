@@ -162,6 +162,20 @@ const traducciones: Record<string, TraduccionProducto> = {
     descripcion: "" ,
     destaca: "" ,
   },
+  "elixir-miel-melipona-cacao": {
+    nombre: "Melipona bee honey elixir",
+    ingrediente: "Melipona bee honey",
+    ingredientes: ["Melipona bee honey"],
+    descripcion: "" ,
+    destaca: "" ,
+    variantes: [
+      { tamano: "10 ml", precio: 130 },
+      { tamano: "20 ml", precio: 230 },
+      { tamano: "30 ml", precio: 320 },
+      { tamano: "50 ml", precio: 440 },
+      { tamano: "50 ml · with wooden case", precio: 590 },
+    ],
+  },
   "shampoo-mascarilla-miel-romero-canela": {
     nombre: "Honey, rosemary and cinnamon hair mask shampoo",
     ingrediente: "Honey, rosemary and cinnamon",

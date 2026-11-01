@@ -5,11 +5,32 @@ import { productosEn } from "../data/catalogo-en";
 describe("Fichas eliminadas por la usuaria", () => {
   it.each([
     "elixir-miel-meliponas-y-cacao",
-    "elixir-miel-melipona-cacao",
     "miel-abejas-meliponas",
   ])("%s ya no existe en ningún idioma", (id) => {
     expect(productos.find((p) => p.id === id)).toBeUndefined();
     expect(productosEn.find((p) => p.id === id)).toBeUndefined();
+  });
+});
+
+describe("Elixir de miel de abejas meliponas restaurado por la usuaria", () => {
+  it("conserva sus 5 presentaciones y precios en ambos idiomas", () => {
+    const es = productos.find((p) => p.id === "elixir-miel-melipona-cacao");
+    expect(es?.nombre).toBe("Elixir de miel de abejas meliponas");
+    expect(es?.variantes).toEqual([
+      { tamano: "10 ml", precio: 130 },
+      { tamano: "20 ml", precio: 230 },
+      { tamano: "30 ml", precio: 320 },
+      { tamano: "50 ml", precio: 440 },
+      { tamano: "50 ml · con estuche de madera", precio: 590 },
+    ]);
+    const en = productosEn.find((p) => p.id === "elixir-miel-melipona-cacao");
+    expect(en?.variantes).toEqual([
+      { tamano: "10 ml", precio: 130 },
+      { tamano: "20 ml", precio: 230 },
+      { tamano: "30 ml", precio: 320 },
+      { tamano: "50 ml", precio: 440 },
+      { tamano: "50 ml · with wooden case", precio: 590 },
+    ]);
   });
 });
 
