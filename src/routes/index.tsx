@@ -46,6 +46,7 @@ import kitFlorNueva from "@/assets/kit-cartera-nueva.png.asset.json";
 import repelenteLiquido from "@/assets/repelente-liquido-nueva.png.asset.json";
 import repelenteCremaNueva from "@/assets/repelente-crema-nueva.png.asset.json";
 import multivitaminicoFrasco from "@/assets/multivitaminico-nueva.jpg.asset.json";
+import elixirJardin from "@/assets/elixir-jardin.png.asset.json";
 import jabonCurcumaFoto from "@/assets/jabon-curcuma-coco-melipona-nueva.jpg.asset.json";
 import jabonFresaChampagneNueva from "@/assets/jabon-fresa-champagne-nueva.jpg.asset.json";
 import albumEstantes from "@/assets/album/tienda-estantes.jpg.asset.json";
@@ -133,6 +134,7 @@ const PRODUCT_IMAGE_URLS: Record<string, string> = {
   "crema-rf": cremaRfNueva.url,
   "multivitaminico-polen-propoleo-miel": multivitaminicoFrasco.url,
   "propoleo-eucalipto": propoleoEucalipto,
+  "elixir-miel-melipona-cacao": elixirJardin.url,
   "shampoo-mascarilla-miel-romero-canela": shampooMiel.url,
   "shampoo-preventivo-miel-romero-neem": shampooPreventivo.url,
   "repelente-crema": repelenteCremaNueva.url,
