@@ -44,6 +44,18 @@ export const productos: Producto[] = [
     variantes: [{ tamano: "70 g", precio: 37 }],
   },
   {
+    id: "jabon-coco-arroz",
+    nombre: "Jabón de coco y arroz",
+    categoria: "Jabones",
+    marca: "XUUJÁAB",
+    ingrediente: "Coco y arroz",
+    ingredientes: ["Coco", "Arroz"],
+    descripcion: "",
+    ritual: "No especificado en la ficha del catálogo.",
+    destaca: "",
+    variantes: [{ tamano: "70 g", precio: 77 }],
+  },
+  {
     id: "jabon-tepezcohuite-melipona",
     nombre: "Jabón de tepezcohuite con miel de abejas meliponas",
     categoria: "Jabones",
