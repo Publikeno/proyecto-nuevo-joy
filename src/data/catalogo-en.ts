@@ -23,6 +23,13 @@ const traducciones: Record<string, TraduccionProducto> = {
     destaca:
       "" ,
   },
+  "jabon-coco-arroz": {
+    nombre: "Coconut and rice soap",
+    ingrediente: "Coconut and rice",
+    ingredientes: ["Coconut", "Rice"],
+    descripcion: "",
+    destaca: "",
+  },
   "jabon-tepezcohuite-melipona": {
     nombre: "Tepezcohuite soap with melipona bee honey",
     ingrediente: "Tepezcohuite and melipona honey",

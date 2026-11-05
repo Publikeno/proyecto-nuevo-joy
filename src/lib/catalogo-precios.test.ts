@@ -82,6 +82,17 @@ describe("RF crema reafirmante corregida por la usuaria", () => {
   });
 });
 
+describe("Jabón de coco y arroz agregado por la usuaria", () => {
+  it("se vende en 70 g a $77 MXN en ambos idiomas", () => {
+    const es = productos.find((p) => p.id === "jabon-coco-arroz");
+    expect(es?.nombre).toBe("Jabón de coco y arroz");
+    expect(es?.variantes).toEqual([{ tamano: "70 g", precio: 77 }]);
+    const en = productosEn.find((p) => p.id === "jabon-coco-arroz");
+    expect(en?.nombre).toBe("Coconut and rice soap");
+    expect(en?.variantes).toEqual([{ tamano: "70 g", precio: 77 }]);
+  });
+});
+
 describe("Multivitamínico de polen, propóleo y miel corregido por la usuaria", () => {
   it("se vende en 200 g a $150 MXN en ambos idiomas y nada más cambió", () => {
     const es = productos.find((p) => p.id === "multivitaminico-polen-propoleo-miel");
