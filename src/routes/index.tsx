@@ -35,7 +35,7 @@ import cremaRchAzul from "@/assets/crema-rch-dispensador-nueva.png.asset.json";
 import cremaRchNueva from "@/assets/crema-rch-horizontal.png.asset.json";
 import cremaRfNueva from "@/assets/crema-rf-horizontal.png.asset.json";
 import jabonAvenaActual from "@/assets/jabon-avena-70g-actual.jpeg.asset.json";
-import jabonCocoArrozNueva from "@/assets/jabon-coco-arroz-nueva.png.asset.json";
+import jabonCocoArrozNueva from "@/assets/jabon-coco-arroz-horizontal.png.asset.json";
 import jabonNeem from "@/assets/jabon-neem-cuadro.jpg.asset.json";
 import jabonSabilaMentaActual from "@/assets/jabon-sabila-menta-80g-actual.jpeg.asset.json";
 import jabonTepezcohuiteActual from "@/assets/jabon-tepezcohuite-100g-actual.jpeg.asset.json";
