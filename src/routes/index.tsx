@@ -287,12 +287,12 @@ function Index() {
           </div>
           <div className="flex min-w-0 items-center gap-3">
             <nav aria-label={copy.navAria} className="-mx-1 min-w-0 overflow-x-auto">
-              <ul className="flex gap-1 whitespace-nowrap text-sm">
+              <ul className="flex gap-1 whitespace-nowrap text-base sm:text-lg">
                 {NAV.map((n) => (
                   <li key={n.href}>
                     <a
                       href={n.href}
-                      className="inline-block rounded-full border border-border px-3 py-1.5 transition-colors hover:border-honey hover:text-foreground"
+                      className="inline-block rounded-full border border-border px-4 py-2 transition-colors hover:border-honey hover:text-foreground"
                     >
                       {n.label}
                     </a>
@@ -303,7 +303,7 @@ function Index() {
             <div
               role="group"
               aria-label={copy.languageLabel}
-              className="flex shrink-0 items-center gap-1 rounded-full border border-border bg-card p-1 text-xs"
+              className="flex shrink-0 items-center gap-1 rounded-full border border-border bg-card p-1 text-sm sm:text-base"
             >
               <button
                 type="button"
