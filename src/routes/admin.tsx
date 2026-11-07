@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { ArrowLeft, LogOut, Plus, Trash2, Upload } from "lucide-react";
 import type { Session } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
-import { productos, type Producto, type Variante } from "@/data/catalogo";
+import { categorias, productos, type Producto, type Variante } from "@/data/catalogo";
 import { fotoAjusteUrl, type AjusteProducto } from "@/lib/ajustes";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -156,12 +156,56 @@ function Panel({ userId }: { userId: string }) {
   if (!esAdmin)
     return <p className="text-center">Esta cuenta no tiene permiso de administración.</p>;
 
+  const baseIds = new Set(productos.map((p) => p.id));
+  const nuevos: Producto[] = (ajustes ?? [])
+    .filter((a) => a.es_nuevo && !baseIds.has(a.id))
+    .map((a) => ({
+      id: a.id,
+      nombre: a.nombre ?? "",
+      categoria: (a.categoria as Producto["categoria"]) ?? "Jabones",
+      marca: a.marca === "XUUMIEL" ? "XUUMIEL" : "XUUJÁAB",
+      ingrediente: "",
+      ingredientes: [],
+      descripcion: a.descripcion ?? "",
+      ritual: "",
+      destaca: "",
+      variantes: a.variantes?.length ? a.variantes : [{ tamano: "", precio: 0 }],
+    }));
+  const lista = [...nuevos, ...productos];
+
   return (
     <div className="space-y-3">
       <p className="text-sm text-muted-foreground">
         Toca un producto para cambiar su nombre, descripción, precios o foto. Los cambios se ven en la página al guardar.
       </p>
-      {productos.map((p) => {
+      <div className="rounded-sm border border-primary">
+        <button
+          type="button"
+          className="flex w-full items-center gap-2 px-4 py-3 text-left font-medium"
+          onClick={() => setAbierto(abierto === "__nuevo" ? null : "__nuevo")}
+        >
+          <Plus className="h-4 w-4" /> Agregar producto nuevo
+        </button>
+        {abierto === "__nuevo" && (
+          <Editor
+            nuevo
+            producto={{
+              id: `nuevo-${Date.now()}`,
+              nombre: "",
+              categoria: "Jabones",
+              marca: "XUUJÁAB",
+              ingrediente: "",
+              ingredientes: [],
+              descripcion: "",
+              ritual: "",
+              destaca: "",
+              variantes: [{ tamano: "", precio: 0 }],
+            }}
+            onListo={() => setAbierto(null)}
+          />
+        )}
+      </div>
+      {lista.map((p) => {
         const a = ajustes?.find((x) => x.id === p.id);
         return (
           <div key={p.id} className="rounded-sm border border-border">
@@ -177,7 +221,9 @@ function Panel({ userId }: { userId: string }) {
               </span>
               <span className="text-sm text-muted-foreground">{abierto === p.id ? "Cerrar" : "Editar"}</span>
             </button>
-            {abierto === p.id && <Editor producto={p} ajuste={a} onListo={() => setAbierto(null)} />}
+            {abierto === p.id && (
+              <Editor producto={p} ajuste={a} nuevo={!baseIds.has(p.id)} onListo={() => setAbierto(null)} />
+            )}
           </div>
         );
       })}
@@ -185,9 +231,11 @@ function Panel({ userId }: { userId: string }) {
   );
 }
 
-function Editor({ producto, ajuste, onListo }: { producto: Producto; ajuste?: AjusteProducto | undefined; onListo: () => void }) {
+function Editor({ producto, ajuste, onListo, nuevo = false }: { producto: Producto; ajuste?: AjusteProducto | undefined; onListo: () => void; nuevo?: boolean }) {
   const qc = useQueryClient();
   const [nombre, setNombre] = useState(ajuste?.nombre ?? producto.nombre);
+  const [categoria, setCategoria] = useState<string>(ajuste?.categoria ?? producto.categoria);
+  const [marca, setMarca] = useState<string>(ajuste?.marca ?? producto.marca);
   const [descripcion, setDescripcion] = useState(ajuste?.descripcion ?? producto.descripcion);
   const [variantes, setVariantes] = useState<Variante[]>(ajuste?.variantes?.length ? ajuste.variantes : producto.variantes);
   const [oculto, setOculto] = useState(ajuste?.oculto ?? false);
@@ -207,11 +255,15 @@ function Editor({ producto, ajuste, onListo }: { producto: Producto; ajuste?: Aj
     if (variantes.some((v) => !v.tamano.trim() || !(v.precio > 0))) {
       { toast.error("Cada presentación necesita tamaño y un precio mayor a 0."); return; }
     }
+    if (nuevo && !nombre.trim()) { toast.error("Escribe el nombre del producto."); return; }
     setGuardando(true);
     const { error } = await supabase.from("product_overrides").upsert({
       id: producto.id,
-      nombre: nombre.trim() === producto.nombre ? null : nombre.trim(),
-      descripcion: descripcion === producto.descripcion ? null : descripcion,
+      nombre: nuevo ? nombre.trim() : nombre.trim() === producto.nombre ? null : nombre.trim(),
+      descripcion: nuevo ? descripcion : descripcion === producto.descripcion ? null : descripcion,
+      es_nuevo: nuevo,
+      categoria: nuevo ? categoria : null,
+      marca: nuevo ? marca : null,
       imagen_path: imagenPath,
       oculto,
       variantes: variantes.map((v) => ({ tamano: v.tamano.trim(), precio: Math.round(v.precio) })),
@@ -226,7 +278,7 @@ function Editor({ producto, ajuste, onListo }: { producto: Producto; ajuste?: Aj
 
   const restaurar = async () => {
     if (!ajuste) return onListo();
-    if (!confirm("¿Regresar este producto a como estaba originalmente?")) return;
+    if (!confirm(nuevo ? "¿Borrar este producto nuevo?" : "¿Regresar este producto a como estaba originalmente?")) return;
     const { error } = await supabase.from("product_overrides").delete().eq("id", producto.id);
     if (error) { toast.error("No se pudo restaurar"); return; }
     await qc.invalidateQueries({ queryKey: ["product-overrides"] });
@@ -260,6 +312,23 @@ function Editor({ producto, ajuste, onListo }: { producto: Producto; ajuste?: Aj
         <Label>Nombre</Label>
         <Input value={nombre} onChange={(e) => setNombre(e.target.value)} />
       </div>
+      {nuevo && (
+        <div className="flex flex-wrap gap-4">
+          <div className="space-y-2">
+            <Label>Categoría</Label>
+            <select className="block rounded-sm border border-border bg-background px-3 py-2" value={categoria} onChange={(e) => setCategoria(e.target.value)}>
+              {categorias.map((c) => <option key={c} value={c}>{c}</option>)}
+            </select>
+          </div>
+          <div className="space-y-2">
+            <Label>Marca</Label>
+            <select className="block rounded-sm border border-border bg-background px-3 py-2" value={marca} onChange={(e) => setMarca(e.target.value)}>
+              <option value="XUUJÁAB">XUUJÁAB</option>
+              <option value="XUUMIEL">XUUMIEL</option>
+            </select>
+          </div>
+        </div>
+      )}
       <div className="space-y-2">
         <Label>Descripción</Label>
         <Textarea rows={4} value={descripcion} onChange={(e) => setDescripcion(e.target.value)} />
@@ -297,7 +366,7 @@ function Editor({ producto, ajuste, onListo }: { producto: Producto; ajuste?: Aj
       <div className="flex flex-wrap gap-2">
         <Button onClick={guardar} disabled={guardando}>{guardando ? "Guardando…" : "Guardar"}</Button>
         <Button variant="outline" onClick={onListo}>Cancelar</Button>
-        {ajuste && <Button variant="ghost" onClick={restaurar}>Restaurar original</Button>}
+        {ajuste && <Button variant="ghost" onClick={restaurar}>{nuevo ? "Borrar producto" : "Restaurar original"}</Button>}
       </div>
     </div>
   );

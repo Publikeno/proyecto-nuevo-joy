@@ -1,4 +1,4 @@
-import type { Producto, Variante } from "@/data/catalogo";
+import type { Categoria, Producto, Variante } from "@/data/catalogo";
 
 // Cambios guardados desde el panel /admin, encima del catálogo base.
 export type AjusteProducto = {
@@ -8,7 +8,33 @@ export type AjusteProducto = {
   imagen_path: string | null;
   oculto: boolean;
   variantes: Variante[] | null;
+  es_nuevo?: boolean;
+  categoria?: string | null;
+  marca?: string | null;
 };
+
+const CATEGORIAS: Categoria[] = ["Jabones", "Cremas", "Mieles y elixires", "Kits", "Cuidado personal"];
+
+/** Producto creado desde el panel (no existe en el catálogo base). */
+function productoNuevo(a: AjusteProducto): Producto | null {
+  const variantes = variantesValidas(a.variantes);
+  const nombre = a.nombre?.trim();
+  if (!variantes || !nombre || a.oculto) return null;
+  const categoria = CATEGORIAS.includes(a.categoria as Categoria) ? (a.categoria as Categoria) : "Jabones";
+  return {
+    id: a.id,
+    nombre,
+    categoria,
+    marca: a.marca === "XUUMIEL" ? "XUUMIEL" : "XUUJÁAB",
+    ingrediente: "",
+    ingredientes: [],
+    descripcion: a.descripcion ?? "",
+    ritual: "",
+    destaca: "",
+    variantes,
+    imagen: a.imagen_path ? fotoAjusteUrl(a.imagen_path) : undefined,
+  };
+}
 
 export const fotoAjusteUrl = (path: string) => `/api/public/foto/${path}`;
 
@@ -55,6 +81,12 @@ export function aplicarAjustes(
       imagen: a.imagen_path ? fotoAjusteUrl(a.imagen_path) : p.imagen,
       variantes,
     });
+  }
+  const base = new Set(lista.map((p) => p.id));
+  for (const a of ajustes) {
+    if (!a.es_nuevo || base.has(a.id)) continue;
+    const n = productoNuevo(a);
+    if (n) out.push(n);
   }
   return out;
 }

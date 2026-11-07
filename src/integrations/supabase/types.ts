@@ -16,27 +16,36 @@ export type Database = {
     Tables: {
       product_overrides: {
         Row: {
+          categoria: string | null
           descripcion: string | null
+          es_nuevo: boolean
           id: string
           imagen_path: string | null
+          marca: string | null
           nombre: string | null
           oculto: boolean
           updated_at: string
           variantes: Json | null
         }
         Insert: {
+          categoria?: string | null
           descripcion?: string | null
+          es_nuevo?: boolean
           id: string
           imagen_path?: string | null
+          marca?: string | null
           nombre?: string | null
           oculto?: boolean
           updated_at?: string
           variantes?: Json | null
         }
         Update: {
+          categoria?: string | null
           descripcion?: string | null
+          es_nuevo?: boolean
           id?: string
           imagen_path?: string | null
+          marca?: string | null
           nombre?: string | null
           oculto?: boolean
           updated_at?: string

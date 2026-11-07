@@ -37,3 +37,13 @@ describe("ajustes del panel admin", () => {
     expect(p!.variantes[0]!.precio).toBe(50);
   });
 });
+
+describe("productos nuevos del panel", () => {
+  it("aparecen con su precio y se ocultan si se marcan", async () => {
+    const { aplicarAjustes } = await import("./ajustes");
+    const nuevo = { id: "nuevo-1", nombre: "Jabón de prueba", descripcion: "", imagen_path: null, oculto: false, variantes: [{ tamano: "70 g", precio: 55 }], es_nuevo: true, categoria: "Jabones", marca: "XUUJÁAB" };
+    const r = aplicarAjustes([], [nuevo], "es");
+    expect(r[0]?.variantes[0]?.precio).toBe(55);
+    expect(aplicarAjustes([], [{ ...nuevo, oculto: true }], "es")).toHaveLength(0);
+  });
+});
