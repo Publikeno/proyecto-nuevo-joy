@@ -56,6 +56,18 @@ export const productos: Producto[] = [
     variantes: [{ tamano: "70 g", precio: 77 }],
   },
   {
+    id: "jabon-cafe-miel",
+    nombre: "Jabón exfoliante de café y miel de Meliponas Beecheii para baños de pies",
+    categoria: "Jabones",
+    marca: "XUUJÁAB",
+    ingrediente: "Café y miel de abejas Meliponas Beecheii",
+    ingredientes: ["Café", "Miel de abejas Meliponas Beecheii"],
+    descripcion: "Jabón exfoliante para baños de pies.",
+    ritual: "No especificado en la ficha del catálogo.",
+    destaca: "",
+    variantes: [{ tamano: "1 pieza", precio: 57 }],
+  },
+  {
     id: "jabon-tepezcohuite-melipona",
     nombre: "Jabón de tepezcohuite con miel de abejas meliponas",
     categoria: "Jabones",

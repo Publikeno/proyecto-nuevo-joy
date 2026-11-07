@@ -30,6 +30,14 @@ const traducciones: Record<string, TraduccionProducto> = {
     descripcion: "",
     destaca: "",
   },
+  "jabon-cafe-miel": {
+    nombre: "Exfoliating coffee and Meliponas Beecheii honey soap for foot baths",
+    ingrediente: "Coffee and Meliponas Beecheii bee honey",
+    ingredientes: ["Coffee", "Meliponas Beecheii bee honey"],
+    descripcion: "Exfoliating soap for foot baths.",
+    destaca: "",
+    variantes: [{ tamano: "1 bar", precio: 57 }],
+  },
   "jabon-tepezcohuite-melipona": {
     nombre: "Tepezcohuite soap with melipona bee honey",
     ingrediente: "Tepezcohuite and melipona honey",

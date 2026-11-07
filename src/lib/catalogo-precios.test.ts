@@ -93,6 +93,16 @@ describe("Jabón de coco y arroz agregado por la usuaria", () => {
   });
 });
 
+describe("Jabón exfoliante de café y miel agregado por la usuaria", () => {
+  it("se vende a $57 MXN en ambos idiomas", () => {
+    const es = productos.find((p) => p.id === "jabon-cafe-miel");
+    expect(es?.nombre).toBe("Jabón exfoliante de café y miel de Meliponas Beecheii para baños de pies");
+    expect(es?.variantes).toEqual([{ tamano: "1 pieza", precio: 57 }]);
+    const en = productosEn.find((p) => p.id === "jabon-cafe-miel");
+    expect(en?.variantes).toEqual([{ tamano: "1 bar", precio: 57 }]);
+  });
+});
+
 describe("Multivitamínico de polen, propóleo y miel corregido por la usuaria", () => {
   it("se vende en 200 g a $150 MXN en ambos idiomas y nada más cambió", () => {
     const es = productos.find((p) => p.id === "multivitaminico-polen-propoleo-miel");
