@@ -179,7 +179,10 @@ function Index() {
       if (error) throw error;
       return data as unknown as AjusteProducto[];
     },
-    staleTime: 60_000,
+    staleTime: 0,
+    refetchOnWindowFocus: "always",
+    refetchOnMount: "always",
+    refetchInterval: 5_000,
   });
   const productosActivos = useMemo(
     () => aplicarAjustes(idioma === "en" ? productosEn : productos, ajustes, idioma),
