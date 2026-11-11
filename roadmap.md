@@ -1,5 +1,11 @@
 # Opciones para regresar
 
+# Cambios del 11 de noviembre
+
+- [x] Quitar Jabón de panal y abeja y Jabón artesanal rosa del catálogo fotográfico.
+- [x] Quitar toda la sección Próximamente.
+- [ ] Comprobar y publicar la página actualizada.
+
 # Catálogo único
 
 - [x] Integrar las fotos de productos no repetidos en Catálogo 2026 sin añadir precios ni descripciones.

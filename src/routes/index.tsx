@@ -661,25 +661,6 @@ function Index() {
               </ul>
             </div>
 
-            {/* Próximamente */}
-            <div className="mt-12">
-              <h3 className="font-display text-2xl">{copy.comingSoonTitle}</h3>
-              <p className="mt-2 max-w-2xl text-muted-foreground">{copy.comingSoonIntro}</p>
-              <ul className="mt-6 grid gap-4 sm:grid-cols-3">
-                {copy.comingSoonItems.map((n) => (
-                  <li
-                    key={n}
-                    className="rounded-sm border border-dashed border-border bg-card/60 p-6"
-                  >
-                    <span className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
-                      {copy.comingSoon}
-                    </span>
-                    <h4 className="mt-3 font-display text-xl">{n}</h4>
-                    <p className="mt-2 text-sm text-muted-foreground">{copy.noConfirmed}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </section>
 

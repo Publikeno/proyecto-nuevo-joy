@@ -5,10 +5,10 @@ import { productos } from "../data/catalogo";
 describe("catálogo único sin repetir las fichas existentes", () => {
   it("conserva únicamente las fotos de productos que no tenían ficha", () => {
     expect(fotosCatalogo.map((foto) => foto.id)).toEqual([
-      "IMG_8092", "IMG_8094", "IMG_8115", "IMG_8167", "IMG_8169", "abejajabon", "jabondemiel",
+      "IMG_8115", "IMG_8167", "IMG_8169", "abejajabon", "jabondemiel",
       "multivitaminico-cacao",
     ]);
-    expect(new Set(fotosCatalogo.map((foto) => foto.archivo)).size).toBe(7);
+    expect(new Set(fotosCatalogo.map((foto) => foto.archivo)).size).toBe(5);
   });
 
   it("mantiene sin precio ni descripción las entradas que no los tenían", () => {
