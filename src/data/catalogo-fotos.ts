@@ -1,6 +1,4 @@
 import type { Categoria } from "./catalogo";
-import jabonPanalNueva from "@/assets/jabon-panal-abeja-nueva.png.asset.json";
-import jabonRosaNueva from "@/assets/jabon-rosa-nueva.png.asset.json";
 import jabonLavandaNueva from "@/assets/jabon-lavanda-nueva.png.asset.json";
 import jabonNeemNueva from "@/assets/jabon-neem-nueva.png.asset.json";
 import jabonDisenoAbejaNueva from "@/assets/jabon-diseno-abeja-nueva.png.asset.json";
@@ -20,8 +18,6 @@ export type FotoCatalogo = {
 };
 
 export const fotosCatalogo: FotoCatalogo[] = [
-  { id: "IMG_8092", nombre: "Jabón de panal y abeja", categoria: "Jabones", archivo: "cjXqhYGENXHnNSSq.png", estado: "Diseño recibido", url: jabonPanalNueva.url },
-  { id: "IMG_8094", nombre: "Jabón artesanal rosa", categoria: "Jabones", archivo: "XncbeftxROyqSnSU.png", estado: "Variante por confirmar", url: jabonRosaNueva.url },
   { id: "IMG_8115", nombre: "Jabón de lavanda y miel", categoria: "Jabones", archivo: "JqqJWmQbuLLeDbPG.png", estado: "Producto nuevo", url: jabonLavandaNueva.url },
   {
     id: "IMG_8167",
