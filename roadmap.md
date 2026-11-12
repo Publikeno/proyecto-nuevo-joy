@@ -4,7 +4,7 @@
 
 - [x] Quitar Jabón de panal y abeja y Jabón artesanal rosa del catálogo fotográfico.
 - [x] Quitar toda la sección Próximamente.
-- [ ] Comprobar y publicar la página actualizada.
+- [x] Comprobar la página actualizada y solicitar su publicación.
 
 # Catálogo único
 
