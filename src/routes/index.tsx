@@ -175,9 +175,15 @@ function Index() {
   const { data: ajustes } = useQuery({
     queryKey: ["product-overrides"],
     queryFn: async () => {
-      const { data, error } = await supabase.from("product_overrides").select("*");
-      if (error) throw error;
-      return data as unknown as AjusteProducto[];
+      const [visible, hidden] = await Promise.all([
+        supabase.from("product_overrides").select("*").eq("oculto", false),
+        supabase.rpc("catalog_hidden_ids"),
+      ]);
+      if (visible.error || hidden.error) throw new Error("No se pudo cargar el catálogo.");
+      return [
+        ...(visible.data as unknown as AjusteProducto[]),
+        ...(hidden.data ?? []).map(({ id }) => ({ id, oculto: true, nombre: null, descripcion: null, imagen_path: null, variantes: null })),
+      ];
     },
     staleTime: 0,
     refetchOnWindowFocus: "always",

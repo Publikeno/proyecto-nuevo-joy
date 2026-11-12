@@ -2,12 +2,11 @@ import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { validarAcceso } from "@/lib/acceso.functions";
 import { clave, etiquetaCorta, resumenVisitas, type Dia } from "@/lib/estadisticas";
-import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/xuumiel-logo-3x-transparent-shadow.png";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const STORAGE_KEY = "xuumiel-stats-ok";
+const STORAGE_KEY = "xuumiel-stats-code";
 
 type Estado = "cerrado" | "codigo" | "abierto";
 
@@ -19,39 +18,29 @@ export function Estadisticas() {
   const [dias, setDias] = useState<Dia[]>([]);
   const validar = useServerFn(validarAcceso);
 
-  const cargar = async () => {
-    const { data } = await supabase.from("site_counter").select("visits").eq("id", 1).maybeSingle();
-    if (data) setVisitas(Number(data.visits));
-    const { data: filas } = await supabase
-      .from("site_visits")
-      .select("dia, visitas")
-      .order("dia", { ascending: false })
-      .limit(120);
-    setDias((filas ?? []).map((f) => ({ dia: f.dia, visitas: Number(f.visitas) })));
-  };
-
-  const abrir = () => {
+  const abrir = async (codigo: string) => {
+    const res = await validar({ data: { codigo } });
+    if (!res.ok) return false;
+    setVisitas(res.visitas);
+    setDias(res.dias);
     try {
-      sessionStorage.setItem(STORAGE_KEY, "1");
+      sessionStorage.setItem(STORAGE_KEY, codigo);
     } catch {
       /* ignore */
     }
     setEstado("abierto");
-    cargar();
+    return true;
   };
 
-  const alClickBoton = () => {
-    let guardado = false;
+  const alClickBoton = async () => {
+    setValor("");
+    setError(null);
+    setEstado("codigo");
     try {
-      guardado = sessionStorage.getItem(STORAGE_KEY) === "1";
+      const guardado = sessionStorage.getItem(STORAGE_KEY);
+      if (guardado) await abrir(guardado);
     } catch {
-      guardado = false;
-    }
-    if (guardado) abrir();
-    else {
-      setValor("");
-      setError(null);
-      setEstado("codigo");
+      // A local flag never authorizes access; failure keeps the code prompt open.
     }
   };
 
@@ -59,9 +48,7 @@ export function Estadisticas() {
     e.preventDefault();
     setError(null);
     try {
-      const res = await validar({ data: { codigo: valor } });
-      if (res.ok) abrir();
-      else setError("Código incorrecto. Intenta de nuevo.");
+      if (!(await abrir(valor))) setError("Código incorrecto. Intenta de nuevo.");
     } catch {
       setError("No se pudo validar el código. Intenta de nuevo.");
     }

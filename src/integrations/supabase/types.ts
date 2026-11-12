@@ -106,6 +106,12 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      catalog_hidden_ids: {
+        Args: never
+        Returns: {
+          id: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

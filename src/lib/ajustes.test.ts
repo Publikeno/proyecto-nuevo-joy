@@ -26,6 +26,12 @@ describe("ajustes del panel admin", () => {
   it("un producto oculto no aparece", () => {
     expect(aplicarAjustes([base], [ajuste({ oculto: true })], "es")).toHaveLength(0);
   });
+  it("identifier-only tombstones hide static products in both catalog languages", () => {
+    const tombstone = ajuste({ oculto: true });
+    for (const idioma of ["es", "en"] as const) {
+      expect(aplicarAjustes([base], [tombstone], idioma)).toEqual([]);
+    }
+  });
   it("ignora precios en cero para no vender gratis", () => {
     const [p] = aplicarAjustes([base], [ajuste({ variantes: [{ tamano: "70 g", precio: 0 }] })], "es");
     expect(p!.variantes[0]!.precio).toBe(37);

@@ -31,9 +31,15 @@ async function leerAjustes(): Promise<AjusteProducto[]> {
       },
     },
   });
-  const { data, error } = await sb.from("product_overrides").select("*");
-  if (error) throw new Error("No se pudieron leer los precios");
-  return (data ?? []) as unknown as AjusteProducto[];
+  const [visible, hidden] = await Promise.all([
+    sb.from("product_overrides").select("*").eq("oculto", false),
+    sb.rpc("catalog_hidden_ids"),
+  ]);
+  if (visible.error || hidden.error) throw new Error("No se pudieron leer los precios");
+  return [
+    ...((visible.data ?? []) as unknown as AjusteProducto[]),
+    ...(hidden.data ?? []).map(({ id }: { id: string }) => ({ id, oculto: true, nombre: null, descripcion: null, imagen_path: null, variantes: null })),
+  ];
 }
 
 export const crearPagoCarrito = createServerFn({ method: "POST" })
